@@ -1,0 +1,1227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Bosnia and Herzegovina vs Qatar Pre-Match Analysis Report</title>
+  <style>
+    @page { size: A5 portrait; margin: 12mm 10mm 14mm; }
+    :root {
+      --ink: #102033;
+      --muted: #697586;
+      --line: #d9e2df;
+      --paper: #eaf1eb;
+      --panel: #ffffff;
+      --green: #0b6b47;
+      --gold: #fece14;
+      --blue: #102a57;
+      --red: #b33a3a;
+      --grass: #147a4d;
+      --deep: #071527;
+      --stadium: #020f2a;
+      --soft-green: #e4f4ec;
+      --soft-gold: #fff6cc;
+      --soft-blue: #e7eef9;
+      --soft-red: #fbeaea;
+      --shadow: 0 18px 44px rgba(7,21,39,.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #06172a 0, #082b25 310px, var(--paper) 620px, #eef4f1 100%);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    .wrap { max-width: 520px; margin: 0 auto; padding: 0 12px; }
+
+    .hero {
+      position: relative; color: #fff; padding: 40px 16px 36px; overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(255,255,255,.15), transparent 15%),
+        radial-gradient(circle at 82% 18%, rgba(254,206,20,.35), transparent 20%),
+        linear-gradient(110deg, rgba(2,15,42,.97), rgba(4,56,39,.80) 50%, rgba(2,15,42,.93));
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: auto -10% -38% -10%; height: 52%;
+      background: linear-gradient(180deg, rgba(20,122,77,.55), rgba(8,72,47,.90));
+      border-top: 1px solid rgba(255,255,255,.18); transform: skewY(-3deg); pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800;
+      letter-spacing: .08em; color: #101820; background: var(--gold); border-radius: 999px;
+      padding: 4px 10px; margin-bottom: 10px; text-transform: uppercase;
+    }
+    h1 { font-size: 34px; line-height: .96; margin: 0 0 10px; letter-spacing: -.5px; }
+    .subtitle { margin: 0; color: rgba(255,255,255,.82); font-size: 13px; }
+
+    .team-strip {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center;
+      margin-top: 22px; padding: 12px; background: rgba(255,255,255,.08);
+      border-radius: 8px; border: 1px solid rgba(255,255,255,.12);
+    }
+    .team-strip .team { text-align: center; }
+    .team-strip .team img { width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: rgba(255,255,255,.1); }
+    .team-strip .team .name { font-size: 14px; font-weight: 700; margin-top: 4px; }
+    .team-strip .team .rank { font-size: 10px; color: rgba(255,255,255,.6); }
+    .team-strip .vs { font-size: 22px; font-weight: 800; color: var(--gold); }
+
+    .notice {
+      margin: 16px auto; max-width: 520px; padding: 10px 14px; font-size: 11px;
+      background: var(--soft-gold); border-left: 3px solid var(--gold); border-radius: 4px;
+      color: #5a4e00;
+    }
+    .notice strong { color: #3d3500; }
+
+    .section { max-width: 520px; margin: 20px auto; }
+    .section-title {
+      font-size: 16px; font-weight: 800; color: var(--green); margin: 0 0 12px;
+      padding-bottom: 6px; border-bottom: 2px solid var(--gold);
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .card {
+      background: var(--panel); border-radius: 8px; padding: 14px 16px;
+      margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      border: 1px solid var(--line);
+    }
+    .card h3 { font-size: 13px; margin: 0 0 6px; color: var(--green); text-transform: uppercase; letter-spacing: .04em; }
+
+    .conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .metric-card {
+      background: var(--panel); border-radius: 8px; padding: 12px;
+      border: 1px solid var(--line); text-align: center;
+    }
+    .metric-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+    .metric-card .value { font-size: 22px; font-weight: 800; color: var(--green); margin: 2px 0; }
+    .metric-card .sub { font-size: 10px; color: var(--muted); }
+    .tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin: 2px 2px 0 0; text-transform: uppercase; }
+    .tag-verified { background: var(--soft-green); color: var(--green); }
+    .tag-assumed { background: var(--soft-gold); color: #7a6800; }
+    .tag-not-verified { background: var(--soft-red); color: var(--red); }
+
+    .bet-card {
+      background: linear-gradient(135deg, #071527 0%, #0b3d2b 100%);
+      color: #fff; border-radius: 8px; padding: 16px; margin-bottom: 12px;
+    }
+    .bet-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 14px; }
+    .bet-card .play { background: rgba(255,255,255,.08); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+    .bet-card .play-label { font-size: 10px; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+    .bet-card .play-title { font-size: 15px; font-weight: 800; }
+    .bet-card .play-detail { font-size: 11px; color: rgba(255,255,255,.7); margin-top: 4px; }
+    .bet-card .warning {
+      background: rgba(179,58,58,.25); border: 1px solid rgba(179,58,58,.5);
+      border-radius: 4px; padding: 8px 10px; font-size: 11px; margin-top: 10px;
+    }
+    .bet-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
+    .bet-table th { text-align: left; font-size: 10px; color: var(--gold); padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .bet-table td { padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
+
+    .env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .env-item { background: var(--soft-blue); border-radius: 6px; padding: 8px 10px; }
+    .env-item .env-label { font-size: 10px; font-weight: 700; color: var(--blue); text-transform: uppercase; }
+    .env-item .env-value { font-size: 13px; font-weight: 600; }
+
+    .pitch-container { background: var(--panel); border-radius: 8px; padding: 12px; border: 1px solid var(--line); margin-bottom: 14px; page-break-inside: avoid; break-inside: avoid; }
+    .pitch {
+      position: relative; width: 100%; height: 520px; background: linear-gradient(180deg, #1a7a42 0%, #15653a 50%, #1a7a42 100%);
+      border-radius: 6px; overflow: hidden; border: 2px solid rgba(255,255,255,.3);
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .pitch::before {
+      content: ""; position: absolute; left: 5%; right: 5%; top: 49.5%; height: 1%;
+      border-top: 2px solid rgba(255,255,255,.4); border-bottom: 2px solid rgba(255,255,255,.4);
+    }
+    .pitch .center-circle {
+      position: absolute; left: 50%; top: 50%; width: 60px; height: 60px;
+      border: 2px solid rgba(255,255,255,.3); border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .pitch .penalty-box-top {
+      position: absolute; left: 25%; right: 25%; top: 0; height: 12%;
+      border: 2px solid rgba(255,255,255,.3); border-top: none;
+    }
+    .pitch .penalty-box-bot {
+      position: absolute; left: 25%; right: 25%; bottom: 0; height: 12%;
+      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
+    }
+    .pitch .goal-top {
+      position: absolute; left: 38%; right: 38%; top: 0; height: 5%;
+      border: 2px solid rgba(255,255,255,.3); border-top: none;
+    }
+    .pitch .goal-bot {
+      position: absolute; left: 38%; right: 38%; bottom: 0; height: 5%;
+      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
+    }
+    .player-dot {
+      position: absolute; transform: translate(-50%, -50%); text-align: center; z-index: 2;
+    }
+    .player-dot .dot {
+      width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 11px; font-weight: 800; margin: 0 auto 2px;
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .player-dot .pname { font-size: 8px; color: #fff; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+    .dot-bih { background: #002395; color: #fff; }
+    .dot-qat { background: #8A1538; color: #fff; }
+
+    .formation-label {
+      position: absolute; left: 8px; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.7);
+      text-transform: uppercase; letter-spacing: .05em;
+    }
+    .venue-badge {
+      position: absolute; right: 6px; bottom: 6px; background: rgba(0,0,0,.5);
+      padding: 3px 6px; border-radius: 3px; font-size: 8px; color: rgba(255,255,255,.8);
+    }
+
+    .roster-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .roster-panel { background: #f5f8f6; border-radius: 8px; padding: 10px; border: 1px solid var(--line); }
+    .roster-panel.bih { background: #eef1fa; }
+    .roster-panel.qat { background: #faf0f3; }
+    .roster-header { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+    .roster-header img { width: 24px; height: 24px; border-radius: 50%; object-fit: contain; }
+    .roster-header .rh-name { font-size: 13px; font-weight: 800; }
+    .pos-group-title { font-size: 10px; font-weight: 800; color: var(--green); text-transform: uppercase; margin: 8px 0 4px; letter-spacing: .05em; }
+    .player-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,.04); }
+    .player-row:last-child { border-bottom: none; }
+    .player-row .avatar {
+      width: 30px; height: 30px; border-radius: 50%; object-fit: cover;
+      background: #ddd; flex-shrink: 0; border: 1px solid rgba(0,0,0,.08);
+    }
+    .player-row .pinfo { min-width: 0; }
+    .player-row .pinfo .pname { font-size: 11px; font-weight: 700; line-height: 1.2; }
+    .player-row .pinfo .pmeta { font-size: 9px; color: var(--muted); line-height: 1.3; }
+    .player-row .pinfo .pdetail { font-size: 8px; color: #999; line-height: 1.3; }
+
+    table.odds { width: 100%; border-collapse: collapse; font-size: 12px; }
+    table.odds th { text-align: left; font-size: 10px; color: var(--muted); padding: 6px 8px; border-bottom: 2px solid var(--line); font-weight: 700; text-transform: uppercase; }
+    table.odds td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+    table.odds tr:last-child td { border-bottom: none; }
+
+    .risk-item { display: flex; gap: 8px; margin-bottom: 8px; }
+    .risk-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; }
+    .risk-high { background: var(--soft-red); color: var(--red); }
+    .risk-med { background: var(--soft-gold); color: #7a6800; }
+
+    .source-list { font-size: 10px; color: var(--muted); }
+    .source-list a { font-size: 10px; word-break: break-all; }
+    .source-list li { margin-bottom: 4px; }
+
+    .footer {
+      max-width: 520px; margin: 30px auto 20px; padding: 14px 16px; text-align: center;
+      font-size: 10px; color: var(--muted); border-top: 1px solid var(--line);
+    }
+
+    @media print {
+      body { background: #fff; }
+      .hero { break-after: avoid; }
+      .section { break-inside: avoid; }
+      .card { break-inside: avoid; }
+      .bet-card { break-inside: avoid; }
+      .roster-grid { break-inside: auto; }
+      .roster-panel { break-inside: avoid; }
+    }
+
+    .adj-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 6px; }
+    .adj-table th { text-align: left; font-size: 10px; padding: 4px 6px; background: var(--soft-green); color: var(--green); }
+    .adj-table td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
+    .adj-up { color: var(--red); font-weight: 700; }
+    .adj-down { color: var(--green); font-weight: 700; }
+    .adj-none { color: var(--muted); }
+
+    .subs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .sub-panel { background: rgba(255,255,255,.06); border-radius: 6px; padding: 8px; }
+    .sub-panel h4 { font-size: 10px; color: var(--gold); margin: 0 0 4px; text-transform: uppercase; }
+    .sub-row { font-size: 10px; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+
+    .tactic-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .tactic-table th { text-align: left; font-size: 10px; padding: 5px 6px; background: var(--soft-green); color: var(--green); font-weight: 700; }
+    .tactic-table td { padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">⚽ FIFA World Cup 2026 &middot; Group B &middot; Matchday 3 &middot; Match 52</div>
+    <h1>Bosnia vs Qatar</h1>
+    <p class="subtitle">
+      Tuesday, June 24, 2026 &middot; 3:00 PM ET / 12:00 PM PT / 3:00 AM MYT (Jun 25)<br>
+      Lumen Field, Seattle, WA &middot; Referee: Jesús Noel Valenzuela Sáez (VEN)
+    </p>
+    <div class="team-strip">
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDIzOTUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPkJJSDwvdGV4dD48L3N2Zz4=" alt="Bosnia">
+        <div class="name">Bosnia &amp; Herzegovina</div>
+        <div class="rank">FIFA #75 &middot; 1 pt &middot; Must win</div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiM4QTE1MzgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPlFBVDwvdGV4dD48L3N2Zz4=" alt="Qatar">
+        <div class="name">Qatar</div>
+        <div class="rank">FIFA #35 &middot; 1 pt &middot; Eliminated</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="notice wrap">
+  <strong>Report generated:</strong> June 25, 2026, 03:00 MYT (GMT+8).<br>
+  <strong>Exchange rate:</strong> 1 EUR ≈ 1.08 USD (approximate, June 2026).<br>
+  <strong>Betslip status:</strong> Pre-purchase — verify odds at your sportsbook before placing bets. Lineups are predicted, not confirmed.<br>
+  <strong>Disclaimer:</strong> This report is entertainment-oriented analysis, not investment advice. Gambling involves risk of losing your entire budget.
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Match Conclusion</div>
+  <div class="conclusion-grid">
+    <div class="metric-card">
+      <div class="label">Central Score Path</div>
+      <div class="value">2–0</div>
+      <div class="sub">Bosnia dominance vs depleted Qatar</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Alternative Path</div>
+      <div class="value">2–1 BIH</div>
+      <div class="sub">Afif pulls one back late</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Bosnia Win Prob</div>
+      <div class="value">~69%</div>
+      <div class="sub">Sportsbook −270 / Polymarket 69–71%</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Total Goals Line</div>
+      <div class="value">O/U 2.5</div>
+      <div class="sub">Over −175 &middot; lean to Over</div>
+    </div>
+  </div>
+  <div class="card">
+    <p style="margin:0;font-size:12px;">
+      <strong>Verdict:</strong> A must-win fixture for Bosnia in a wide-open Group B race, against a Qatar side already eliminated on goal difference and missing two key starters through suspension (Homam Ahmed, Assim Madibo). Bosnia's own defensive loss — Tarik Muharemović (red vs Switzerland) — is offset by Qatar's greater squad depletion and 0-6 humiliation vs Canada. Edin Džeko and Ermedin Demirović should exploit a reshuffled Qatari back line. Market consensus (-270 ML, -1.25 AH) and Polymarket (69–71% Bosnia) align on a comfortable home-nation-adjacent win for the Balkan side in Seattle.
+    </p>
+    <div style="margin-top:8px;">
+      <span class="tag tag-verified">Verified: Qatar eliminated</span>
+      <span class="tag tag-verified">Verified: 3 suspensions</span>
+      <span class="tag tag-verified">Verified: Group B standings</span>
+      <span class="tag tag-assumed">Assumed: Bosnia full-strength attack</span>
+      <span class="tag tag-not-verified">Not verified: Official lineups</span>
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Concentrated Betting Plan</div>
+  <div class="bet-card">
+    <h3>Budget: $100 USD &middot; $2 per bet &middot; 50 bets</h3>
+
+    <div class="play" data-pct="0.65" data-odds="2.05">
+      <div class="play-label">Selection 1 — Core (65% = 33 bets = $66)</div>
+      <div class="play-title">Bosnia −1.5 (Asian Handicap) @ +105</div>
+      <div class="play-detail">
+        Bosnia's must-win vs a depleted Qatar missing two red-carded starters. Canada and Switzerland both scored multiple goals
+        against Qatar; Bosnia's 3-5-2 with Džeko and Demirović should generate enough chances to win by 2+.
+        Qatar conceded 6 to Canada and have −6 GD after two matches.<br>
+        <strong>Potential payout:</strong> $66 × 2.05 = $135.30 (profit $69.30)<br>
+        <strong>Min acceptable odds:</strong> −110 (1.91) equivalent on -1.5<br>
+        <strong>Cancel if:</strong> Bosnia rests 3+ starters, or Muharemović ban is overturned on appeal.
+      </div>
+    </div>
+
+    <div class="play" data-pct="0.35" data-odds="7.50">
+      <div class="play-label">Selection 2 — Adjacent (35% = 17 bets = $34)</div>
+      <div class="play-title">Correct Score: Bosnia 2–0 @ 7.00–8.00</div>
+      <div class="play-detail">
+        Clean-sheet path with Qatar's defensive spine weakened. Valenzuela's low-card, low-penalty profile and Qatar's
+        limited attacking threat (1 goal in 2 matches) support a shutout. Central score thesis aligns with market O/U 2.5 Over
+        via exactly 2 goals.<br>
+        <strong>Potential payout:</strong> $34 × 7.50 = $255 (profit $221)<br>
+        <strong>Min acceptable odds:</strong> 6.50 (7/2)<br>
+        <strong>Cancel if:</strong> Qatar fields near full-strength XI or Bosnia rotates attack.
+      </div>
+    </div>
+
+    <table class="bet-table">
+      <tr><th>Pre-Purchase Check</th><th>Action</th></tr>
+      <tr><td>Bosnia -1.5 drops below even money (+100)</td><td>Reduce Selection 1 to 50%; add Bosnia ML at -250</td></tr>
+      <tr><td>Official starters show Bosnia rotation</td><td>Cancel Selection 1; shift to Bosnia ML only</td></tr>
+      <tr><td>Muharemović ban overturned</td><td>Reduce -1.5 stake by 30%; Qatar defense slightly stronger</td></tr>
+      <tr><td>Correct Score 2-0 worse than 6.00</td><td>Drop Selection 2; concentrate on handicap</td></tr>
+      <tr><td>Heat advisory worsens (90°F+)</td><td>Consider Under 3.5 as hedge; noon kickoff already hot</td></tr>
+    </table>
+
+    <div class="warning">
+      ⚠️ <strong>Whole-Budget-Loss Warning:</strong> This concentrated plan intentionally accepts a high probability of losing the entire $100 entertainment budget.
+      Correct-score bets are low-probability by nature. Bosnia has drawn 1-1 with Canada and lost 1-4 to Switzerland — consistency is not guaranteed.
+      Only bet what you can afford to lose. This is entertainment analysis, not guaranteed returns.
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Score Thesis</div>
+  <div class="card">
+    <h3>Baseline Score Range (Market-Derived)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      De-vigged sportsbook odds: Bosnia ~69%, Draw ~17%, Qatar ~12%. Total goals O/U 2.5 (Over favored at −175).
+      Polymarket: Bosnia 69–71%, Draw 18–20%, Qatar 12–13%. Strong market consensus on Bosnia with moderate goal expectation.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Baseline central path:</strong> 2–3 total goals, Bosnia win by 1–2. Most likely scores: 2-0, 2-1, 3-1.
+      Asian Handicap Bosnia -1.25 implies market expects a 2-goal margin as modal outcome.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Score-Impact Adjustments</h3>
+    <table class="adj-table">
+      <tr><th>Factor</th><th>Evidence</th><th>Direction</th></tr>
+      <tr>
+        <td>Qatar suspensions (Ahmed, Madibo)</td>
+        <td>Both red-carded vs Canada (0-6). Verified via FIFA disciplinary report.</td>
+        <td class="adj-up">↑ Bosnia scoring +0.4</td>
+      </tr>
+      <tr>
+        <td>Bosnia missing Muharemović</td>
+        <td>Red card vs Switzerland (1-4 loss). Sassuolo CB suspended.</td>
+        <td class="adj-up">↑ Qatar scoring +0.1</td>
+      </tr>
+      <tr>
+        <td>Qatar WC scoring record</td>
+        <td>1 goal in 2 matches; 0 pts in 2022 WC. Verified.</td>
+        <td class="adj-down">↓ Qatar scoring −0.3</td>
+      </tr>
+      <tr>
+        <td>Bosnia must-win motivation</td>
+        <td>1 pt, −3 GD; needs win + help to advance. Canada/SUI on 4 pts.</td>
+        <td class="adj-up">↑ Bosnia intensity +0.2</td>
+      </tr>
+      <tr>
+        <td>Referee (Valenzuela): low cards</td>
+        <td>1 YC in AUS 2-0 TUR; career 5.13 Y/match. Not aggressive.</td>
+        <td class="adj-none">→ NO CHANGE</td>
+      </tr>
+      <tr>
+        <td>Weather: 70–77°F, heat advisory</td>
+        <td>Noon PT kickoff, mostly sunny, 0% rain. AccuWeather Seattle.</td>
+        <td class="adj-down">↓ Total goals −0.1</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Resulting Score Paths</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Central path:</strong> Bosnia 2 – 0 Qatar. Bosnia control from the first whistle; Džeko and Demirović convert against a makeshift Qatari defense. Qatar lack the midfield steel of Madibo to break transitions. Confidence: <strong>Medium-High</strong>.<br>
+      <strong>Alternative path:</strong> Bosnia 2 – 1 Qatar. Afif creates a late consolation from a set piece or counter; Bosnia already ahead by two. Confidence: <strong>Medium</strong>.<br>
+      <strong>Tail-risk trigger:</strong> Bosnia rotate heavily or concede early → 1-1 draw or Qatar 1-0 shock (Qatar's only prior H2H win was 2-0 in 2000 friendly).
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Referee &amp; Environment</div>
+  <div class="card">
+    <h3>Referee: Jesús Noel Valenzuela Sáez (Venezuela, age 39)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      CONMEBOL FIFA referee. Officiated Australia 2-0 Turkey in this tournament — a clean, low-card affair with flowing football.
+      Known for allowing physical play without excessive whistle-blowing.
+    </p>
+    <table class="adj-table">
+      <tr><th>Stat</th><th>WC 2026 (1 match)</th><th>Career Avg</th></tr>
+      <tr><td>Yellow cards</td><td>1</td><td>5.13 per match</td></tr>
+      <tr><td>Red cards</td><td>0</td><td>0.24 per match</td></tr>
+      <tr><td>Fouls called</td><td>14–16</td><td>~22 per match (est.)</td></tr>
+      <tr><td>Penalties</td><td>0</td><td>~0.3 per match (est.)</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Assessment:</strong> Permissive, low-disruption style. The Australia-Turkey match had fewer fouls than average, suggesting open play.
+      Low card count reduces suspension risk for already-depleted Qatar. <strong>Score impact: slight lean to Over (more continuous play).</strong>
+      <span class="tag tag-verified">Verified: FIFA assignment</span>
+    </p>
+  </div>
+
+  <div class="env-grid" style="margin-top:12px;">
+    <div class="env-item">
+      <div class="env-label">Venue</div>
+      <div class="env-value">Lumen Field</div>
+      <div style="font-size:10px;color:var(--muted);">Seattle, WA · 69,000 capacity</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Surface</div>
+      <div class="env-value">Natural Grass</div>
+      <div style="font-size:10px;color:var(--muted);">Temporary WC pitch, open-air stadium</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Kickoff Weather</div>
+      <div class="env-value">70–77°F / 21–25°C</div>
+      <div style="font-size:10px;color:var(--muted);">Mostly sunny, light wind, 0% rain</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Travel &amp; Rest</div>
+      <div class="env-value">6 days rest (both)</div>
+      <div style="font-size:10px;color:var(--muted);">Heat advisory in effect at noon local</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--muted);margin-top:8px;">
+    <strong>Environment impact:</strong> Warm midday conditions may slow tempo in the second half, but 0% rain probability and a quality grass surface favor technical teams.
+    Heat advisory is a minor factor — hydration breaks likely. <strong>Score adjustment: −0.1 total goals (heat fatigue).</strong>
+    Source: AccuWeather (Seattle, WA), retrieved June 24, 2026.
+  </p>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Event Background</div>
+  <div class="card">
+    <h3>Group B — Final Matchday</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      All four Group B teams enter matchday 3 with something at stake except Qatar, who are eliminated on goal difference.
+      Canada and Switzerland lead on 4 points each. Bosnia (1 pt, −3 GD) need a win and favorable results elsewhere.
+      The parallel fixture is Canada vs Switzerland — the group winner may not be decided until full time.
+    </p>
+    <table class="odds" style="margin-top:8px;">
+      <tr><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Canada</strong></td><td>2</td><td>1</td><td>1</td><td>0</td><td>7</td><td>1</td><td>+6</td><td><strong>4</strong></td></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Switzerland</strong></td><td>2</td><td>1</td><td>1</td><td>0</td><td>5</td><td>2</td><td>+3</td><td><strong>4</strong></td></tr>
+      <tr><td><strong>Bosnia</strong></td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>5</td><td>−3</td><td><strong>1</strong></td></tr>
+      <tr style="background:var(--soft-red);"><td><strong>Qatar</strong></td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>7</td><td>−6</td><td><strong>1</strong></td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      Results so far: Canada 1-1 Bosnia, Qatar 1-1 Switzerland, Switzerland 4-1 Bosnia, Canada 6-0 Qatar.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Match Context</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Bosnia:</strong> Historic return to the World Cup after eliminating Italy in qualifying. Sergej Barbarez's side has shown flashes
+      (1-1 vs Canada) but collapsed against Switzerland (1-4). Captain Edin Džeko (40, Schalke 04) leads a squad valued at ~$120M with
+      Bundesliga-quality attackers Demirović and Dedić. Must-win mentality; defensive suspension of Muharemović forces reshuffle in back three.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Qatar:</strong> Second consecutive World Cup appearance, first on merit. Julen Lopetegui's team earned 1 point (1-1 vs Switzerland)
+      but was demolished 6-0 by Canada. Lost Homam Ahmed and Assim Madibo to red cards in that match — crippling the defensive midfield.
+      Akram Afif ($8.6M) and Almoez Ali remain the primary threats, but elimination removes tactical pressure.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Head-to-Head (2 meetings — 0 competitive)</h3>
+    <table class="odds">
+      <tr><th>Year</th><th>Competition</th><th>Result</th><th>Venue</th></tr>
+      <tr><td>2010</td><td>Friendly</td><td>Bosnia 1–1 Qatar</td><td>Sarajevo, Bosnia</td></tr>
+      <tr><td>2000</td><td>Friendly</td><td><strong>Qatar</strong> 2–0 Bosnia</td><td>Doha, Qatar</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      Record: 1 win each in friendlies. 3 total goals. <strong>First competitive meeting</strong> — no prior World Cup or qualifier history.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Team Overview</div>
+  <div class="card">
+    <h3>🇧🇦 Bosnia and Herzegovina</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Sergej Barbarez (Bosnia) &middot; <strong>FIFA Ranking:</strong> #75 &middot;
+      <strong>Squad Value:</strong> ~$120M &middot; <strong>Style:</strong> 3-5-2 with aggressive wing-backs and twin strikers<br>
+      <strong>WC History:</strong> 2nd appearance (2014, 2026). Best: Group stage exit in 2014.<br>
+      <strong>Key Players:</strong> Edin Džeko (Schalke 04, $2.2M, captain), Ermedin Demirović (Stuttgart, $19.4M), Amar Dedić (Benfica, $23.8M).<br>
+      <strong>Strengths:</strong> Physical striker pairing, European league experience, wing-back width via Dedić and Alajbegović.<br>
+      <strong>Weaknesses:</strong> Defensive fragility (5 conceded in 2 matches), Muharemović suspended, aging captain.<br>
+      <strong>Form:</strong> D 1-1 vs Canada, L 1-4 vs Switzerland.
+    </p>
+  </div>
+  <div class="card">
+    <h3>🇶🇦 Qatar</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Julen Lopetegui (Spain) &middot; <strong>FIFA Ranking:</strong> #35 &middot;
+      <strong>Squad Value:</strong> ~$21.5M &middot; <strong>Style:</strong> 4-2-3-1 possession-based, Afif-Almoez axis<br>
+      <strong>WC History:</strong> 2nd appearance (2022 hosts, 2026). 0 pts in 2022; 1 pt so far in 2026.<br>
+      <strong>Key Players:</strong> Akram Afif (Al-Sadd, $8.6M), Almoez Ali (Al-Duhail, $2.7M), Hassan Al-Haydos (Al-Sadd, captain).<br>
+      <strong>Strengths:</strong> AFC Asian Cup pedigree, Afif creativity, set-piece threat via Khoukhi.<br>
+      <strong>Weaknesses:</strong> QSL-dominated squad, −6 GD, two suspensions, no WC knockout experience.<br>
+      <strong>Form:</strong> D 1-1 vs Switzerland, L 0-6 vs Canada.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Predicted Starters &amp; Tactics</div>
+
+  <div class="pitch-container">
+    <div class="pitch">
+      <div class="penalty-box-top"></div>
+      <div class="goal-top"></div>
+      <div class="center-circle"></div>
+      <div class="penalty-box-bot"></div>
+      <div class="goal-bot"></div>
+
+      <div class="formation-label" style="top:3%;">BOSNIA 3-5-2</div>
+      <div class="formation-label" style="bottom:3%;">QATAR 4-2-3-1</div>
+
+      <div class="player-dot" style="left:50%;top:5%;"><div class="dot dot-bih">1</div><div class="pname">Vasilj</div></div>
+      <div class="player-dot" style="left:22%;top:15%;"><div class="dot dot-bih">8</div><div class="pname">Hadžikadunić</div></div>
+      <div class="player-dot" style="left:50%;top:15%;"><div class="dot dot-bih">3</div><div class="pname">Katić</div></div>
+      <div class="player-dot" style="left:78%;top:15%;"><div class="dot dot-bih">4</div><div class="pname">Kolašinac</div></div>
+      <div class="player-dot" style="left:8%;top:28%;"><div class="dot dot-bih">2</div><div class="pname">Dedić</div></div>
+      <div class="player-dot" style="left:30%;top:30%;"><div class="dot dot-bih">17</div><div class="pname">Tahirović</div></div>
+      <div class="player-dot" style="left:50%;top:30%;"><div class="dot dot-bih">10</div><div class="pname">Hadžiahmetović</div></div>
+      <div class="player-dot" style="left:70%;top:30%;"><div class="dot dot-bih">19</div><div class="pname">Gigović</div></div>
+      <div class="player-dot" style="left:92%;top:28%;"><div class="dot dot-bih">20</div><div class="pname">Alajbegović</div></div>
+      <div class="player-dot" style="left:35%;top:42%;"><div class="dot dot-bih">22</div><div class="pname">Demirović</div></div>
+      <div class="player-dot" style="left:65%;top:42%;"><div class="dot dot-bih">9</div><div class="pname">Džeko</div></div>
+
+      <div class="player-dot" style="left:50%;top:95%;"><div class="dot dot-qat">22</div><div class="pname">Barsham</div></div>
+      <div class="player-dot" style="left:15%;top:85%;"><div class="dot dot-qat">13</div><div class="pname">Al-Oui</div></div>
+      <div class="player-dot" style="left:37%;top:85%;"><div class="dot dot-qat">16</div><div class="pname">Khoukhi</div></div>
+      <div class="player-dot" style="left:63%;top:85%;"><div class="dot dot-qat">3</div><div class="pname">Mendes</div></div>
+      <div class="player-dot" style="left:85%;top:85%;"><div class="dot dot-qat">18</div><div class="pname">Al-Brake</div></div>
+      <div class="player-dot" style="left:37%;top:73%;"><div class="dot dot-qat">12</div><div class="pname">Boudiaf</div></div>
+      <div class="player-dot" style="left:63%;top:73%;"><div class="dot dot-qat">5</div><div class="pname">Gaber</div></div>
+      <div class="player-dot" style="left:18%;top:63%;"><div class="dot dot-qat">17</div><div class="pname">Al-Ganehi</div></div>
+      <div class="player-dot" style="left:50%;top:63%;"><div class="dot dot-qat">10</div><div class="pname">Al-Haydos</div></div>
+      <div class="player-dot" style="left:82%;top:63%;"><div class="dot dot-qat">11</div><div class="pname">Afif</div></div>
+      <div class="player-dot" style="left:50%;top:56%;"><div class="dot dot-qat">19</div><div class="pname">Almoez Ali</div></div>
+
+      <div class="venue-badge">Lumen Field · 74°F · Sunny</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Tactical Analysis</h3>
+    <table class="tactic-table">
+      <tr><th>Observation</th><th>Betting Implication</th></tr>
+      <tr>
+        <td>Bosnia 3-5-2 overloads wide areas vs Qatar's depleted midfield (no Madibo)</td>
+        <td>Supports Bosnia -1.5 and Over 2.5 via crossing chances</td>
+      </tr>
+      <tr>
+        <td>Džeko + Demirović vs makeshift CB pairing (Khoukhi/Mendes, ages 35)</td>
+        <td>Favors Bosnia scoring 2+; supports Correct Score 2-0</td>
+      </tr>
+      <tr>
+        <td>Qatar missing left-back Ahmed; Al-Brake/Oui likely stretched</td>
+        <td>Dedić and Alajbegović attacking lanes; Bosnia wing-back value</td>
+      </tr>
+      <tr>
+        <td>Afif isolated against 3-man Bosnia defense without Madibo link play</td>
+        <td>BTTS No (-102) has value; Qatar 1 goal in 2 WC matches</td>
+      </tr>
+      <tr>
+        <td>Must-win Bosnia vs eliminated Qatar — intensity asymmetry</td>
+        <td>Bosnia ML (-270) fair but low ROI; handicap preferred</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card" style="background:var(--stadium);color:#fff;">
+    <h3 style="color:var(--gold);">Likely Substitutes</h3>
+    <div class="subs-grid">
+      <div class="sub-panel">
+        <h4>🇧🇦 Bosnia Bench</h4>
+        <div class="sub-row">GK: Zlomislić, Hadžikić</div>
+        <div class="sub-row">DEF: Mujakić, Radeljić, Čelik</div>
+        <div class="sub-row">MID: Šunjić, Bašić, Burnić, Memić, Bajraktarević</div>
+        <div class="sub-row">FWD: Tabaković, Baždar, Lukić</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">OUT: Muharemović (suspended)</div>
+      </div>
+      <div class="sub-panel">
+        <h4>🇶🇦 Qatar Bench</h4>
+        <div class="sub-row">GK: Abunada, Zakaria</div>
+        <div class="sub-row">DEF: Pedro Miguel, Al-Hussain, Laye</div>
+        <div class="sub-row">MID: Hatem, Fathy, Al-Mannai</div>
+        <div class="sub-row">FWD: Edmílson Jr., Abdurisag, Muntari, Alaaeldin</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">OUT: Ahmed, Madibo (suspended)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Full Squad Rosters</div>
+  <div class="roster-grid">
+    <div class="roster-panel bih">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDIzOTUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPkJJSDwvdGV4dD48L3N2Zz4=" alt="Bosnia &amp; Herzegovina">
+        <div class="rh-name">Bosnia &amp; Herzegovina</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0I8L3RleHQ+PC9zdmc+" alt="Sergej Barbarez">
+        <div class="pinfo">
+          <div class="pname">Sergej Barbarez</div>
+          <div class="pmeta">54 · Bosnian · Eliminated Italy in qualifying</div>
+          <div class="pdetail">Manager</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TlY8L3RleHQ+PC9zdmc+" alt="Nikola Vasilj">
+        <div class="pinfo">
+          <div class="pname">Nikola Vasilj ⭐</div>
+          <div class="pmeta">29 · $8.6M</div>
+          <div class="pdetail">#1 · GK · 196cm · FC St. Pauli</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TVo8L3RleHQ+PC9zdmc+" alt="Martin Zlomislić">
+        <div class="pinfo">
+          <div class="pname">Martin Zlomislić</div>
+          <div class="pmeta">28 · $2.2M</div>
+          <div class="pdetail">#12 · GK · 192cm · HNK Rijeka</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+T0g8L3RleHQ+PC9zdmc+" alt="Osman Hadžikić">
+        <div class="pinfo">
+          <div class="pname">Osman Hadžikić</div>
+          <div class="pmeta">25 · $0.5M</div>
+          <div class="pdetail">#13 · GK · 188cm · Slaven Belupo</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0s8L3RleHQ+PC9zdmc+" alt="Sead Kolašinac">
+        <div class="pinfo">
+          <div class="pname">Sead Kolašinac ⭐</div>
+          <div class="pmeta">32 · $10.8M</div>
+          <div class="pdetail">#4 · CB · 183cm · Atalanta</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUQ8L3RleHQ+PC9zdmc+" alt="Amar Dedić">
+        <div class="pinfo">
+          <div class="pname">Amar Dedić ⭐</div>
+          <div class="pmeta">22 · $23.8M</div>
+          <div class="pdetail">#2 · RB/WB · 180cm · SL Benfica</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Tk08L3RleHQ+PC9zdmc+" alt="Nihad Mujakić">
+        <div class="pinfo">
+          <div class="pname">Nihad Mujakić</div>
+          <div class="pmeta">27 · $3.2M</div>
+          <div class="pdetail">#5 · CB · 189cm · Gaziantep FK</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Tks8L3RleHQ+PC9zdmc+" alt="Nikola Katić">
+        <div class="pinfo">
+          <div class="pname">Nikola Katić ⭐</div>
+          <div class="pmeta">29 · $6.5M</div>
+          <div class="pdetail">#3 · CB · 190cm · Schalke 04</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VE08L3RleHQ+PC9zdmc+" alt="Tarik Muharemović">
+        <div class="pinfo">
+          <div class="pname">Tarik Muharemović 🔴</div>
+          <div class="pmeta">22 · $8.1M</div>
+          <div class="pdetail">#6 · CB · 191cm · US Sassuolo</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U1I8L3RleHQ+PC9zdmc+" alt="Stjepan Radeljić">
+        <div class="pinfo">
+          <div class="pname">Stjepan Radeljić</div>
+          <div class="pmeta">24 · $2.7M</div>
+          <div class="pdetail">#7 · CB · 192cm · HNK Rijeka</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REg8L3RleHQ+PC9zdmc+" alt="Dennis Hadžikadunić">
+        <div class="pinfo">
+          <div class="pname">Dennis Hadžikadunić ⭐</div>
+          <div class="pmeta">27 · $4.3M</div>
+          <div class="pdetail">#8 · CB · 191cm · UC Sampdoria</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TsSMPC90ZXh0Pjwvc3ZnPg==" alt="Nidal Čelik">
+        <div class="pinfo">
+          <div class="pname">Nidal Čelik</div>
+          <div class="pmeta">22 · $5.4M</div>
+          <div class="pdetail">#9 · CB · 191cm · RC Lens</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUg8L3RleHQ+PC9zdmc+" alt="Amir Hadžiahmetović">
+        <div class="pinfo">
+          <div class="pname">Amir Hadžiahmetović ⭐</div>
+          <div class="pmeta">28 · $5.4M</div>
+          <div class="pdetail">#10 · DM · 184cm · Hull City</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+ScWgPC90ZXh0Pjwvc3ZnPg==" alt="Ivan Šunjić">
+        <div class="pinfo">
+          <div class="pname">Ivan Šunjić</div>
+          <div class="pmeta">29 · $2.2M</div>
+          <div class="pdetail">#11 · DM · 185cm · Pafos FC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SUI8L3RleHQ+PC9zdmc+" alt="Ivan Bašić">
+        <div class="pinfo">
+          <div class="pname">Ivan Bašić</div>
+          <div class="pmeta">28 · $3.2M</div>
+          <div class="pdetail">#14 · CM · 189cm · FC Astana</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REI8L3RleHQ+PC9zdmc+" alt="Dženis Burnić">
+        <div class="pinfo">
+          <div class="pname">Dženis Burnić</div>
+          <div class="pmeta">28 · $2.7M</div>
+          <div class="pdetail">#15 · DM · 183cm · Karlsruher SC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RU08L3RleHQ+PC9zdmc+" alt="Ermin Mahmić">
+        <div class="pinfo">
+          <div class="pname">Ermin Mahmić</div>
+          <div class="pmeta">24 · $1.6M</div>
+          <div class="pdetail">#16 · CM · 180cm · Slovan Liberec</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QlQ8L3RleHQ+PC9zdmc+" alt="Benjamin Tahirović">
+        <div class="pinfo">
+          <div class="pname">Benjamin Tahirović ⭐</div>
+          <div class="pmeta">22 · $6.5M</div>
+          <div class="pdetail">#17 · CM · 191cm · Brøndby IF</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QU08L3RleHQ+PC9zdmc+" alt="Amar Memić">
+        <div class="pinfo">
+          <div class="pname">Amar Memić</div>
+          <div class="pmeta">20 · $4.3M</div>
+          <div class="pdetail">#18 · RM · 178cm · Viktoria Plzeň</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUc8L3RleHQ+PC9zdmc+" alt="Armin Gigović">
+        <div class="pinfo">
+          <div class="pname">Armin Gigović ⭐</div>
+          <div class="pmeta">23 · $5.4M</div>
+          <div class="pdetail">#19 · CM · 187cm · BSC Young Boys</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S0E8L3RleHQ+PC9zdmc+" alt="Kerim Alajbegović">
+        <div class="pinfo">
+          <div class="pname">Kerim Alajbegović ⭐</div>
+          <div class="pmeta">21 · $8.1M</div>
+          <div class="pdetail">#20 · LW/WB · 183cm · RB Salzburg</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RUI8L3RleHQ+PC9zdmc+" alt="Esmir Bajraktarević">
+        <div class="pinfo">
+          <div class="pname">Esmir Bajraktarević</div>
+          <div class="pmeta">20 · $12.9M</div>
+          <div class="pdetail">#21 · RW · 183cm · PSV Eindhoven</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RUQ8L3RleHQ+PC9zdmc+" alt="Edin Džeko (C)">
+        <div class="pinfo">
+          <div class="pname">Edin Džeko (C) ⭐</div>
+          <div class="pmeta">40 · $2.2M</div>
+          <div class="pdetail">#9 · ST · 193cm · Schalke 04</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RUQ8L3RleHQ+PC9zdmc+" alt="Ermedin Demirović">
+        <div class="pinfo">
+          <div class="pname">Ermedin Demirović ⭐</div>
+          <div class="pmeta">27 · $19.4M</div>
+          <div class="pdetail">#22 · ST · 185cm · VfB Stuttgart</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SFQ8L3RleHQ+PC9zdmc+" alt="Haris Tabaković">
+        <div class="pinfo">
+          <div class="pname">Haris Tabaković</div>
+          <div class="pmeta">31 · $8.6M</div>
+          <div class="pdetail">#23 · ST · 196cm · B. M'gladbach</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0I8L3RleHQ+PC9zdmc+" alt="Samed Baždar">
+        <div class="pinfo">
+          <div class="pname">Samed Baždar</div>
+          <div class="pmeta">20 · $3.2M</div>
+          <div class="pdetail">#24 · ST · 190cm · Jagiellonia</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Skw8L3RleHQ+PC9zdmc+" alt="Jovo Lukić">
+        <div class="pinfo">
+          <div class="pname">Jovo Lukić</div>
+          <div class="pmeta">24 · $1.6M</div>
+          <div class="pdetail">#25 · ST · 188cm · U. Cluj</div>
+        </div>
+      </div>
+    </div>
+    <div class="roster-panel qat">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiM4QTE1MzgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPlFBVDwvdGV4dD48L3N2Zz4=" alt="Qatar">
+        <div class="rh-name">Qatar</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Skw8L3RleHQ+PC9zdmc+" alt="Julen Lopetegui">
+        <div class="pinfo">
+          <div class="pname">Julen Lopetegui</div>
+          <div class="pmeta">59 · Spanish · WC coach</div>
+          <div class="pdetail">Manager</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUI8L3RleHQ+PC9zdmc+" alt="Meshaal Barsham">
+        <div class="pinfo">
+          <div class="pname">Meshaal Barsham ⭐</div>
+          <div class="pmeta">28 · $0.8M</div>
+          <div class="pdetail">#22 · GK · 180cm · Al-Sadd</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUE8L3RleHQ+PC9zdmc+" alt="Mahmoud Abunada">
+        <div class="pinfo">
+          <div class="pname">Mahmoud Abunada</div>
+          <div class="pmeta">26 · $0.4M</div>
+          <div class="pdetail">#1 · GK · 185cm · Al-Rayyan</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U1o8L3RleHQ+PC9zdmc+" alt="Salah Zakaria">
+        <div class="pinfo">
+          <div class="pname">Salah Zakaria</div>
+          <div class="pmeta">27 · $0.4M</div>
+          <div class="pdetail">#21 · GK · 186cm · Al-Duhail</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Qks8L3RleHQ+PC9zdmc+" alt="Boualem Khoukhi">
+        <div class="pinfo">
+          <div class="pname">Boualem Khoukhi ⭐</div>
+          <div class="pmeta">35 · $0.2M</div>
+          <div class="pdetail">#16 · CB · 185cm · Al-Sadd</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TE08L3RleHQ+PC9zdmc+" alt="Lucas Mendes">
+        <div class="pinfo">
+          <div class="pname">Lucas Mendes ⭐</div>
+          <div class="pmeta">35 · $0.4M</div>
+          <div class="pdetail">#3 · CB · 179cm · Al-Wakrah</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UE08L3RleHQ+PC9zdmc+" alt="Pedro Miguel">
+        <div class="pinfo">
+          <div class="pname">Pedro Miguel</div>
+          <div class="pmeta">35 · $0.2M</div>
+          <div class="pdetail">#2 · CB · 180cm · Al-Sadd</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUg8L3RleHQ+PC9zdmc+" alt="Al-Hashmi Al-Hussain">
+        <div class="pinfo">
+          <div class="pname">Al-Hashmi Al-Hussain</div>
+          <div class="pmeta">22 · $0.3M</div>
+          <div class="pdetail">#25 · CB · 182cm · Al-Arabi</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SUw8L3RleHQ+PC9zdmc+" alt="Issa Laye">
+        <div class="pinfo">
+          <div class="pname">Issa Laye</div>
+          <div class="pmeta">28 · $0.2M</div>
+          <div class="pdetail">#4 · CB · 178cm · Al-Arabi</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SEE8L3RleHQ+PC9zdmc+" alt="Homam Ahmed">
+        <div class="pinfo">
+          <div class="pname">Homam Ahmed 🔴</div>
+          <div class="pmeta">26 · $0.5M</div>
+          <div class="pdetail">#14 · LB · 188cm · Cult. Leonesa</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0I8L3RleHQ+PC9zdmc+" alt="Sultan Al-Brake">
+        <div class="pinfo">
+          <div class="pname">Sultan Al-Brake ⭐</div>
+          <div class="pmeta">30 · $0.3M</div>
+          <div class="pdetail">#18 · LB · 178cm · Al-Duhail</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QU88L3RleHQ+PC9zdmc+" alt="Ayoub Al-Oui">
+        <div class="pinfo">
+          <div class="pname">Ayoub Al-Oui ⭐</div>
+          <div class="pmeta">21 · $0.4M</div>
+          <div class="pdetail">#13 · RB · 181cm · Al-Gharafa</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S0I8L3RleHQ+PC9zdmc+" alt="Karim Boudiaf">
+        <div class="pinfo">
+          <div class="pname">Karim Boudiaf ⭐</div>
+          <div class="pmeta">35 · $0.2M</div>
+          <div class="pdetail">#12 · DM · 190cm · Al-Duhail</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QU08L3RleHQ+PC9zdmc+" alt="Assim Madibo">
+        <div class="pinfo">
+          <div class="pname">Assim Madibo 🔴</div>
+          <div class="pmeta">29 · $0.4M</div>
+          <div class="pdetail">#23 · DM · 168cm · Al-Wakrah</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Skc8L3RleHQ+PC9zdmc+" alt="Jassem Gaber">
+        <div class="pinfo">
+          <div class="pname">Jassem Gaber ⭐</div>
+          <div class="pmeta">24 · $0.5M</div>
+          <div class="pdetail">#5 · DM · 181cm · Al-Rayyan</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUY8L3RleHQ+PC9zdmc+" alt="Ahmed Fathy">
+        <div class="pinfo">
+          <div class="pname">Ahmed Fathy</div>
+          <div class="pmeta">33 · $0.3M</div>
+          <div class="pdetail">#20 · DM · 171cm · Al-Arabi</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUg8L3RleHQ+PC9zdmc+" alt="Abdulaziz Hatem">
+        <div class="pinfo">
+          <div class="pname">Abdulaziz Hatem</div>
+          <div class="pmeta">35 · $0.3M</div>
+          <div class="pdetail">#6 · CM · 179cm · Al-Rayyan</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TU08L3RleHQ+PC9zdmc+" alt="Mohamed Al-Mannai">
+        <div class="pinfo">
+          <div class="pname">Mohamed Al-Mannai</div>
+          <div class="pmeta">23 · $0.5M</div>
+          <div class="pdetail">#26 · CM · 180cm · Al-Shamal</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SEg8L3RleHQ+PC9zdmc+" alt="Hassan Al-Haydos (C)">
+        <div class="pinfo">
+          <div class="pname">Hassan Al-Haydos (C) ⭐</div>
+          <div class="pmeta">35 · $0.3M</div>
+          <div class="pdetail">#10 · AM · 174cm · Al-Sadd</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUE8L3RleHQ+PC9zdmc+" alt="Akram Afif">
+        <div class="pinfo">
+          <div class="pname">Akram Afif ⭐</div>
+          <div class="pmeta">29 · $8.6M</div>
+          <div class="pdetail">#11 · LW · 176cm · Al-Sadd</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUc8L3RleHQ+PC9zdmc+" alt="Ahmed Al-Ganehi">
+        <div class="pinfo">
+          <div class="pname">Ahmed Al-Ganehi ⭐</div>
+          <div class="pmeta">25 · $0.5M</div>
+          <div class="pdetail">#17 · RW · 175cm · Al-Gharafa</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RUo8L3RleHQ+PC9zdmc+" alt="Edmílson Junior">
+        <div class="pinfo">
+          <div class="pname">Edmílson Junior</div>
+          <div class="pmeta">31 · $1.9M</div>
+          <div class="pdetail">#8 · LW · 180cm · Al-Duhail</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+WUE8L3RleHQ+PC9zdmc+" alt="Yusuf Abdurisag">
+        <div class="pinfo">
+          <div class="pname">Yusuf Abdurisag</div>
+          <div class="pmeta">26 · $0.3M</div>
+          <div class="pdetail">#15 · RW · 171cm · Al-Wakrah</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VEo8L3RleHQ+PC9zdmc+" alt="Tahsin Mohammed">
+        <div class="pinfo">
+          <div class="pname">Tahsin Mohammed</div>
+          <div class="pmeta">20 · $0.2M</div>
+          <div class="pdetail">#24 · LW · 166cm · Al-Duhail</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUE8L3RleHQ+PC9zdmc+" alt="Almoez Ali">
+        <div class="pinfo">
+          <div class="pname">Almoez Ali ⭐</div>
+          <div class="pmeta">29 · $2.7M</div>
+          <div class="pdetail">#19 · ST · 180cm · Al-Duhail</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUE8L3RleHQ+PC9zdmc+" alt="Ahmed Alaaeldin">
+        <div class="pinfo">
+          <div class="pname">Ahmed Alaaeldin</div>
+          <div class="pmeta">33 · $0.3M</div>
+          <div class="pdetail">#7 · ST · 179cm · Al-Rayyan</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TU08L3RleHQ+PC9zdmc+" alt="Mohammed Muntari">
+        <div class="pinfo">
+          <div class="pname">Mohammed Muntari</div>
+          <div class="pmeta">32 · $0.2M</div>
+          <div class="pdetail">#9 · ST · 192cm · Al-Gharafa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:10px;color:var(--muted);text-align:center;margin-top:4px;">
+    ⭐ = predicted starter &nbsp; 🔴 = suspended &nbsp; Market values in USD, converted at 1 EUR ≈ 1.08 USD. Source: Transfermarkt, retrieved June 24, 2026.
+  </p>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Odds &amp; Probabilities</div>
+  <div class="card">
+    <h3>Moneyline (90 min + stoppage)</h3>
+    <table class="odds">
+      <tr><th>Outcome</th><th>Pre-Match Odds</th><th>Polymarket</th><th>Implied Prob</th></tr>
+      <tr><td><strong>Bosnia Win</strong></td><td>−270</td><td>69–71¢</td><td>~69–73%</td></tr>
+      <tr><td><strong>Draw</strong></td><td>+420</td><td>18–20¢</td><td>~17–19%</td></tr>
+      <tr><td><strong>Qatar Win</strong></td><td>+650</td><td>12–13¢</td><td>~12–13%</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Reading moneyline:</strong> −270 means bet $270 to win $100 profit. Bosnia are heavy favorites reflecting Qatar's suspensions and −6 GD.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Totals &amp; Spreads</h3>
+    <table class="odds">
+      <tr><th>Market</th><th>Line</th><th>Odds</th><th>Implication</th></tr>
+      <tr><td>Total Goals</td><td>O/U 2.5</td><td>Over −175 / Under +138</td><td>Market expects 3+ goals</td></tr>
+      <tr><td>Asian Handicap</td><td>Bosnia −1.25</td><td>~−110 (est.)</td><td>Expect Bosnia win by 2</td></tr>
+      <tr><td>Both Teams Score</td><td>Yes/No</td><td>Yes −124 / No −102</td><td>Slight lean to BTTS Yes</td></tr>
+      <tr><td>Correct Score</td><td>Bosnia 2-0</td><td>7.00–8.00</td><td>Central thesis scoreline</td></tr>
+      <tr><td>Asian Handicap</td><td>Bosnia −1.5</td><td>+105</td><td>Selection 1 play</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Market Sentiment (Polymarket)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Bosnia 69–71%, Draw 18–20%, Qatar 12–13%. Sportsbook and prediction market align closely — rare consensus suggesting
+      efficient pricing. The −1.25/-1.5 handicap spread is the key debate: can Bosnia cover 2 goals against a team that held
+      Switzerland to 1-1 despite being down to 10 men late?
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Risk Assessment</div>
+  <div class="card">
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Bosnia defensive frailty:</strong> Conceded 4 to Switzerland and 1 to Canada. Without Muharemović, a Qatar counter through Afif could spoil a clean sheet. <span class="tag tag-verified">Verified</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Group B complexity:</strong> Bosnia may not know if a win is enough until Canada-Switzerland finishes. Nervous finishing in a must-win can produce conservative play. <span class="tag tag-assumed">Assumed pressure</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Heat advisory:</strong> Midday Seattle kickoff with temperatures up to 77°F. Both teams are European/Middle Eastern acclimated, but tempo may drop after 60 minutes.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Qatar pride factor:</strong> Eliminated teams sometimes play freely. Lopetegui may unleash Afif and Almoez with nothing to lose — supports 2-1 alternative path.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Correct-score variance:</strong> Selection 2 is inherently low-probability (~12-15% implied at 7.00 odds). A 3-0 or 1-0 Bosnia win voids the bet.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Sources</div>
+  <div class="card">
+    <ol class="source-list">
+      <li><strong>FIFA</strong> — Official squad lists, group standings, referee assignments. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank">fifa.com</a></li>
+      <li><strong>beIN SPORTS</strong> — Bosnia official 26-man squad announcement. <a href="https://www.beinsports.com/en-us/soccer/fifa-world-cup-2026/articles/sergej-barbarez-s-official-bosnia-and-herzegovina-squad-for-the-2026-fifa-world-cup-2026-05-11" target="_blank">beinsports.com</a></li>
+      <li><strong>USA Today</strong> — Bosnia World Cup roster breakdown. <a href="https://www.usatoday.com/story/sports/soccer/worldcup/2026/05/14/bosnia-and-herzegovina-national-team-fifa-world-cup-roster-official-squad/90065433007/" target="_blank">usatoday.com</a></li>
+      <li><strong>AS USA</strong> — Qatar 2026 squad and Group B schedule. <a href="https://en.as.com/soccer/world-cup/qatar-at-the-2026-world-cup-roster-squad-players-group-and-schedule-f202606-n/" target="_blank">en.as.com</a></li>
+      <li><strong>Transfermarkt</strong> — Player market values for both squads. <a href="https://www.transfermarkt.com" target="_blank">transfermarkt.com</a>. Retrieved June 24, 2026.</li>
+      <li><strong>Polymarket</strong> — Prediction market pricing (Bosnia 69–71%). <a href="https://polymarket.com" target="_blank">polymarket.com</a></li>
+      <li><strong>AccuWeather</strong> — Seattle/Lumen Field weather forecast. <a href="https://www.accuweather.com/en/us/seattle/98104/weather-forecast/351409" target="_blank">accuweather.com</a>. Retrieved June 24, 2026.</li>
+      <li><strong>Sportpaedia</strong> — Qatar squad confirmation by Julen Lopetegui. <a href="https://www.sportpaedia.com/football/world-cup-2026/qatar-world-cup-2026-team-squad/" target="_blank">sportpaedia.com</a></li>
+      <li><strong>Fotmob</strong> — Qatar player positions and transfer values. <a href="https://www.fotmob.com/teams/5902/squad/qatar" target="_blank">fotmob.com</a></li>
+      <li><strong>11v11</strong> — Bosnia vs Qatar head-to-head records. <a href="https://www.11v11.com" target="_blank">11v11.com</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="footer wrap">
+  <strong>World Cup 2026 Match Report — Bosnia vs Qatar</strong><br>
+  Generated by Assistant Coach Skill &middot; June 25, 2026<br>
+  This report is for entertainment purposes only. All predictions are inference.<br>
+  Gambling involves risk. Only bet what you can afford to lose.
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var budget=parseInt(p.get('budget'))||100;
+  var BET=2,total=Math.floor(budget/BET);
+  budget=total*BET;
+  var h=document.querySelector('.bet-card h3');
+  if(h) h.innerHTML='Budget: $'+budget+' USD &middot; $'+BET+' per bet &middot; '+total+' bets';
+  document.querySelectorAll('.play[data-pct]').forEach(function(el){
+    var pct=parseFloat(el.dataset.pct),odds=parseFloat(el.dataset.odds);
+    var bets=Math.round(pct*total),alloc=bets*BET;
+    var pay=(alloc*odds).toFixed(2).replace(/\.00$/,''),prof=(alloc*odds-alloc).toFixed(2).replace(/\.00$/,'');
+    var lb=el.querySelector('.play-label');
+    if(lb) lb.textContent=lb.textContent.replace(/\(\d+%\s*=\s*\d+\s*bets\s*=\s*\$\d+\)/,'('+Math.round(pct*100)+'% = '+bets+' bets = $'+alloc+')');
+    var dt=el.querySelector('.play-detail');
+    if(dt) dt.innerHTML=dt.innerHTML.replace(/\$\d+(\.\d+)?\s*×/,'$'+alloc+' ×').replace(/=\s*\$[\d,.]+\s*\(profit\s*\$[\d,.]+\)/,'= $'+pay+' (profit $'+prof+')');
+  });
+  var w=document.querySelector('.bet-card .warning');
+  if(w) w.innerHTML=w.innerHTML.replace(/\$100/g,'$'+budget);
+})();
+</script>
+</body>
+</html>

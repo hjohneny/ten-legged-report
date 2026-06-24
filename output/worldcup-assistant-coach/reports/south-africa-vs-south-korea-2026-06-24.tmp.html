@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>South Africa vs South Korea Pre-Match Analysis Report</title>
+  <style>
+    @page { size: A5 portrait; margin: 12mm 10mm 14mm; }
+    :root {
+      --ink: #102033;
+      --muted: #697586;
+      --line: #d9e2df;
+      --paper: #eaf1eb;
+      --panel: #ffffff;
+      --green: #0b6b47;
+      --gold: #fece14;
+      --blue: #102a57;
+      --red: #b33a3a;
+      --grass: #147a4d;
+      --deep: #071527;
+      --stadium: #020f2a;
+      --soft-green: #e4f4ec;
+      --soft-gold: #fff6cc;
+      --soft-blue: #e7eef9;
+      --soft-red: #fbeaea;
+      --shadow: 0 18px 44px rgba(7,21,39,.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #06172a 0, #082b25 310px, var(--paper) 620px, #eef4f1 100%);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    .wrap { max-width: 520px; margin: 0 auto; padding: 0 12px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; color: #fff; padding: 40px 16px 36px; overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(255,255,255,.15), transparent 15%),
+        radial-gradient(circle at 82% 18%, rgba(254,206,20,.35), transparent 20%),
+        linear-gradient(110deg, rgba(2,15,42,.97), rgba(4,56,39,.80) 50%, rgba(2,15,42,.93));
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: auto -10% -38% -10%; height: 52%;
+      background: linear-gradient(180deg, rgba(20,122,77,.55), rgba(8,72,47,.90));
+      border-top: 1px solid rgba(255,255,255,.18); transform: skewY(-3deg); pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800;
+      letter-spacing: .08em; color: #101820; background: var(--gold); border-radius: 999px;
+      padding: 4px 10px; margin-bottom: 10px; text-transform: uppercase;
+    }
+    h1 { font-size: 34px; line-height: .96; margin: 0 0 10px; letter-spacing: -.5px; }
+    .subtitle { margin: 0; color: rgba(255,255,255,.82); font-size: 13px; }
+
+    .team-strip {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center;
+      margin-top: 22px; padding: 12px; background: rgba(255,255,255,.08);
+      border-radius: 8px; border: 1px solid rgba(255,255,255,.12);
+    }
+    .team-strip .team { text-align: center; }
+    .team-strip .team img { width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: rgba(255,255,255,.1); }
+    .team-strip .team .name { font-size: 14px; font-weight: 700; margin-top: 4px; }
+    .team-strip .team .rank { font-size: 10px; color: rgba(255,255,255,.6); }
+    .team-strip .vs { font-size: 22px; font-weight: 800; color: var(--gold); }
+
+    /* ── NOTICE ── */
+    .notice {
+      margin: 16px auto; max-width: 520px; padding: 10px 14px; font-size: 11px;
+      background: var(--soft-gold); border-left: 3px solid var(--gold); border-radius: 4px;
+      color: #5a4e00;
+    }
+    .notice strong { color: #3d3500; }
+
+    /* ── SECTIONS ── */
+    .section { max-width: 520px; margin: 20px auto; }
+    .section-title {
+      font-size: 16px; font-weight: 800; color: var(--green); margin: 0 0 12px;
+      padding-bottom: 6px; border-bottom: 2px solid var(--gold);
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .card {
+      background: var(--panel); border-radius: 8px; padding: 14px 16px;
+      margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      border: 1px solid var(--line);
+    }
+    .card h3 { font-size: 13px; margin: 0 0 6px; color: var(--green); text-transform: uppercase; letter-spacing: .04em; }
+
+    /* ── CONCLUSION CARDS ── */
+    .conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .metric-card {
+      background: var(--panel); border-radius: 8px; padding: 12px;
+      border: 1px solid var(--line); text-align: center;
+    }
+    .metric-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+    .metric-card .value { font-size: 22px; font-weight: 800; color: var(--green); margin: 2px 0; }
+    .metric-card .sub { font-size: 10px; color: var(--muted); }
+    .tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin: 2px 2px 0 0; text-transform: uppercase; }
+    .tag-verified { background: var(--soft-green); color: var(--green); }
+    .tag-assumed { background: var(--soft-gold); color: #7a6800; }
+    .tag-not-verified { background: var(--soft-red); color: var(--red); }
+
+    /* ── BETTING ── */
+    .bet-card {
+      background: linear-gradient(135deg, #071527 0%, #0b3d2b 100%);
+      color: #fff; border-radius: 8px; padding: 16px; margin-bottom: 12px;
+    }
+    .bet-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 14px; }
+    .bet-card .play { background: rgba(255,255,255,.08); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+    .bet-card .play-label { font-size: 10px; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+    .bet-card .play-title { font-size: 15px; font-weight: 800; }
+    .bet-card .play-detail { font-size: 11px; color: rgba(255,255,255,.7); margin-top: 4px; }
+    .bet-card .warning {
+      background: rgba(179,58,58,.25); border: 1px solid rgba(179,58,58,.5);
+      border-radius: 4px; padding: 8px 10px; font-size: 11px; margin-top: 10px;
+    }
+    .bet-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
+    .bet-table th { text-align: left; font-size: 10px; color: var(--gold); padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .bet-table td { padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
+
+    /* ── REFEREE &amp; ENV ── */
+    .env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .env-item { background: var(--soft-blue); border-radius: 6px; padding: 8px 10px; }
+    .env-item .env-label { font-size: 10px; font-weight: 700; color: var(--blue); text-transform: uppercase; }
+    .env-item .env-value { font-size: 13px; font-weight: 600; }
+
+    /* ── PITCH ── */
+    .pitch-container { background: var(--panel); border-radius: 8px; padding: 12px; border: 1px solid var(--line); margin-bottom: 14px; page-break-inside: avoid; break-inside: avoid; }
+    .pitch {
+      position: relative; width: 100%; height: 520px; background: linear-gradient(180deg, #1a7a42 0%, #15653a 50%, #1a7a42 100%);
+      border-radius: 6px; overflow: hidden; border: 2px solid rgba(255,255,255,.3);
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .pitch::before {
+      content: ""; position: absolute; left: 5%; right: 5%; top: 49.5%; height: 1%;
+      border-top: 2px solid rgba(255,255,255,.4); border-bottom: 2px solid rgba(255,255,255,.4);
+    }
+    .pitch .center-circle {
+      position: absolute; left: 50%; top: 50%; width: 60px; height: 60px;
+      border: 2px solid rgba(255,255,255,.3); border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .pitch .penalty-box-top {
+      position: absolute; left: 25%; right: 25%; top: 0; height: 12%;
+      border: 2px solid rgba(255,255,255,.3); border-top: none;
+    }
+    .pitch .penalty-box-bot {
+      position: absolute; left: 25%; right: 25%; bottom: 0; height: 12%;
+      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
+    }
+    .pitch .goal-top {
+      position: absolute; left: 38%; right: 38%; top: 0; height: 5%;
+      border: 2px solid rgba(255,255,255,.3); border-top: none;
+    }
+    .pitch .goal-bot {
+      position: absolute; left: 38%; right: 38%; bottom: 0; height: 5%;
+      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
+    }
+    .player-dot {
+      position: absolute; transform: translate(-50%, -50%); text-align: center; z-index: 2;
+    }
+    .player-dot .dot {
+      width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 11px; font-weight: 800; margin: 0 auto 2px;
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .player-dot .pname { font-size: 8px; color: #fff; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+    .dot-tur { background: #e30a17; color: #fff; }
+    .dot-rsa { background: #007749; color: #FFB81C; }
+    .dot-kor { background: #CD2E3A; color: #fff; }
+
+    .formation-label {
+      position: absolute; left: 8px; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.7);
+      text-transform: uppercase; letter-spacing: .05em;
+    }
+    .venue-badge {
+      position: absolute; right: 6px; bottom: 6px; background: rgba(0,0,0,.5);
+      padding: 3px 6px; border-radius: 3px; font-size: 8px; color: rgba(255,255,255,.8);
+    }
+
+    /* ── ROSTER ── */
+    .roster-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .roster-panel { background: #f5f8f6; border-radius: 8px; padding: 10px; border: 1px solid var(--line); }
+    
+    .roster-panel.rsa { background: #e8f5ee; }
+    .roster-panel.kor { background: #fdf0f1; }
+    .roster-header { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+    .roster-header img { width: 24px; height: 24px; border-radius: 50%; object-fit: contain; }
+    .roster-header .rh-name { font-size: 13px; font-weight: 800; }
+    .pos-group-title { font-size: 10px; font-weight: 800; color: var(--green); text-transform: uppercase; margin: 8px 0 4px; letter-spacing: .05em; }
+    .player-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,.04); }
+    .player-row:last-child { border-bottom: none; }
+    .player-row .avatar {
+      width: 30px; height: 30px; border-radius: 50%; object-fit: cover;
+      background: #ddd; flex-shrink: 0; border: 1px solid rgba(0,0,0,.08);
+    }
+    .player-row .pinfo { min-width: 0; }
+    .player-row .pinfo .pname { font-size: 11px; font-weight: 700; line-height: 1.2; }
+    .player-row .pinfo .pmeta { font-size: 9px; color: var(--muted); line-height: 1.3; }
+    .player-row .pinfo .pdetail { font-size: 8px; color: #999; line-height: 1.3; }
+
+    /* ── ODDS TABLE ── */
+    table.odds { width: 100%; border-collapse: collapse; font-size: 12px; }
+    table.odds th { text-align: left; font-size: 10px; color: var(--muted); padding: 6px 8px; border-bottom: 2px solid var(--line); font-weight: 700; text-transform: uppercase; }
+    table.odds td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+    table.odds tr:last-child td { border-bottom: none; }
+
+    /* ── RISK ── */
+    .risk-item { display: flex; gap: 8px; margin-bottom: 8px; }
+    .risk-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; }
+    .risk-high { background: var(--soft-red); color: var(--red); }
+    .risk-med { background: var(--soft-gold); color: #7a6800; }
+
+    /* ── SOURCES ── */
+    .source-list { font-size: 10px; color: var(--muted); }
+    .source-list a { font-size: 10px; word-break: break-all; }
+    .source-list li { margin-bottom: 4px; }
+
+    /* ── FOOTER ── */
+    .footer {
+      max-width: 520px; margin: 30px auto 20px; padding: 14px 16px; text-align: center;
+      font-size: 10px; color: var(--muted); border-top: 1px solid var(--line);
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; }
+      .hero { break-after: avoid; }
+      .section { break-inside: avoid; }
+      .card { break-inside: avoid; }
+      .bet-card { break-inside: avoid; }
+      .roster-grid { break-inside: auto; }
+      .roster-panel { break-inside: avoid; }
+    }
+
+    .adj-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 6px; }
+    .adj-table th { text-align: left; font-size: 10px; padding: 4px 6px; background: var(--soft-green); color: var(--green); }
+    .adj-table td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
+    .adj-up { color: var(--red); font-weight: 700; }
+    .adj-down { color: var(--green); font-weight: 700; }
+    .adj-none { color: var(--muted); }
+
+    .subs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .sub-panel { background: rgba(255,255,255,.06); border-radius: 6px; padding: 8px; }
+    .sub-panel h4 { font-size: 10px; color: var(--gold); margin: 0 0 4px; text-transform: uppercase; }
+    .sub-row { font-size: 10px; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+
+    .tactic-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .tactic-table th { text-align: left; font-size: 10px; padding: 5px 6px; background: var(--soft-green); color: var(--green); font-weight: 700; }
+    .tactic-table td { padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">⚽ FIFA World Cup 2026 &middot; Group A &middot; Matchday 3 &middot; Match 54</div>
+    <h1>South Africa vs South Korea</h1>
+    <p class="subtitle">
+      Wednesday, June 24, 2026 &middot; 9:00 PM ET / 7:00 PM CST / 9:00 AM MYT (June 25)<br>
+      Estadio BBVA (Monterrey Stadium), Guadalupe, Mexico &middot; Referee: Facundo Tello (ARG)
+    </p>
+    <div class="team-strip">
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDc3NDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI0ZGQjgxQyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPlJTQTwvdGV4dD48L3N2Zz4=" alt="South Africa">
+        <div class="name">South Africa</div>
+        <div class="rank">FIFA #61 &middot; 1 pt &middot; Must Win</div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNDRDJFM0EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPktPUjwvdGV4dD48L3N2Zz4=" alt="South Korea">
+        <div class="name">South Korea</div>
+        <div class="rank">FIFA #21 &middot; 3 pts &middot; Draw Enough</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ NOTICE ═══════════════════════ -->
+<div class="notice wrap">
+  <strong>Report generated:</strong> June 25, 2026, 08:30 MYT (GMT+8).<br>
+  <strong>Exchange rate:</strong> 1 EUR ≈ 1.08 USD (approximate, June 2026).<br>
+  <strong>Betslip status:</strong> Pre-purchase — verify odds at your sportsbook before placing bets. Lineups are predicted, not confirmed.<br>
+  <strong>Disclaimer:</strong> This report is entertainment-oriented analysis, not investment advice. Gambling involves risk of losing your entire budget.
+</div>
+
+<!-- ═══════════════════════ CONCLUSION ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Match Conclusion</div>
+  <div class="conclusion-grid">
+    <div class="metric-card">
+      <div class="label">Central Score Path</div>
+      <div class="value">0–2</div>
+      <div class="sub">South Korea control; SA depleted midfield</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Alternative Path</div>
+      <div class="value">1–0 KOR</div>
+      <div class="sub">Tight, heat-suppressed; or Draw 1–1</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Korea Win Prob</div>
+      <div class="value">~60%</div>
+      <div class="sub">De-vigged sportsbook / 62% Polymarket</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Total Goals Line</div>
+      <div class="value">O/U 2.5</div>
+      <div class="sub">Under -130 &middot; Heat favors caution</div>
+    </div>
+  </div>
+  <div class="card">
+    <p style="margin:0;font-size:12px;">
+      <strong>Verdict:</strong> A must-win finale for South Africa against a South Korea side that only needs a draw to secure second place on head-to-head over Czechia. Korea arrive with superior squad depth (~$218M vs ~$53M), a proven Matchday 3 pedigree (beat Germany 2018, Portugal 2022), and no suspensions. Bafana Bafana are missing captain Teboho Mokoena (yellow accumulation) and creative hub Themba Zwane (3-match red-card ban). Extreme heat (~31°C, muggy, open-air) should slow tempo and favor Korea's deeper rotation. The central path is a controlled South Korea 2-0.
+    </p>
+    <div style="margin-top:8px;">
+      <span class="tag tag-verified">Verified: Mexico qualified (6 pts)</span>
+      <span class="tag tag-verified">Verified: Mokoena &amp; Zwane suspended</span>
+      <span class="tag tag-verified">Verified: Korea draw clinches 2nd</span>
+      <span class="tag tag-assumed">Assumed: Son starts</span>
+      <span class="tag tag-assumed">Assumed: Heat suppresses goals</span>
+      <span class="tag tag-not-verified">Not verified: Official lineups</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BETTING PLAN ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Concentrated Betting Plan</div>
+  <div class="bet-card">
+    <h3>Budget: $100 USD &middot; $2 per bet &middot; 50 bets</h3>
+
+    <div class="play" data-pct="0.60" data-odds="1.76">
+      <div class="play-label">Selection 1 — Core (60% = 30 bets = $60)</div>
+      <div class="play-title">South Korea -0.75 (Asian Handicap) @ -132</div>
+      <div class="play-detail">
+        Korea dominant on paper with Son, Lee Kang-in, and Kim Min-jae against a depleted SA midfield missing Mokoena and Zwane.
+        Korea's -150 moneyline offers thin value; the -0.75 handicap better expresses the 2-0 central path.
+        SA must attack, leaving space for Korea transitions.<br>
+        <strong>Potential payout:</strong> $60 × 1.76 = $105.60 (profit $45.60)<br>
+        <strong>Min acceptable odds:</strong> -145 (1.69)<br>
+        <strong>Cancel if:</strong> Korea rests Son Heung-min, or SA lineup shows tactical surprise (e.g. Foster + Makgopa both start).
+      </div>
+    </div>
+
+    <div class="play" data-pct="0.40" data-odds="1.77">
+      <div class="play-label">Selection 2 — Adjacent (40% = 20 bets = $40)</div>
+      <div class="play-title">Under 2.5 Goals @ -130</div>
+      <div class="play-detail">
+        Extreme heat (~31°C, muggy humidity) at open-air Estadio BBVA suppresses pressing intensity.
+        Korea can manage a draw-or-win with tactical caution; SA's depleted midfield limits creative output.
+        Referee Tello's high foul count (30 vs Canada-Bosnia) may fragment rhythm.<br>
+        <strong>Potential payout:</strong> $40 × 1.77 = $70.80 (profit $30.80)<br>
+        <strong>Min acceptable odds:</strong> -140 (1.71)<br>
+        <strong>Cancel if:</strong> Early team news suggests open, high-tempo approach from both sides.
+      </div>
+    </div>
+
+    <table class="bet-table">
+      <tr><th>Pre-Purchase Check</th><th>Action</th></tr>
+      <tr><td>Korea -0.75 worse than -145</td><td>Reduce Selection 1 to 40%; shift to Korea ML at -150</td></tr>
+      <tr><td>Son Heung-min rested or benched</td><td>Cancel Selection 1 entirely</td></tr>
+      <tr><td>SA fields surprise full-strength midfield</td><td>Reduce both selections by 50%</td></tr>
+      <tr><td>Under 2.5 odds worse than -140</td><td>Drop Selection 2; concentrate on Korea -0.75</td></tr>
+      <tr><td>Weather cools below 28°C or roof added</td><td>Reduce Under 2.5 allocation by 50%</td></tr>
+    </table>
+
+    <div class="warning">
+      ⚠️ <strong>Whole-Budget-Loss Warning:</strong> This concentrated plan intentionally accepts a high probability of losing the entire $100 entertainment budget.
+      SA's desperation could produce an upset (priced +450), and Korea's draw-is-enough mentality may invite a cagey 1-1.
+      Only bet what you can afford to lose. This is entertainment analysis, not guaranteed returns.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SCORE THESIS ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Score Thesis</div>
+  <div class="card">
+    <h3>Baseline Score Range (Market-Derived)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      De-vigged sportsbook odds: South Korea ~60%, Draw ~22%, South Africa ~18%. Total goals O/U 2.5 (Under favored at -130).
+      Polymarket: Korea 62%, Draw 24%, South Africa 16%. Correct-score favorites: Korea 0-1 (+540), Korea 0-2 (+600).
+      BTTS: Yes +112 / No -144 — market leans toward at least one clean sheet.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Baseline central path:</strong> 2 total goals or fewer, Korea win. Most likely scores: 0-2, 0-1, 1-0 (Korea). SA must win, creating structural imbalance.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Score-Impact Adjustments</h3>
+    <table class="adj-table">
+      <tr><th>Factor</th><th>Evidence</th><th>Direction</th></tr>
+      <tr>
+        <td>SA missing Mokoena &amp; Zwane</td>
+        <td>Mokoena suspended (yellows); Zwane 3-match ban (red vs Mexico). Verified.</td>
+        <td class="adj-up">↑ Korea scoring +0.4</td>
+      </tr>
+      <tr>
+        <td>Korea squad quality gap</td>
+        <td>Squad value ~$218M vs ~$53M; Son, Lee Kang-in, Kim Min-jae. Verified via Transfermarkt.</td>
+        <td class="adj-up">↑ Korea scoring +0.3</td>
+      </tr>
+      <tr>
+        <td>Korea MD3 pedigree</td>
+        <td>Beat Germany 2-0 (2018), Portugal 2-1 (2022) on final matchday. Verified.</td>
+        <td class="adj-up">↑ Korea win probability</td>
+      </tr>
+      <tr>
+        <td>Heat stress (~31°C, muggy)</td>
+        <td>Open-air Estadio BBVA, 7 PM local kickoff. AccuWeather forecast.</td>
+        <td class="adj-down">↓ Total goals −0.3</td>
+      </tr>
+      <tr>
+        <td>Referee Tello: high foul count</td>
+        <td>5 YC, 30 fouls in Canada 1-1 Bosnia; career 4.71 Y/match.</td>
+        <td class="adj-down">↓ Total goals −0.1</td>
+      </tr>
+      <tr>
+        <td>Korea draw enough for 2nd</td>
+        <td>H2H over Czechia (2-1 win MD1). Verified standings.</td>
+        <td class="adj-down">↓ Korea risk-taking −0.2</td>
+      </tr>
+      <tr>
+        <td>SA must-win desperation</td>
+        <td>Only win keeps knockout hopes alive (needs Czechia result).</td>
+        <td class="adj-up">↑ SA scoring +0.1 (tail risk)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Resulting Score Paths</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Central path:</strong> South Korea 2 – 0 South Africa. Korea control possession, exploit SA's weakened midfield in transitions. Son or Lee Kang-in seal it late as heat saps Bafana legs. Confidence: <strong>Medium-High</strong>.<br>
+      <strong>Alternative path:</strong> South Korea 1 – 0 South Africa. Cagey, heat-affected contest where Korea manage the result without overextending. Confidence: <strong>Medium</strong>.<br>
+      <strong>Tail-risk trigger:</strong> SA score early on counter → Korea forced open → 1-1 draw or 2-1 Korea. SA win (+450) remains live but low probability.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ REFEREE &amp; ENVIRONMENT ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Referee &amp; Environment</div>
+  <div class="card">
+    <h3>Referee: Facundo Tello (Argentina, age 34)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      FIFA international referee since 2017. Officiated at the 2022 World Cup — notably South Korea 2-1 Portugal (Matchday 3 classic).
+      In WC 2026, his one match was Canada 1-1 Bosnia with 5 yellow cards, 0 red cards, and 30 fouls called.
+    </p>
+    <table class="adj-table">
+      <tr><th>Stat</th><th>WC 2026 (1 match)</th><th>Career Avg</th></tr>
+      <tr><td>Yellow cards</td><td>5</td><td>4.71 per match</td></tr>
+      <tr><td>Red cards</td><td>0</td><td>Not verified</td></tr>
+      <tr><td>Fouls called</td><td>30</td><td>Not verified</td></tr>
+      <tr><td>Penalties</td><td>0</td><td>Not verified</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Assessment:</strong> Above-average discipline rate. Physical, stop-start match likely — fragments attacking rhythm.
+      His 2022 Korea-Portugal experience is a positive omen for Korean composure on MD3. <strong>Score impact: ↓ total goals −0.1.</strong>
+      <span class="tag tag-verified">Verified: FIFA assignment</span>
+    </p>
+  </div>
+
+  <div class="env-grid" style="margin-top:12px;">
+    <div class="env-item">
+      <div class="env-label">Venue</div>
+      <div class="env-value">Estadio BBVA</div>
+      <div style="font-size:10px;color:var(--muted);">Guadalupe, Monterrey · 53,500 capacity</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Surface</div>
+      <div class="env-value">Natural Grass</div>
+      <div style="font-size:10px;color:var(--muted);">Open-air · altitude ~540m</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Kickoff Weather</div>
+      <div class="env-value">~88°F / 31°C</div>
+      <div style="font-size:10px;color:var(--muted);">Clear/sunny, muggy humidity</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Travel &amp; Rest</div>
+      <div class="env-value">6 days rest (both)</div>
+      <div style="font-size:10px;color:var(--muted);">SA from Guadalajara; Korea from Mexico City</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--muted);margin-top:8px;">
+    <strong>Environment impact:</strong> Significant heat stress at open-air Estadio BBVA. Evening kickoff (7 PM CST) mitigates peak sun but muggy conditions persist.
+    Altitude (~540m) is modest. Heat favors deeper Korea squad and suppresses high-pressing intensity from both sides. <strong>Score adjustment: ↓ total goals −0.3.</strong>
+    Source: AccuWeather (Monterrey), retrieved June 24, 2026.
+  </p>
+</div>
+
+<!-- ═══════════════════════ EVENT BACKGROUND ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Event Background</div>
+  <div class="card">
+    <h3>Group A — Final Matchday</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Mexico have clinched first place with 6 points (+3 GD). South Korea sit second on 3 points with head-to-head advantage over Czechia (2-1 win on MD1).
+      South Africa (1 pt, -2 GD) must win and hope Czechia lose heavily to Mexico. Czechia (1 pt, -1 GD) play Mexico simultaneously at Estadio Azteca.
+    </p>
+    <table class="odds" style="margin-top:8px;">
+      <tr><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Mexico</strong></td><td>2</td><td>2</td><td>0</td><td>0</td><td>3</td><td>0</td><td>+3</td><td><strong>6</strong></td></tr>
+      <tr><td><strong>South Korea</strong></td><td>2</td><td>1</td><td>0</td><td>1</td><td>2</td><td>2</td><td>0</td><td>3</td></tr>
+      <tr><td>Czechia</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>3</td><td>−1</td><td>1</td></tr>
+      <tr style="background:var(--soft-red);"><td><strong>South Africa</strong></td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>3</td><td>−2</td><td><strong>1</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Match Context</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>South Africa:</strong> Hugo Broos (74, Belgian) leads Bafana in his farewell tournament. Historic third World Cup appearance (1998, 2002, 2010).
+      Drew 1-1 with Czechia but lost 0-2 to Mexico and had Zwane sent off. Without Mokoena and Zwane, the midfield lacks its two most experienced operators.
+      Lyle Foster (~$8M, Burnley) is the main European outlet but may not start.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>South Korea:</strong> Hong Myung-bo's side bounced back from 0-1 loss to Mexico with tactical discipline.
+      Son Heung-min (LAFC, captain) leads a squad with Lee Kang-in (PSG) and Kim Min-jae (Bayern Munich).
+      Korea's Matchday 3 history is exceptional — they thrive when stakes are clearest. A draw secures Round of 32.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Head-to-Head</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>First-ever senior international meeting</strong> between South Africa and South Korea. No prior competitive or friendly fixtures on record.
+      Korea's experience against African opposition includes WC wins over Ghana (2022) and draws with Nigeria (2010).
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ TEAM OVERVIEW ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Team Overview</div>
+  <div class="card">
+    <h3>🇿🇦 South Africa</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Hugo Broos (Belgium, 74 — retiring after WC) &middot; <strong>FIFA Ranking:</strong> #61 &middot;
+      <strong>Squad Value:</strong> ~$53M &middot; <strong>Style:</strong> 4-3-3 with width through Mudau/Modiba<br>
+      <strong>WC History:</strong> 3rd appearance (1998, 2002, 2010). Best: group stage.<br>
+      <strong>Key Players:</strong> Teboho Mokoena (SUSPENDED), Lyle Foster (Burnley, $8M), Ronwen Williams (Sundowns).<br>
+      <strong>Strengths:</strong> AFCON 2023 bronze pedigree, cohesive domestic core (Sundowns/Pirates), Williams in form.<br>
+      <strong>Weaknesses:</strong> Two key midfielders suspended, limited European depth, must-win pressure.<br>
+      <strong>Form:</strong> L 0-2 vs Mexico, D 1-1 vs Czechia.
+    </p>
+  </div>
+  <div class="card">
+    <h3>🇰🇷 South Korea</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Hong Myung-bo (Korea) &middot; <strong>FIFA Ranking:</strong> #21 (live) &middot;
+      <strong>Squad Value:</strong> ~$218M &middot; <strong>Style:</strong> 3-4-2-1 with Son as focal point<br>
+      <strong>WC History:</strong> 11th appearance. Best: 4th place (2002 co-host).<br>
+      <strong>Key Players:</strong> Son Heung-min (LAFC, $18M), Lee Kang-in (PSG, $40M), Kim Min-jae (Bayern, $35M).<br>
+      <strong>Strengths:</strong> Elite European-based core, MD3 mentality, tactical flexibility, draw-is-enough mindset.<br>
+      <strong>Weaknesses:</strong> Kim Tae-hyeon &amp; Bae Jun-ho ankle doubts; can be passive when leading.<br>
+      <strong>Form:</strong> W 2-1 vs Czechia, L 0-1 vs Mexico.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ PREDICTED STARTERS + PITCH ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Predicted Starters &amp; Tactics</div>
+
+  <div class="pitch-container">
+    <div class="pitch">
+      <div class="penalty-box-top"></div>
+      <div class="goal-top"></div>
+      <div class="center-circle"></div>
+      <div class="penalty-box-bot"></div>
+      <div class="goal-bot"></div>
+
+      <div class="formation-label" style="top:3%;">SOUTH AFRICA 4-3-3</div>
+      <div class="formation-label" style="bottom:3%;">SOUTH KOREA 3-4-2-1</div>
+
+      <!-- SOUTH AFRICA (top) -->
+      <div class="player-dot" style="left:50%;top:5%;"><div class="dot dot-rsa">16</div><div class="pname">Williams</div></div>
+      <div class="player-dot" style="left:15%;top:15%;"><div class="dot dot-rsa">2</div><div class="pname">Mudau</div></div>
+      <div class="player-dot" style="left:37%;top:15%;"><div class="dot dot-rsa">21</div><div class="pname">Okon</div></div>
+      <div class="player-dot" style="left:63%;top:15%;"><div class="dot dot-rsa">15</div><div class="pname">Mbokazi</div></div>
+      <div class="player-dot" style="left:85%;top:15%;"><div class="dot dot-rsa">3</div><div class="pname">Modiba</div></div>
+      <div class="player-dot" style="left:25%;top:28%;"><div class="dot dot-rsa">5</div><div class="pname">Mbatha</div></div>
+      <div class="player-dot" style="left:50%;top:30%;"><div class="dot dot-rsa">13</div><div class="pname">Sithole</div></div>
+      <div class="player-dot" style="left:75%;top:28%;"><div class="dot dot-rsa">23</div><div class="pname">Adams</div></div>
+      <div class="player-dot" style="left:18%;top:40%;"><div class="dot dot-rsa">17</div><div class="pname">Maseko</div></div>
+      <div class="player-dot" style="left:50%;top:42%;"><div class="dot dot-rsa">7</div><div class="pname">Appollis</div></div>
+      <div class="player-dot" style="left:82%;top:40%;"><div class="dot dot-rsa">11</div><div class="pname">Rayners</div></div>
+
+      <!-- SOUTH KOREA (bottom) -->
+      <div class="player-dot" style="left:50%;top:95%;"><div class="dot dot-kor">21</div><div class="pname">Jo</div></div>
+      <div class="player-dot" style="left:22%;top:85%;"><div class="dot dot-kor">3</div><div class="pname">Lee HB</div></div>
+      <div class="player-dot" style="left:50%;top:86%;"><div class="dot dot-kor">4</div><div class="pname">Kim MJ</div></div>
+      <div class="player-dot" style="left:78%;top:85%;"><div class="dot dot-kor">2</div><div class="pname">Lee GH</div></div>
+      <div class="player-dot" style="left:12%;top:72%;"><div class="dot dot-kor">14</div><div class="pname">Kim MH</div></div>
+      <div class="player-dot" style="left:35%;top:74%;"><div class="dot dot-kor">6</div><div class="pname">Hwang IB</div></div>
+      <div class="player-dot" style="left:65%;top:74%;"><div class="dot dot-kor">8</div><div class="pname">Paik</div></div>
+      <div class="player-dot" style="left:88%;top:72%;"><div class="dot dot-kor">22</div><div class="pname">Seol</div></div>
+      <div class="player-dot" style="left:32%;top:62%;"><div class="dot dot-kor">10</div><div class="pname">Lee KI</div></div>
+      <div class="player-dot" style="left:68%;top:62%;"><div class="dot dot-kor">13</div><div class="pname">Lee JS</div></div>
+      <div class="player-dot" style="left:50%;top:55%;"><div class="dot dot-kor">7</div><div class="pname">Son</div></div>
+
+      <div class="venue-badge">Estadio BBVA · 31°C · Clear</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Tactical Analysis</h3>
+    <table class="tactic-table">
+      <tr><th>Observation</th><th>Betting Implication</th></tr>
+      <tr>
+        <td>SA missing Mokoena (DM) and Zwane (AM) — replaced by Mbatha/Sithole/Adams</td>
+        <td>Weakened press resistance; supports Korea -0.75 and Korea scoring</td>
+      </tr>
+      <tr>
+        <td>Korea 3-4-2-1 with Son, Lee Kang-in, Lee Jae-sung behind striker</td>
+        <td>Creative overload vs SA's makeshift midfield; favors Korea 0-2 correct score</td>
+      </tr>
+      <tr>
+        <td>SA must attack from early stages — Modiba/Mudau push high</td>
+        <td>Space for Korea counters; but also risk of SA conceding multiple on break</td>
+      </tr>
+      <tr>
+        <td>Heat (~31°C) at open-air venue with 6 days rest</td>
+        <td>Favors deeper Korea bench; supports Under 2.5 in second half</td>
+      </tr>
+      <tr>
+        <td>Korea draw enough — may sit deeper after taking lead</td>
+        <td>Late-game game-management; supports Under 2.5 and Korea -0.75 (not -1.5)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card" style="background:var(--stadium);color:#fff;">
+    <h3 style="color:var(--gold);">Likely Substitutes</h3>
+    <div class="subs-grid">
+      <div class="sub-panel">
+        <h4>🇿🇦 South Africa Bench</h4>
+        <div class="sub-row">GK: Goss, Chaine</div>
+        <div class="sub-row">DEF: Sibisi, Ndamane, Kabini, Sebelebele, Cross, Matuludi, Makhanya</div>
+        <div class="sub-row">MID/FWD: Foster, Makgopa, Mofokeng, Moremi</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">🚫 Mokoena &amp; Zwane suspended</div>
+      </div>
+      <div class="sub-panel">
+        <h4>🇰🇷 South Korea Bench</h4>
+        <div class="sub-row">GK: Kim Seung-gyu, Song Bum-keun</div>
+        <div class="sub-row">DEF: Kim Tae-hyeon*, Lee Tae-seok, Park Jin-seob, Castrop, Cho Yu-min</div>
+        <div class="sub-row">MID: Hwang Hee-chan, Bae Jun-ho*, Yang Hyun-jun, Kim Jin-gyu, Eom Ji-sung, Lee Dong-gyeong</div>
+        <div class="sub-row">FWD: Cho Gue-sung, Oh Hyeon-gyu</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">* = ankle doubts but expected available</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ FULL ROSTERS ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Full Squad Rosters</div>
+  <div class="roster-grid">
+    <div class="roster-panel rsa">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDc3NDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI0ZGQjgxQyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPlJTQTwvdGV4dD48L3N2Zz4=" alt="South Africa">
+        <div class="rh-name">South Africa</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SEI8L3RleHQ+PC9zdmc+" alt="Hugo Broos">
+        <div class="pinfo">
+          <div class="pname">Hugo Broos</div>
+          <div class="pmeta">74 · —</div>
+          <div class="pdetail">Belgian · Retiring after WC · Record: AFCON 2023 3rd</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Ulc8L3RleHQ+PC9zdmc+" alt="Ronwen Williams">
+        <div class="pinfo">
+          <div class="pname">Ronwen Williams ⭐</div>
+          <div class="pmeta">33 · $1.5M</div>
+          <div class="pdetail">#1 · GK · 184cm · Mamelodi Sundowns</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Ukc8L3RleHQ+PC9zdmc+" alt="Ricardo Goss">
+        <div class="pinfo">
+          <div class="pname">Ricardo Goss</div>
+          <div class="pmeta">32 · $0.3M</div>
+          <div class="pdetail">#16 · GK · 188cm · Siwelele FC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0M8L3RleHQ+PC9zdmc+" alt="Sipho Chaine">
+        <div class="pinfo">
+          <div class="pname">Sipho Chaine</div>
+          <div class="pmeta">27 · $0.5M</div>
+          <div class="pdetail">#22 · GK · 188cm · Orlando Pirates</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S008L3RleHQ+PC9zdmc+" alt="Khuliso Mudau">
+        <div class="pinfo">
+          <div class="pname">Khuliso Mudau ⭐</div>
+          <div class="pmeta">31 · $2.5M</div>
+          <div class="pdetail">#2 · RB · 180cm · Mamelodi Sundowns</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SU88L3RleHQ+PC9zdmc+" alt="Ime Okon">
+        <div class="pinfo">
+          <div class="pname">Ime Okon ⭐</div>
+          <div class="pmeta">22 · $3.5M</div>
+          <div class="pdetail">#21 · CB · 190cm · Hannover 96</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TU08L3RleHQ+PC9zdmc+" alt="Mbekezeli Mbokazi">
+        <div class="pinfo">
+          <div class="pname">Mbekezeli Mbokazi ⭐</div>
+          <div class="pmeta">22 · $1.2M</div>
+          <div class="pdetail">#15 · CB · 185cm · Chicago Fire</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QU08L3RleHQ+PC9zdmc+" alt="Aubrey Modiba">
+        <div class="pinfo">
+          <div class="pname">Aubrey Modiba ⭐</div>
+          <div class="pmeta">30 · $2.0M</div>
+          <div class="pdetail">#3 · LB · 175cm · Mamelodi Sundowns</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S048L3RleHQ+PC9zdmc+" alt="Khulumani Ndamane">
+        <div class="pinfo">
+          <div class="pname">Khulumani Ndamane</div>
+          <div class="pmeta">22 · $0.8M</div>
+          <div class="pdetail">#14 · CB · 188cm · Mamelodi Sundowns</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TlM8L3RleHQ+PC9zdmc+" alt="Nkosinathi Sibisi">
+        <div class="pinfo">
+          <div class="pname">Nkosinathi Sibisi</div>
+          <div class="pmeta">32 · $0.6M</div>
+          <div class="pdetail">#4 · CB · 186cm · Orlando Pirates</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0s8L3RleHQ+PC9zdmc+" alt="Samukele Kabini">
+        <div class="pinfo">
+          <div class="pname">Samukele Kabini</div>
+          <div class="pmeta">22 · $1.0M</div>
+          <div class="pdetail">#18 · CB · 185cm · Molde FK</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VE08L3RleHQ+PC9zdmc+" alt="Thabang Matuludi">
+        <div class="pinfo">
+          <div class="pname">Thabang Matuludi</div>
+          <div class="pmeta">27 · $0.4M</div>
+          <div class="pdetail">#19 · CB · 183cm · Polokwane City</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+T008L3RleHQ+PC9zdmc+" alt="Olwethu Makhanya">
+        <div class="pinfo">
+          <div class="pname">Olwethu Makhanya</div>
+          <div class="pmeta">22 · $1.5M</div>
+          <div class="pdetail">#24 · LB · 178cm · Philadelphia Union</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S1M8L3RleHQ+PC9zdmc+" alt="Kamogelo Sebelebele">
+        <div class="pinfo">
+          <div class="pname">Kamogelo Sebelebele</div>
+          <div class="pmeta">23 · $0.5M</div>
+          <div class="pdetail">#25 · RB · 175cm · Orlando Pirates</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QkM8L3RleHQ+PC9zdmc+" alt="Bradley Cross">
+        <div class="pinfo">
+          <div class="pname">Bradley Cross</div>
+          <div class="pmeta">25 · $0.3M</div>
+          <div class="pdetail">#26 · CB · 188cm · Kaizer Chiefs</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VE08L3RleHQ+PC9zdmc+" alt="Teboho Mokoena (C)">
+        <div class="pinfo">
+          <div class="pname">Teboho Mokoena (C) 🚫 SUSPENDED</div>
+          <div class="pmeta">29 · $4.5M</div>
+          <div class="pdetail">#4 · DM · 188cm · Mamelodi Sundowns</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VE08L3RleHQ+PC9zdmc+" alt="Thalente Mbatha">
+        <div class="pinfo">
+          <div class="pname">Thalente Mbatha ⭐</div>
+          <div class="pmeta">26 · $1.8M</div>
+          <div class="pdetail">#5 · CM · 178cm · Orlando Pirates</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U1M8L3RleHQ+PC9zdmc+" alt="Sphephelo Sithole">
+        <div class="pinfo">
+          <div class="pname">Sphephelo Sithole ⭐</div>
+          <div class="pmeta">27 · $2.0M</div>
+          <div class="pdetail">#13 · CM · 180cm · CD Tondela</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SkE8L3RleHQ+PC9zdmc+" alt="Jayden Adams">
+        <div class="pinfo">
+          <div class="pname">Jayden Adams ⭐</div>
+          <div class="pmeta">25 · $1.5M</div>
+          <div class="pdetail">#23 · CM · 175cm · Mamelodi Sundowns</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VFo8L3RleHQ+PC9zdmc+" alt="Themba Zwane">
+        <div class="pinfo">
+          <div class="pname">Themba Zwane 🚫 SUSPENDED</div>
+          <div class="pmeta">36 · $1.0M</div>
+          <div class="pdetail">#10 · AM · 170cm · Mamelodi Sundowns</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEY8L3RleHQ+PC9zdmc+" alt="Lyle Foster">
+        <div class="pinfo">
+          <div class="pname">Lyle Foster</div>
+          <div class="pmeta">25 · $8.0M</div>
+          <div class="pdetail">#9 · ST · 185cm · Burnley</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+T0E8L3RleHQ+PC9zdmc+" alt="Oswin Appollis">
+        <div class="pinfo">
+          <div class="pname">Oswin Appollis ⭐</div>
+          <div class="pmeta">24 · $3.5M</div>
+          <div class="pdetail">#7 · RW · 175cm · Orlando Pirates</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SVI8L3RleHQ+PC9zdmc+" alt="Iqraam Rayners">
+        <div class="pinfo">
+          <div class="pname">Iqraam Rayners ⭐</div>
+          <div class="pmeta">30 · $2.5M</div>
+          <div class="pdetail">#11 · ST · 183cm · Mamelodi Sundowns</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VE08L3RleHQ+PC9zdmc+" alt="Thapelo Maseko">
+        <div class="pinfo">
+          <div class="pname">Thapelo Maseko ⭐</div>
+          <div class="pmeta">23 · $2.0M</div>
+          <div class="pdetail">#17 · LW · 178cm · AEL Limassol</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Uk08L3RleHQ+PC9zdmc+" alt="Relebohile Mofokeng">
+        <div class="pinfo">
+          <div class="pname">Relebohile Mofokeng</div>
+          <div class="pmeta">20 · $1.5M</div>
+          <div class="pdetail">#20 · LW · 172cm · Orlando Pirates</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RU08L3RleHQ+PC9zdmc+" alt="Evidence Makgopa">
+        <div class="pinfo">
+          <div class="pname">Evidence Makgopa</div>
+          <div class="pmeta">26 · $1.2M</div>
+          <div class="pdetail">#12 · ST · 188cm · Orlando Pirates</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VE08L3RleHQ+PC9zdmc+" alt="Tshepang Moremi">
+        <div class="pinfo">
+          <div class="pname">Tshepang Moremi</div>
+          <div class="pmeta">25 · $0.8M</div>
+          <div class="pdetail">#8 · FW · 180cm · Orlando Pirates</div>
+        </div>
+      </div>
+    </div>
+    <div class="roster-panel kor">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNDRDJFM0EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPktPUjwvdGV4dD48L3N2Zz4=" alt="South Korea">
+        <div class="rh-name">South Korea</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SE08L3RleHQ+PC9zdmc+" alt="Hong Myung-bo">
+        <div class="pinfo">
+          <div class="pname">Hong Myung-bo</div>
+          <div class="pmeta">56 · —</div>
+          <div class="pdetail">Korean · 4th WC as player (2002 4th) · Coach since 2024</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Skg8L3RleHQ+PC9zdmc+" alt="Jo Hyeon-woo">
+        <div class="pinfo">
+          <div class="pname">Jo Hyeon-woo ⭐</div>
+          <div class="pmeta">34 · $1.0M</div>
+          <div class="pdetail">#21 · GK · 189cm · Ulsan HD</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S1M8L3RleHQ+PC9zdmc+" alt="Kim Seung-gyu">
+        <div class="pinfo">
+          <div class="pname">Kim Seung-gyu</div>
+          <div class="pmeta">35 · $0.8M</div>
+          <div class="pdetail">#1 · GK · 187cm · FC Tokyo</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0I8L3RleHQ+PC9zdmc+" alt="Song Bum-keun">
+        <div class="pinfo">
+          <div class="pname">Song Bum-keun</div>
+          <div class="pmeta">28 · $1.2M</div>
+          <div class="pdetail">#12 · GK · 194cm · Jeonbuk Motors</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S008L3RleHQ+PC9zdmc+" alt="Kim Min-jae">
+        <div class="pinfo">
+          <div class="pname">Kim Min-jae ⭐</div>
+          <div class="pmeta">28 · $35M</div>
+          <div class="pdetail">#4 · CB · 190cm · Bayern Munich</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEg8L3RleHQ+PC9zdmc+" alt="Lee Han-beom">
+        <div class="pinfo">
+          <div class="pname">Lee Han-beom ⭐</div>
+          <div class="pmeta">24 · $8.0M</div>
+          <div class="pdetail">#3 · CB · 188cm · Midtjylland</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEc8L3RleHQ+PC9zdmc+" alt="Lee Gi-hyuk">
+        <div class="pinfo">
+          <div class="pname">Lee Gi-hyuk ⭐</div>
+          <div class="pmeta">24 · $3.5M</div>
+          <div class="pdetail">#2 · CB · 186cm · Gangwon FC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U1k8L3RleHQ+PC9zdmc+" alt="Seol Young-woo">
+        <div class="pinfo">
+          <div class="pname">Seol Young-woo ⭐</div>
+          <div class="pmeta">26 · $4.0M</div>
+          <div class="pdetail">#22 · RWB · 178cm · Red Star Belgrade</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S008L3RleHQ+PC9zdmc+" alt="Kim Moon-hwan">
+        <div class="pinfo">
+          <div class="pname">Kim Moon-hwan ⭐</div>
+          <div class="pmeta">30 · $3.0M</div>
+          <div class="pdetail">#14 · RWB · 173cm · Daejeon Hana</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S1Q8L3RleHQ+PC9zdmc+" alt="Kim Tae-hyeon">
+        <div class="pinfo">
+          <div class="pname">Kim Tae-hyeon 🤕 Ankle doubt</div>
+          <div class="pmeta">22 · $2.5M</div>
+          <div class="pdetail">#26 · CB · 188cm · Kashima Antlers</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TFQ8L3RleHQ+PC9zdmc+" alt="Lee Tae-seok">
+        <div class="pinfo">
+          <div class="pname">Lee Tae-seok</div>
+          <div class="pmeta">23 · $2.0M</div>
+          <div class="pdetail">#15 · LB · 178cm · Austria Wien</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UEo8L3RleHQ+PC9zdmc+" alt="Park Jin-seob">
+        <div class="pinfo">
+          <div class="pname">Park Jin-seob</div>
+          <div class="pmeta">25 · $1.5M</div>
+          <div class="pdetail">#6 · CB · 185cm · Zhejiang FC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SkM8L3RleHQ+PC9zdmc+" alt="Jens Castrop">
+        <div class="pinfo">
+          <div class="pname">Jens Castrop</div>
+          <div class="pmeta">22 · $6.0M</div>
+          <div class="pdetail">#18 · CB · 182cm · B. M&#x27;gladbach</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q1k8L3RleHQ+PC9zdmc+" alt="Cho Yu-min">
+        <div class="pinfo">
+          <div class="pname">Cho Yu-min</div>
+          <div class="pmeta">27 · $1.2M</div>
+          <div class="pdetail">#5 · CB · 183cm · Sharjah FC</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SEk8L3RleHQ+PC9zdmc+" alt="Hwang In-beom">
+        <div class="pinfo">
+          <div class="pname">Hwang In-beom ⭐</div>
+          <div class="pmeta">29 · $12M</div>
+          <div class="pdetail">#6 · DM · 177cm · Feyenoord</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UFM8L3RleHQ+PC9zdmc+" alt="Paik Seung-ho">
+        <div class="pinfo">
+          <div class="pname">Paik Seung-ho ⭐</div>
+          <div class="pmeta">26 · $5.0M</div>
+          <div class="pdetail">#8 · CM · 182cm · Birmingham City</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEs8L3RleHQ+PC9zdmc+" alt="Lee Kang-in">
+        <div class="pinfo">
+          <div class="pname">Lee Kang-in ⭐</div>
+          <div class="pmeta">24 · $40M</div>
+          <div class="pdetail">#10 · AM · 173cm · Paris Saint-Germain</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEo8L3RleHQ+PC9zdmc+" alt="Lee Jae-sung">
+        <div class="pinfo">
+          <div class="pname">Lee Jae-sung ⭐</div>
+          <div class="pmeta">33 · $8.0M</div>
+          <div class="pdetail">#13 · AM · 180cm · FSV Mainz</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SEg8L3RleHQ+PC9zdmc+" alt="Hwang Hee-chan">
+        <div class="pinfo">
+          <div class="pname">Hwang Hee-chan</div>
+          <div class="pmeta">29 · $15M</div>
+          <div class="pdetail">#11 · LW · 178cm · Wolverhampton</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Qko8L3RleHQ+PC9zdmc+" alt="Bae Jun-ho">
+        <div class="pinfo">
+          <div class="pname">Bae Jun-ho 🤕 Ankle doubt</div>
+          <div class="pmeta">22 · $8.0M</div>
+          <div class="pdetail">#7 · RW · 175cm · Stoke City</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+WUg8L3RleHQ+PC9zdmc+" alt="Yang Hyun-jun">
+        <div class="pinfo">
+          <div class="pname">Yang Hyun-jun</div>
+          <div class="pmeta">23 · $6.0M</div>
+          <div class="pdetail">#16 · LW · 172cm · Celtic</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S0o8L3RleHQ+PC9zdmc+" alt="Kim Jin-gyu">
+        <div class="pinfo">
+          <div class="pname">Kim Jin-gyu</div>
+          <div class="pmeta">24 · $2.0M</div>
+          <div class="pdetail">#17 · CM · 180cm · Jeonbuk Motors</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RUo8L3RleHQ+PC9zdmc+" alt="Eom Ji-sung">
+        <div class="pinfo">
+          <div class="pname">Eom Ji-sung</div>
+          <div class="pmeta">22 · $4.0M</div>
+          <div class="pdetail">#19 · LW · 174cm · Swansea City</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEQ8L3RleHQ+PC9zdmc+" alt="Lee Dong-gyeong">
+        <div class="pinfo">
+          <div class="pname">Lee Dong-gyeong</div>
+          <div class="pmeta">27 · $3.0M</div>
+          <div class="pdetail">#20 · CM · 178cm · Ulsan HD</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0g8L3RleHQ+PC9zdmc+" alt="Son Heung-min (C)">
+        <div class="pinfo">
+          <div class="pname">Son Heung-min (C) ⭐</div>
+          <div class="pmeta">33 · $18M</div>
+          <div class="pdetail">#7 · ST · 184cm · LAFC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q0c8L3RleHQ+PC9zdmc+" alt="Cho Gue-sung">
+        <div class="pinfo">
+          <div class="pname">Cho Gue-sung</div>
+          <div class="pmeta">27 · $3.5M</div>
+          <div class="pdetail">#9 · ST · 188cm · Midtjylland</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+T0g8L3RleHQ+PC9zdmc+" alt="Oh Hyeon-gyu">
+        <div class="pinfo">
+          <div class="pname">Oh Hyeon-gyu</div>
+          <div class="pmeta">24 · $6.0M</div>
+          <div class="pdetail">#23 · ST · 185cm · Beşiktaş</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:10px;color:var(--muted);text-align:center;margin-top:4px;">
+    ⭐ = predicted starter &nbsp; 🚫 = suspended &nbsp; 🤕 = injury doubt<br>
+    Market values in USD, converted at 1 EUR ≈ 1.08 USD. Source: Transfermarkt, retrieved June 24, 2026.
+  </p>
+</div>
+
+<!-- ═══════════════════════ ODDS &amp; PROBABILITIES ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Odds &amp; Probabilities</div>
+  <div class="card">
+    <h3>Moneyline (90 min + stoppage)</h3>
+    <table class="odds">
+      <tr><th>Outcome</th><th>Sportsbook</th><th>Polymarket</th><th>Implied Prob</th></tr>
+      <tr><td><strong>South Korea Win</strong></td><td>−150</td><td>62¢</td><td>~58–62%</td></tr>
+      <tr><td><strong>Draw</strong></td><td>+280</td><td>24¢</td><td>~22–24%</td></tr>
+      <tr><td><strong>South Africa Win</strong></td><td>+450</td><td>16¢</td><td>~16–18%</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Line movement:</strong> Korea opened ~-130 and has shortened to -150 as SA suspension news priced in.
+      SA drifted from +350 to +450. Draw stable at +280.<br>
+      <strong>Reading moneyline:</strong> −150 means bet $150 to win $100 profit. +450 means $100 bet returns $550 total.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Totals &amp; Spreads</h3>
+    <table class="odds">
+      <tr><th>Market</th><th>Line</th><th>Odds</th><th>Implication</th></tr>
+      <tr><td>Total Goals</td><td>O/U 2.5</td><td>Over +106 / Under −130</td><td>Market leans Under; heat factor</td></tr>
+      <tr><td>Asian Handicap</td><td>Korea −0.75</td><td>−132</td><td>Korea win by 1+ covers half; 2+ full cover</td></tr>
+      <tr><td>Both Teams Score</td><td>Yes/No</td><td>Yes +112 / No −144</td><td>Lean toward at least one clean sheet</td></tr>
+      <tr><td>Correct Score</td><td>Korea 0-1</td><td>+540</td><td>Second-most likely single score</td></tr>
+      <tr><td>Correct Score</td><td>Korea 0-2</td><td>+600</td><td>Central path correct score</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Market Sentiment (Polymarket)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      South Korea at 62¢, Draw at 24¢, South Africa at 16¢.
+      Prediction market aligns closely with de-vigged sportsbook odds — no major divergence unlike some home-crowd fixtures.
+      Korea -0.75 at -132 offers better risk-reward than ML at -150 for the 2-0 thesis.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ RISKS ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Risk Assessment</div>
+  <div class="card">
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>SA desperation upside:</strong> Must-win scenarios produce upsets. Bafana drew Czechia and have AFCON pedigree. SA at +450 is not zero. <span class="tag tag-verified">Verified: must-win</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Korea rotation risk:</strong> Hong Myung-bo may rest Son if draw-is-enough logic dominates training. Son bench would invalidate Korea -0.75 thesis. <span class="tag tag-assumed">Assumed: Son starts</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Heat variance:</strong> 31°C forecasts can shift. Cooler evening temps would increase goal expectancy and hurt Under 2.5.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>First-ever H2H:</strong> No historical baseline. Tactical unknowns add variance to score projections.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Simultaneous Czechia-Mexico:</strong> Scorelines in the other Group A match could alter Korea's risk appetite mid-game.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SOURCES ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Sources</div>
+  <div class="card">
+    <ol class="source-list">
+      <li><strong>FIFA</strong> — Official squad lists, group standings, referee assignments. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank">fifa.com</a></li>
+      <li><strong>Al Jazeera / TimesLive</strong> — South Africa final 26-man squad announcement. <a href="https://www.aljazeera.com/sports/2026/5/28/bafana-bafana-world-cup-squad-south-africa-names-two-uncapped-players" target="_blank">aljazeera.com</a></li>
+      <li><strong>AP / Yonhap</strong> — South Korea squad announcement, Hong Myung-bo press conference. <a href="https://apnews.com/article/south-korea-squad-roster-world-cup-son-e1c1440110f674091bbf85d4f6f9896c" target="_blank">apnews.com</a></li>
+      <li><strong>ESPN</strong> — FIFA rankings (SA #60, Korea #25 pre-tournament). <a href="https://www.espn.com/soccer/story/_/id/46664763/fifa-mens-top-50-world-rankings" target="_blank">espn.com</a></li>
+      <li><strong>Transfermarkt</strong> — Player market values for both squads. <a href="https://www.transfermarkt.com" target="_blank">transfermarkt.com</a>. Retrieved June 24, 2026.</li>
+      <li><strong>Polymarket</strong> — Prediction market pricing (Korea 62%, Draw 24%, SA 16%). <a href="https://polymarket.com" target="_blank">polymarket.com</a></li>
+      <li><strong>Yahoo Sports</strong> — Group A results and schedule. <a href="https://sports.yahoo.com/soccer/article/2026-world-cup-results-standings-and-schedule-live-scores-group-stage-updates-and-how-to-watch-050724193.html" target="_blank">sports.yahoo.com</a></li>
+      <li><strong>AccuWeather</strong> — Monterrey weather forecast for kickoff. Retrieved June 24, 2026.</li>
+      <li><strong>Wikipedia</strong> — South Africa squad numbers and caps. <a href="https://en.wikipedia.org/wiki/South_Africa_national_soccer_team" target="_blank">wikipedia.org</a></li>
+      <li><strong>World Cup Wiki</strong> — Match preview, venue details. <a href="https://worldcupwiki.com/south-africa-vs-south-korea-world-cup-2026/" target="_blank">worldcupwiki.com</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<div class="footer wrap">
+  <strong>World Cup 2026 Match Report — South Africa vs South Korea</strong><br>
+  Generated by Assistant Coach Skill &middot; June 25, 2026<br>
+  This report is for entertainment purposes only. All predictions are inference.<br>
+  Gambling involves risk. Only bet what you can afford to lose.
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var budget=parseInt(p.get('budget'))||100;
+  var BET=2,total=Math.floor(budget/BET);
+  budget=total*BET;
+  var h=document.querySelector('.bet-card h3');
+  if(h) h.innerHTML='Budget: $'+budget+' USD &middot; $'+BET+' per bet &middot; '+total+' bets';
+  document.querySelectorAll('.play[data-pct]').forEach(function(el){
+    var pct=parseFloat(el.dataset.pct),odds=parseFloat(el.dataset.odds);
+    var bets=Math.round(pct*total),alloc=bets*BET;
+    var pay=(alloc*odds).toFixed(2).replace(/\.00$/,''),prof=(alloc*odds-alloc).toFixed(2).replace(/\.00$/,'');
+    var lb=el.querySelector('.play-label');
+    if(lb) lb.textContent=lb.textContent.replace(/\(\d+%\s*=\s*\d+\s*bets\s*=\s*\$\d+\)/,'('+Math.round(pct*100)+'% = '+bets+' bets = $'+alloc+')');
+    var dt=el.querySelector('.play-detail');
+    if(dt) dt.innerHTML=dt.innerHTML.replace(/\$\d+(\.\d+)?\s*×/,'$'+alloc+' ×').replace(/=\s*\$[\d,.]+\s*\(profit\s*\$[\d,.]+\)/,'= $'+pay+' (profit $'+prof+')');
+  });
+  var w=document.querySelector('.bet-card .warning');
+  if(w) w.innerHTML=w.innerHTML.replace(/\$100/g,'$'+budget);
+})();
+</script>
+</body>
+</html>
