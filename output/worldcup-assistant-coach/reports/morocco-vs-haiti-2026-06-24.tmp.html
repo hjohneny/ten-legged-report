@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Morocco vs Haiti Pre-Match Analysis Report</title>
+  <style>
+    @page { size: A5 portrait; margin: 12mm 10mm 14mm; }
+    :root {
+      --ink: #102033;
+      --muted: #697586;
+      --line: #d9e2df;
+      --paper: #eaf1eb;
+      --panel: #ffffff;
+      --green: #0b6b47;
+      --gold: #fece14;
+      --blue: #102a57;
+      --red: #b33a3a;
+      --grass: #147a4d;
+      --deep: #071527;
+      --stadium: #020f2a;
+      --soft-green: #e4f4ec;
+      --soft-gold: #fff6cc;
+      --soft-blue: #e7eef9;
+      --soft-red: #fbeaea;
+      --shadow: 0 18px 44px rgba(7,21,39,.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #06172a 0, #082b25 310px, var(--paper) 620px, #eef4f1 100%);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    .wrap { max-width: 520px; margin: 0 auto; padding: 0 12px; }
+    .hero {
+      position: relative; color: #fff; padding: 40px 16px 36px; overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(255,255,255,.15), transparent 15%),
+        radial-gradient(circle at 82% 18%, rgba(254,206,20,.35), transparent 20%),
+        linear-gradient(110deg, rgba(2,15,42,.97), rgba(4,56,39,.80) 50%, rgba(2,15,42,.93));
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: auto -10% -38% -10%; height: 52%;
+      background: linear-gradient(180deg, rgba(20,122,77,.55), rgba(8,72,47,.90));
+      border-top: 1px solid rgba(255,255,255,.18); transform: skewY(-3deg); pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800;
+      letter-spacing: .08em; color: #101820; background: var(--gold); border-radius: 999px;
+      padding: 4px 10px; margin-bottom: 10px; text-transform: uppercase;
+    }
+    h1 { font-size: 34px; line-height: .96; margin: 0 0 10px; letter-spacing: -.5px; }
+    .subtitle { margin: 0; color: rgba(255,255,255,.82); font-size: 13px; }
+    .team-strip {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center;
+      margin-top: 22px; padding: 12px; background: rgba(255,255,255,.08);
+      border-radius: 8px; border: 1px solid rgba(255,255,255,.12);
+    }
+    .team-strip .team { text-align: center; }
+    .team-strip .team img { width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: rgba(255,255,255,.1); }
+    .team-strip .team .name { font-size: 14px; font-weight: 700; margin-top: 4px; }
+    .team-strip .team .rank { font-size: 10px; color: rgba(255,255,255,.6); }
+    .team-strip .vs { font-size: 22px; font-weight: 800; color: var(--gold); }
+    .notice {
+      margin: 16px auto; max-width: 520px; padding: 10px 14px; font-size: 11px;
+      background: var(--soft-gold); border-left: 3px solid var(--gold); border-radius: 4px;
+      color: #5a4e00;
+    }
+    .notice strong { color: #3d3500; }
+    .section { max-width: 520px; margin: 20px auto; }
+    .section-title {
+      font-size: 16px; font-weight: 800; color: var(--green); margin: 0 0 12px;
+      padding-bottom: 6px; border-bottom: 2px solid var(--gold);
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .card {
+      background: var(--panel); border-radius: 8px; padding: 14px 16px;
+      margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      border: 1px solid var(--line);
+    }
+    .card h3 { font-size: 13px; margin: 0 0 6px; color: var(--green); text-transform: uppercase; letter-spacing: .04em; }
+    .conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .metric-card {
+      background: var(--panel); border-radius: 8px; padding: 12px;
+      border: 1px solid var(--line); text-align: center;
+    }
+    .metric-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+    .metric-card .value { font-size: 22px; font-weight: 800; color: var(--green); margin: 2px 0; }
+    .metric-card .sub { font-size: 10px; color: var(--muted); }
+    .tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin: 2px 2px 0 0; text-transform: uppercase; }
+    .tag-verified { background: var(--soft-green); color: var(--green); }
+    .tag-assumed { background: var(--soft-gold); color: #7a6800; }
+    .tag-not-verified { background: var(--soft-red); color: var(--red); }
+    .bet-card {
+      background: linear-gradient(135deg, #071527 0%, #0b3d2b 100%);
+      color: #fff; border-radius: 8px; padding: 16px; margin-bottom: 12px;
+    }
+    .bet-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 14px; }
+    .bet-card .play { background: rgba(255,255,255,.08); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+    .bet-card .play-label { font-size: 10px; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+    .bet-card .play-title { font-size: 15px; font-weight: 800; }
+    .bet-card .play-detail { font-size: 11px; color: rgba(255,255,255,.7); margin-top: 4px; }
+    .bet-card .warning {
+      background: rgba(179,58,58,.25); border: 1px solid rgba(179,58,58,.5);
+      border-radius: 4px; padding: 8px 10px; font-size: 11px; margin-top: 10px;
+    }
+    .bet-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
+    .bet-table th { text-align: left; font-size: 10px; color: var(--gold); padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .bet-table td { padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
+    .env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .env-item { background: var(--soft-blue); border-radius: 6px; padding: 8px 10px; }
+    .env-item .env-label { font-size: 10px; font-weight: 700; color: var(--blue); text-transform: uppercase; }
+    .env-item .env-value { font-size: 13px; font-weight: 600; }
+    .pitch-container { background: var(--panel); border-radius: 8px; padding: 12px; border: 1px solid var(--line); margin-bottom: 14px; page-break-inside: avoid; break-inside: avoid; }
+    .pitch {
+      position: relative; width: 100%; height: 520px; background: linear-gradient(180deg, #1a7a42 0%, #15653a 50%, #1a7a42 100%);
+      border-radius: 6px; overflow: hidden; border: 2px solid rgba(255,255,255,.3);
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .pitch::before {
+      content: ""; position: absolute; left: 5%; right: 5%; top: 49.5%; height: 1%;
+      border-top: 2px solid rgba(255,255,255,.4); border-bottom: 2px solid rgba(255,255,255,.4);
+    }
+    .pitch .center-circle {
+      position: absolute; left: 50%; top: 50%; width: 60px; height: 60px;
+      border: 2px solid rgba(255,255,255,.3); border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .pitch .penalty-box-top { position: absolute; left: 25%; right: 25%; top: 0; height: 12%; border: 2px solid rgba(255,255,255,.3); border-top: none; }
+    .pitch .penalty-box-bot { position: absolute; left: 25%; right: 25%; bottom: 0; height: 12%; border: 2px solid rgba(255,255,255,.3); border-bottom: none; }
+    .pitch .goal-top { position: absolute; left: 38%; right: 38%; top: 0; height: 5%; border: 2px solid rgba(255,255,255,.3); border-top: none; }
+    .pitch .goal-bot { position: absolute; left: 38%; right: 38%; bottom: 0; height: 5%; border: 2px solid rgba(255,255,255,.3); border-bottom: none; }
+    .player-dot { position: absolute; transform: translate(-50%, -50%); text-align: center; z-index: 2; }
+    .player-dot .dot {
+      width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 11px; font-weight: 800; margin: 0 auto 2px;
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .player-dot .pname { font-size: 8px; color: #fff; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+    .dot-mar { background: #C1272D; color: #fff; }
+    .dot-hai { background: #00209F; color: #fff; }
+    .formation-label {
+      position: absolute; left: 8px; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.7);
+      text-transform: uppercase; letter-spacing: .05em;
+    }
+    .venue-badge {
+      position: absolute; right: 6px; bottom: 6px; background: rgba(0,0,0,.5);
+      padding: 3px 6px; border-radius: 3px; font-size: 8px; color: rgba(255,255,255,.8);
+    }
+    .roster-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .roster-panel { background: #f5f8f6; border-radius: 8px; padding: 10px; border: 1px solid var(--line); }
+    .roster-panel.mar { background: #fef0f0; }
+    .roster-panel.hai { background: #eef0fa; }
+    .roster-header { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+    .roster-header img { width: 24px; height: 24px; border-radius: 50%; object-fit: contain; }
+    .roster-header .rh-name { font-size: 13px; font-weight: 800; }
+    .pos-group-title { font-size: 10px; font-weight: 800; color: var(--green); text-transform: uppercase; margin: 8px 0 4px; letter-spacing: .05em; }
+    .player-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,.04); }
+    .player-row:last-child { border-bottom: none; }
+    .player-row .avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; background: #ddd; flex-shrink: 0; border: 1px solid rgba(0,0,0,.08); }
+    .player-row .pinfo { min-width: 0; }
+    .player-row .pinfo .pname { font-size: 11px; font-weight: 700; line-height: 1.2; }
+    .player-row .pinfo .pmeta { font-size: 9px; color: var(--muted); line-height: 1.3; }
+    .player-row .pinfo .pdetail { font-size: 8px; color: #999; line-height: 1.3; }
+    table.odds { width: 100%; border-collapse: collapse; font-size: 12px; }
+    table.odds th { text-align: left; font-size: 10px; color: var(--muted); padding: 6px 8px; border-bottom: 2px solid var(--line); font-weight: 700; text-transform: uppercase; }
+    table.odds td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+    table.odds tr:last-child td { border-bottom: none; }
+    .risk-item { display: flex; gap: 8px; margin-bottom: 8px; }
+    .risk-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; }
+    .risk-high { background: var(--soft-red); color: var(--red); }
+    .risk-med { background: var(--soft-gold); color: #7a6800; }
+    .source-list { font-size: 10px; color: var(--muted); }
+    .source-list a { font-size: 10px; word-break: break-all; }
+    .source-list li { margin-bottom: 4px; }
+    .footer { max-width: 520px; margin: 30px auto 20px; padding: 14px 16px; text-align: center; font-size: 10px; color: var(--muted); border-top: 1px solid var(--line); }
+    @media print {
+      body { background: #fff; }
+      .hero { break-after: avoid; }
+      .section { break-inside: avoid; }
+      .card { break-inside: avoid; }
+      .bet-card { break-inside: avoid; }
+      .roster-grid { break-inside: auto; }
+      .roster-panel { break-inside: avoid; }
+    }
+    .adj-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 6px; }
+    .adj-table th { text-align: left; font-size: 10px; padding: 4px 6px; background: var(--soft-green); color: var(--green); }
+    .adj-table td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
+    .adj-up { color: var(--red); font-weight: 700; }
+    .adj-down { color: var(--green); font-weight: 700; }
+    .adj-none { color: var(--muted); }
+    .subs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .sub-panel { background: rgba(255,255,255,.06); border-radius: 6px; padding: 8px; }
+    .sub-panel h4 { font-size: 10px; color: var(--gold); margin: 0 0 4px; text-transform: uppercase; }
+    .sub-row { font-size: 10px; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .tactic-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .tactic-table th { text-align: left; font-size: 10px; padding: 5px 6px; background: var(--soft-green); color: var(--green); font-weight: 700; }
+    .tactic-table td { padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">⚽ FIFA World Cup 2026 &middot; Group C &middot; Matchday 3</div>
+    <h1>Morocco vs Haiti</h1>
+    <p class="subtitle">
+      Tuesday, June 24, 2026 &middot; 6:00 PM ET / 6:00 AM MYT (June 25)<br>
+      Mercedes-Benz Stadium, Atlanta, GA &middot; Referee: Danny Makkelie (NED)
+    </p>
+    <div class="team-strip">
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNDMTI3MkQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPk1BUjwvdGV4dD48L3N2Zz4=" alt="Morocco">
+        <div class="name">Morocco</div>
+        <div class="rank">FIFA #7 &middot; 4 pts &middot; Need win for group top</div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDIwOUYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPkhBSTwvdGV4dD48L3N2Zz4=" alt="Haiti">
+        <div class="name">Haiti</div>
+        <div class="rank">FIFA #83 &middot; 0 pts &middot; Eliminated</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="notice wrap">
+  <strong>Report generated:</strong> June 25, 2026, 06:00 MYT (GMT+8).<br>
+  <strong>Exchange rate:</strong> 1 EUR ≈ 1.08 USD (approximate, June 2026).<br>
+  <strong>Betslip status:</strong> Pre-purchase — verify odds at your sportsbook before placing bets. Lineups are predicted, not confirmed.<br>
+  <strong>Disclaimer:</strong> This report is entertainment-oriented analysis, not investment advice. Gambling involves risk of losing your entire budget.
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Match Conclusion</div>
+  <div class="conclusion-grid">
+    <div class="metric-card">
+      <div class="label">Central Score Path</div>
+      <div class="value">3–0</div>
+      <div class="sub">Morocco dominant; Haiti scoreless in WC</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Alternative Path</div>
+      <div class="value">2–0 / 2–1</div>
+      <div class="sub">Haiti historic consolation goal possible</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Morocco Win Prob</div>
+      <div class="value">~83%</div>
+      <div class="sub">Polymarket 83% &middot; ML −600</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Total Goals Line</div>
+      <div class="value">O/U 2.5</div>
+      <div class="sub">Over −170 &middot; BTTS No favored</div>
+    </div>
+  </div>
+  <div class="card">
+    <p style="margin:0;font-size:12px;">
+      <strong>Verdict:</strong> Morocco enter as overwhelming favorites against an already-eliminated Haiti side that has conceded four goals and scored none in two matches. The Atlas Lions need a win — and ideally a multi-goal margin — to chase group supremacy against Brazil on goal difference. Saibari has scored in both outings (including the fastest WC 2026 goal at 70 seconds vs Scotland). Haiti, making their first World Cup appearance since 1974, will play for pride but lack the firepower to trouble Morocco's organized defense. A Morocco win or draw clinches top-two qualification.
+    </p>
+    <div style="margin-top:8px;">
+      <span class="tag tag-verified">Verified: Haiti eliminated</span>
+      <span class="tag tag-verified">Verified: Morocco 4 pts</span>
+      <span class="tag tag-verified">Verified: Saibari 2 WC goals</span>
+      <span class="tag tag-assumed">Assumed: Morocco full-strength</span>
+      <span class="tag tag-assumed">Assumed: Nazon doubtful</span>
+      <span class="tag tag-not-verified">Not verified: Official lineups</span>
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Concentrated Betting Plan</div>
+  <div class="bet-card">
+    <h3>Budget: $100 USD &middot; $2 per bet &middot; 50 bets</h3>
+
+    <div class="play" data-pct="0.70" data-odds="2.40">
+      <div class="play-label">Selection 1 — Core (70% = 35 bets = $70)</div>
+      <div class="play-title">Morocco −2.5 Asian Handicap @ +135 to +146</div>
+      <div class="play-detail">
+        Morocco chasing group win and goal-difference edge over Brazil. Haiti conceded 4 in 2 games with zero goals scored.
+        Market prices Morocco −2.0 to −2.5; the wider line offers value if Ouahbi fields his strongest XI.<br>
+        <strong>Potential payout:</strong> $70 × 2.40 = $168 (profit $98) at +140<br>
+        <strong>Min acceptable odds:</strong> +120 (2.20)<br>
+        <strong>Cancel if:</strong> Morocco rests 3+ key starters (Hakimi, Saibari, Díaz) in pre-match team news.
+      </div>
+    </div>
+
+    <div class="play" data-pct="0.30" data-odds="1.83">
+      <div class="play-label">Selection 2 — Adjacent (30% = 15 bets = $30)</div>
+      <div class="play-title">Morocco Over 2.5 Team Goals @ −121</div>
+      <div class="play-detail">
+        Haiti defense porous (0-1 Scotland, 0-3 Brazil). Morocco's attack led by Saibari, Díaz, and Ounahi
+        should generate multiple chances against a side with nothing to lose defensively.<br>
+        <strong>Potential payout:</strong> $30 × 1.83 = $54.90 (profit $24.90)<br>
+        <strong>Min acceptable odds:</strong> −140 (1.71)<br>
+        <strong>Cancel if:</strong> Morocco announces heavy rotation or Haiti sets up ultra-defensive 5-4-1 with Nazon fit to counter.
+      </div>
+    </div>
+
+    <table class="bet-table">
+      <tr><th>Pre-Purchase Check</th><th>Action</th></tr>
+      <tr><td>Morocco −2.5 odds worse than +120</td><td>Reduce Selection 1 to 50%; shift to Morocco −1.5 or team goals</td></tr>
+      <tr><td>Official starters show heavy Morocco rotation</td><td>Cancel Selection 1 entirely; reconsider Morocco ML only</td></tr>
+      <tr><td>Haiti scores early (shock goal)</td><td>Hold positions; Morocco should still win but AH −2.5 at risk</td></tr>
+      <tr><td>Team goals line moves to Over 1.5 @ worse than −200</td><td>Drop Selection 2; concentrate on handicap</td></tr>
+      <tr><td>Correct Score Morocco 3-0 available @ +550+</td><td>Optional small side bet (not in core plan) aligns with central path</td></tr>
+    </table>
+
+    <div class="warning">
+      ⚠️ <strong>Whole-Budget-Loss Warning:</strong> This concentrated plan accepts a high probability of losing the entire $100 entertainment budget.
+      Morocco −2.5 requires a 3+ goal margin; a 2-0 win loses both selections. Only bet what you can afford to lose.
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Score Thesis</div>
+  <div class="card">
+    <h3>Baseline Score Range (Market-Derived)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      De-vigged sportsbook odds: Morocco ~86%, Draw ~8%, Haiti ~6%. Total goals O/U 2.5 (Over favored at −170).
+      BTTS: No −179 (Haiti scoreless in tournament). Polymarket: Morocco 83%, Draw 12–13%, Haiti 5%.
+      Asian Handicap Morocco −2.0 to −2.5. Correct Score Morocco 3-0 @ +550 is market-aligned central path.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Baseline central path:</strong> 2.5–3.5 total goals, Morocco clean sheet likely. Most probable scores: 3-0, 2-0, 3-1.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Score-Impact Adjustments</h3>
+    <table class="adj-table">
+      <tr><th>Factor</th><th>Evidence</th><th>Direction</th></tr>
+      <tr>
+        <td>Morocco chasing GD vs Brazil</td>
+        <td>Both on 4 pts; Brazil +3 GD, Morocco +1. Verified standings.</td>
+        <td class="adj-up">↑ Morocco scoring +0.4</td>
+      </tr>
+      <tr>
+        <td>Haiti eliminated, 0 goals scored</td>
+        <td>Lost 0-1 Scotland, 0-3 Brazil. Verified.</td>
+        <td class="adj-down">↓ Haiti scoring −0.5</td>
+      </tr>
+      <tr>
+        <td>Saibari in form (2 WC goals)</td>
+        <td>Fastest WC 2026 goal (70 sec vs Scotland); also scored vs Brazil. Verified.</td>
+        <td class="adj-up">↑ Morocco scoring +0.2</td>
+      </tr>
+      <tr>
+        <td>Referee (Makkelie): moderate cards</td>
+        <td>6 YC, 30 fouls in USA 4-1 Paraguay. Career 3.38 Y/match.</td>
+        <td class="adj-none">→ NO CHANGE</td>
+      </tr>
+      <tr>
+        <td>Climate-controlled dome (roof closed)</td>
+        <td>78–82°F outside; neutral indoor conditions. Verified venue config.</td>
+        <td class="adj-none">→ NO CHANGE</td>
+      </tr>
+      <tr>
+        <td>First-ever H2H meeting</td>
+        <td>No prior competitive or friendly record. Inference only.</td>
+        <td class="adj-none">→ NO CHANGE</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Resulting Score Paths</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Central path:</strong> Morocco 3 – 0 Haiti. Dominant Atlas Lions performance; Haiti unable to break through. Confidence: <strong>High</strong>.<br>
+      <strong>Alternative path:</strong> Morocco 2 – 1 Haiti. Haiti score a historic first WC 2026 goal in a consolation moment. Confidence: <strong>Low</strong>.<br>
+      <strong>Tail-risk trigger:</strong> Morocco rests key players after clinching qualification early → 1-0 or 2-0 narrower win; AH −2.5 fails.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Referee &amp; Environment</div>
+  <div class="card">
+    <h3>Referee: Danny Makkelie (Netherlands, age 43)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      FIFA elite referee since 2011. Officiated at UEFA Euro 2020, 2022 World Cup, and 2024 European Championship.
+      In WC 2026, his one match was USA 4-1 Paraguay with 6 yellow cards, 0 red cards, and 30 fouls called.
+    </p>
+    <table class="adj-table">
+      <tr><th>Stat</th><th>WC 2026 (1 match)</th><th>Career Avg</th></tr>
+      <tr><td>Yellow cards</td><td>6</td><td>3.38 per match</td></tr>
+      <tr><td>Red cards</td><td>0</td><td>~0.15 per match</td></tr>
+      <tr><td>Fouls called</td><td>30</td><td>~26 per match</td></tr>
+      <tr><td>Penalties</td><td>0</td><td>~0.25 per match</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Assessment:</strong> Experienced, allows play to flow in open matches. Slightly above-average card count in USA-Paraguay but no reds.
+      One-sided mismatch should see fewer contentious moments. <strong>Score impact: NO CHANGE.</strong>
+      <span class="tag tag-verified">Verified: FIFA assignment</span>
+    </p>
+  </div>
+
+  <div class="env-grid" style="margin-top:12px;">
+    <div class="env-item">
+      <div class="env-label">Venue</div>
+      <div class="env-value">Mercedes-Benz Stadium</div>
+      <div style="font-size:10px;color:var(--muted);">Atlanta, GA · 71,000 capacity</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Surface</div>
+      <div class="env-value">Natural Grass</div>
+      <div style="font-size:10px;color:var(--muted);">Retractable roof CLOSED</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Kickoff Weather</div>
+      <div class="env-value">Climate controlled</div>
+      <div style="font-size:10px;color:var(--muted);">78–82°F outside; neutral indoors</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Travel &amp; Rest</div>
+      <div class="env-value">5 days rest (both)</div>
+      <div style="font-size:10px;color:var(--muted);">Morocco from Philadelphia; Haiti from Foxborough</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--muted);margin-top:8px;">
+    <strong>Environment impact:</strong> Closed roof eliminates heat/humidity variance. Climate-controlled conditions favor technical play and sustained pressing.
+    No meaningful travel fatigue for either side. <strong>Score adjustment: NO CHANGE.</strong>
+  </p>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Event Background</div>
+  <div class="card">
+    <h3>Group C — Final Matchday</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Morocco and Brazil are level on 4 points with Brazil holding a superior goal difference (+3 vs +1).
+      A Morocco win could secure first place if combined with a Brazil slip; a win or draw guarantees top-two qualification.
+      Haiti are eliminated with 0 points and −4 goal difference. Scotland (3 pts) play Brazil simultaneously.
+    </p>
+    <table class="odds" style="margin-top:8px;">
+      <tr><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Brazil</strong></td><td>2</td><td>1</td><td>1</td><td>0</td><td>4</td><td>1</td><td>+3</td><td><strong>4</strong></td></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Morocco</strong></td><td>2</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>+1</td><td><strong>4</strong></td></tr>
+      <tr><td>Scotland</td><td>2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>3</td></tr>
+      <tr style="background:var(--soft-red);"><td><strong>Haiti</strong></td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>4</td><td>−4</td><td><strong>0</strong></td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Match Context</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Morocco:</strong> 2022 World Cup semifinalists under Walid Regragui; new coach Mohamed Ouahbi (appointed March 2026)
+      leads a $549M squad ranked FIFA #7. Saibari's early goals have been a tournament highlight. Morocco need goals
+      to overtake Brazil on GD if both win — motivation for an attacking 90 minutes.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Haiti:</strong> First World Cup since 1974 — a 52-year gap. FIFA #83, $48M squad value. Zero goals in two matches.
+      Manager Sébastien Migné will seek a memorable send-off. Duckens Nazon (top scorer, 44 international goals) is doubtful.
+      This is the first-ever meeting between Morocco and Haiti.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Head-to-Head</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>No previous meetings.</strong> Morocco and Haiti have never faced each other in competitive or friendly football.
+      This is a true first encounter at senior international level.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Team Overview</div>
+  <div class="card">
+    <h3>🇲🇦 Morocco</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Mohamed Ouahbi (Morocco) &middot; <strong>FIFA Ranking:</strong> #7 &middot;
+      <strong>Squad Value:</strong> ~$549M &middot; <strong>Style:</strong> 4-2-3-1 possession with rapid transitions via Hakimi<br>
+      <strong>WC History:</strong> 7th appearance. Best: 4th place in 2022 (semifinalists).<br>
+      <strong>Key Players:</strong> Achraf Hakimi (PSG, $68M, captain), Brahim Díaz (Real Madrid, $48M), Ismael Saibari (PSV, $28M).<br>
+      <strong>Strengths:</strong> Elite full-backs, creative midfield (Ounahi, El Khannouss), Saibari in scoring form.<br>
+      <strong>Weaknesses:</strong> New coach adjustment period; lost Aguerd and Ezzalzouli to injury.<br>
+      <strong>Form:</strong> D 1-1 vs Brazil, W 1-0 vs Scotland. Saibari scored in both.
+    </p>
+  </div>
+  <div class="card">
+    <h3>🇭🇹 Haiti</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Sébastien Migné (France) &middot; <strong>FIFA Ranking:</strong> #83 &middot;
+      <strong>Squad Value:</strong> ~$48M &middot; <strong>Style:</strong> 4-4-2 compact block with counter-attacks<br>
+      <strong>WC History:</strong> 2nd appearance (1974, 2026). Best: group stage only.<br>
+      <strong>Key Players:</strong> Wilson Isidor (Sunderland, $18M), Jean-Ricner Bellegarde (Wolves, $12M), Frantzdy Pierrot (Rizespor, $4M).<br>
+      <strong>Strengths:</strong> Physical midfield, Pierrot's aerial threat, emotional underdog narrative.<br>
+      <strong>Weaknesses:</strong> Zero goals scored, porous defense (4 conceded), Nazon doubtful, huge quality gap.<br>
+      <strong>Form:</strong> L 0-1 vs Scotland, L 0-3 vs Brazil. Eliminated.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Predicted Starters &amp; Tactics</div>
+
+  <div class="pitch-container">
+    <div class="pitch">
+      <div class="penalty-box-top"></div>
+      <div class="goal-top"></div>
+      <div class="center-circle"></div>
+      <div class="penalty-box-bot"></div>
+      <div class="goal-bot"></div>
+
+      <div class="formation-label" style="top:3%;">MOROCCO 4-2-3-1</div>
+      <div class="formation-label" style="bottom:3%;">HAITI 4-4-2</div>
+
+      <div class="player-dot" style="left:50%;top:5%;"><div class="dot dot-mar">1</div><div class="pname">Bounou</div></div>
+      <div class="player-dot" style="left:15%;top:15%;"><div class="dot dot-mar">2</div><div class="pname">Hakimi</div></div>
+      <div class="player-dot" style="left:37%;top:15%;"><div class="dot dot-mar">14</div><div class="pname">Diop</div></div>
+      <div class="player-dot" style="left:63%;top:15%;"><div class="dot dot-mar">18</div><div class="pname">Riad</div></div>
+      <div class="player-dot" style="left:85%;top:15%;"><div class="dot dot-mar">3</div><div class="pname">Mazraoui</div></div>
+      <div class="player-dot" style="left:37%;top:27%;"><div class="dot dot-mar">24</div><div class="pname">El Aynaoui</div></div>
+      <div class="player-dot" style="left:63%;top:27%;"><div class="dot dot-mar">6</div><div class="pname">Bouaddi</div></div>
+      <div class="player-dot" style="left:18%;top:37%;"><div class="dot dot-mar">10</div><div class="pname">Díaz</div></div>
+      <div class="player-dot" style="left:50%;top:35%;"><div class="dot dot-mar">8</div><div class="pname">Ounahi</div></div>
+      <div class="player-dot" style="left:82%;top:37%;"><div class="dot dot-mar">23</div><div class="pname">El Khannouss</div></div>
+      <div class="player-dot" style="left:50%;top:44%;"><div class="dot dot-mar">11</div><div class="pname">Saibari</div></div>
+
+      <div class="player-dot" style="left:50%;top:95%;"><div class="dot dot-hai">1</div><div class="pname">Placide</div></div>
+      <div class="player-dot" style="left:85%;top:85%;"><div class="dot dot-hai">2</div><div class="pname">Arcus</div></div>
+      <div class="player-dot" style="left:63%;top:85%;"><div class="dot dot-hai">4</div><div class="pname">Adé</div></div>
+      <div class="player-dot" style="left:37%;top:85%;"><div class="dot dot-hai">5</div><div class="pname">Delcroix</div></div>
+      <div class="player-dot" style="left:15%;top:85%;"><div class="dot dot-hai">8</div><div class="pname">Expérience</div></div>
+      <div class="player-dot" style="left:82%;top:68%;"><div class="dot dot-hai">11</div><div class="pname">Deedson</div></div>
+      <div class="player-dot" style="left:63%;top:70%;"><div class="dot dot-hai">10</div><div class="pname">Bellegarde</div></div>
+      <div class="player-dot" style="left:37%;top:70%;"><div class="dot dot-hai">17</div><div class="pname">Jean Jacques</div></div>
+      <div class="player-dot" style="left:18%;top:68%;"><div class="dot dot-hai">15</div><div class="pname">Providence</div></div>
+      <div class="player-dot" style="left:63%;top:58%;"><div class="dot dot-hai">18</div><div class="pname">Isidor</div></div>
+      <div class="player-dot" style="left:37%;top:58%;"><div class="dot dot-hai">20</div><div class="pname">Pierrot</div></div>
+
+      <div class="venue-badge">Mercedes-Benz Stadium · Roof Closed · 80°F</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Tactical Analysis</h3>
+    <table class="tactic-table">
+      <tr><th>Observation</th><th>Betting Implication</th></tr>
+      <tr>
+        <td>Morocco's Hakimi-Mazraoui width vs Haiti's narrow block</td>
+        <td>Crossing and cut-back chances; supports Morocco team goals Over 2.5</td>
+      </tr>
+      <tr>
+        <td>Saibari's early-goal threat (70-sec WC record)</td>
+        <td>Morocco likely to score first; supports AH −2.5 if early lead opens game</td>
+      </tr>
+      <tr>
+        <td>Haiti 0 goals in 2 WC matches; Nazon doubtful</td>
+        <td>BTTS No at −179 offers value; supports clean-sheet central path 3-0</td>
+      </tr>
+      <tr>
+        <td>Morocco need GD boost vs Brazil</td>
+        <td>Motivation to keep attacking at 2-0; favors multi-goal margin</td>
+      </tr>
+      <tr>
+        <td>Haiti eliminated — play for pride, possible late loosening</td>
+        <td>Tail risk of 2-1 if Haiti score historic goal; low probability</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card" style="background:var(--stadium);color:#fff;">
+    <h3 style="color:var(--gold);">Likely Substitutes</h3>
+    <div class="subs-grid">
+      <div class="sub-panel">
+        <h4>🇲🇦 Morocco Bench</h4>
+        <div class="sub-row">GK: Munir, Tagnaouti</div>
+        <div class="sub-row">DEF: Saâdane, El Ouahdi, Belammari, Halhal, Salah-Eddine</div>
+        <div class="sub-row">MID: Amrabat, Talbi, El Mourabet, Yassine</div>
+        <div class="sub-row">FWD: Rahimi, Sbaï, El Kaabi, Amaimouni</div>
+      </div>
+      <div class="sub-panel">
+        <h4>🇭🇹 Haiti Bench</h4>
+        <div class="sub-row">GK: A. Pierre, Duverger</div>
+        <div class="sub-row">DEF: Thermoncy, Lacroix, Metusala, Duverne, Paugain</div>
+        <div class="sub-row">MID: Sainté, Simon, W. Pierre</div>
+        <div class="sub-row">FWD: Etienne, Nazon* (doubtful), Joseph, Fortuné, Casimir</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">* = fitness doubt</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Full Squad Rosters</div>
+  <div class="roster-grid">
+    <div class="roster-panel mar">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNDMTI3MkQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPk1BUjwvdGV4dD48L3N2Zz4=" alt="Morocco">
+        <div class="rh-name">Morocco</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TU88L3RleHQ+PC9zdmc+" alt="Mohamed Ouahbi">
+        <div class="pinfo">
+          <div class="pname">Mohamed Ouahbi</div>
+          <div class="pmeta">45 · —</div>
+          <div class="pdetail">Moroccan · Appointed Mar 2026</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+WUI8L3RleHQ+PC9zdmc+" alt="Yassine Bounou (VC)">
+        <div class="pinfo">
+          <div class="pname">Yassine Bounou (VC) ⭐</div>
+          <div class="pmeta">35 · $14M</div>
+          <div class="pdetail">#1 · GK · 192cm · Al-Hilal</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TU08L3RleHQ+PC9zdmc+" alt="Munir El Kajoui">
+        <div class="pinfo">
+          <div class="pname">Munir El Kajoui</div>
+          <div class="pmeta">37 · $1M</div>
+          <div class="pdetail">#12 · GK · 190cm · RS Berkane</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UlQ8L3RleHQ+PC9zdmc+" alt="Ahmed Reda Tagnaouti">
+        <div class="pinfo">
+          <div class="pname">Ahmed Reda Tagnaouti</div>
+          <div class="pmeta">30 · $0.5M</div>
+          <div class="pdetail">#22 · GK · 188cm · AS FAR</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUg8L3RleHQ+PC9zdmc+" alt="Achraf Hakimi (C)">
+        <div class="pinfo">
+          <div class="pname">Achraf Hakimi (C) ⭐</div>
+          <div class="pmeta">27 · $68M</div>
+          <div class="pdetail">#2 · RB · 181cm · PSG</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Tk08L3RleHQ+PC9zdmc+" alt="Noussair Mazraoui">
+        <div class="pinfo">
+          <div class="pname">Noussair Mazraoui ⭐</div>
+          <div class="pmeta">28 · $28M</div>
+          <div class="pdetail">#3 · RB · 183cm · Man United</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TVM8L3RleHQ+PC9zdmc+" alt="Marwane Saâdane">
+        <div class="pinfo">
+          <div class="pname">Marwane Saâdane</div>
+          <div class="pmeta">34 · $1M</div>
+          <div class="pdetail">#5 · CB · 188cm · Al-Fateh</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Wk88L3RleHQ+PC9zdmc+" alt="Zakaria El Ouahdi">
+        <div class="pinfo">
+          <div class="pname">Zakaria El Ouahdi</div>
+          <div class="pmeta">24 · $4M</div>
+          <div class="pdetail">#13 · LB · 175cm · Genk</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SUQ8L3RleHQ+PC9zdmc+" alt="Issa Diop">
+        <div class="pinfo">
+          <div class="pname">Issa Diop ⭐</div>
+          <div class="pmeta">28 · $18M</div>
+          <div class="pdetail">#14 · CB · 194cm · Fulham</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q1I8L3RleHQ+PC9zdmc+" alt="Chadi Riad">
+        <div class="pinfo">
+          <div class="pname">Chadi Riad ⭐</div>
+          <div class="pmeta">22 · $22M</div>
+          <div class="pdetail">#18 · CB · 186cm · Crystal Palace</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+WUIyPC90ZXh0Pjwvc3ZnPg==" alt="Youssef Belammari">
+        <div class="pinfo">
+          <div class="pname">Youssef Belammari</div>
+          <div class="pmeta">27 · $2M</div>
+          <div class="pdetail">#19 · LB · 178cm · Al Ahly</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Ukg8L3RleHQ+PC9zdmc+" alt="Redouane Halhal">
+        <div class="pinfo">
+          <div class="pname">Redouane Halhal</div>
+          <div class="pmeta">23 · $3M</div>
+          <div class="pdetail">#25 · CB · 185cm · Mechelen</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QVM8L3RleHQ+PC9zdmc+" alt="Anass Salah-Eddine">
+        <div class="pinfo">
+          <div class="pname">Anass Salah-Eddine</div>
+          <div class="pmeta">24 · $8M</div>
+          <div class="pdetail">#26 · LB · 179cm · PSV</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0E8L3RleHQ+PC9zdmc+" alt="Sofyan Amrabat">
+        <div class="pinfo">
+          <div class="pname">Sofyan Amrabat</div>
+          <div class="pmeta">29 · $22M</div>
+          <div class="pdetail">#4 · DM · 185cm · Real Betis</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUI8L3RleHQ+PC9zdmc+" alt="Ayyoub Bouaddi">
+        <div class="pinfo">
+          <div class="pname">Ayyoub Bouaddi ⭐</div>
+          <div class="pmeta">18 · $35M</div>
+          <div class="pdetail">#6 · CM · 181cm · Lille</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q1Q8L3RleHQ+PC9zdmc+" alt="Chemsdine Talbi">
+        <div class="pinfo">
+          <div class="pname">Chemsdine Talbi</div>
+          <div class="pmeta">21 · $12M</div>
+          <div class="pdetail">#7 · AM · 176cm · Sunderland</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QU88L3RleHQ+PC9zdmc+" alt="Azzedine Ounahi">
+        <div class="pinfo">
+          <div class="pname">Azzedine Ounahi ⭐</div>
+          <div class="pmeta">26 · $14M</div>
+          <div class="pdetail">#8 · CM · 183cm · Girona</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SVM8L3RleHQ+PC9zdmc+" alt="Ismael Saibari">
+        <div class="pinfo">
+          <div class="pname">Ismael Saibari ⭐</div>
+          <div class="pmeta">25 · $28M</div>
+          <div class="pdetail">#11 · AM · 180cm · PSV</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U008L3RleHQ+PC9zdmc+" alt="Samir El Mourabet">
+        <div class="pinfo">
+          <div class="pname">Samir El Mourabet</div>
+          <div class="pmeta">19 · $6M</div>
+          <div class="pdetail">#15 · CM · 178cm · Strasbourg</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R1k8L3RleHQ+PC9zdmc+" alt="Gessime Yassine">
+        <div class="pinfo">
+          <div class="pname">Gessime Yassine</div>
+          <div class="pmeta">20 · $4M</div>
+          <div class="pdetail">#16 · AM · 175cm · Strasbourg</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Qks8L3RleHQ+PC9zdmc+" alt="Bilal El Khannouss">
+        <div class="pinfo">
+          <div class="pname">Bilal El Khannouss ⭐</div>
+          <div class="pmeta">22 · $32M</div>
+          <div class="pdetail">#23 · AM · 180cm · Stuttgart</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TkU8L3RleHQ+PC9zdmc+" alt="Neil El Aynaoui">
+        <div class="pinfo">
+          <div class="pname">Neil El Aynaoui ⭐</div>
+          <div class="pmeta">24 · $18M</div>
+          <div class="pdetail">#24 · CM · 184cm · Roma</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U1I8L3RleHQ+PC9zdmc+" alt="Soufiane Rahimi">
+        <div class="pinfo">
+          <div class="pname">Soufiane Rahimi</div>
+          <div class="pmeta">30 · $12M</div>
+          <div class="pdetail">#9 · ST · 178cm · Al Ain</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QkQ8L3RleHQ+PC9zdmc+" alt="Brahim Díaz">
+        <div class="pinfo">
+          <div class="pname">Brahim Díaz ⭐</div>
+          <div class="pmeta">26 · $48M</div>
+          <div class="pdetail">#10 · RW · 171cm · Real Madrid</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QVMyPC90ZXh0Pjwvc3ZnPg==" alt="Amine Sbaï">
+        <div class="pinfo">
+          <div class="pname">Amine Sbaï</div>
+          <div class="pmeta">25 · $3M</div>
+          <div class="pdetail">#17 · LW · 175cm · Angers</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUs8L3RleHQ+PC9zdmc+" alt="Ayoub El Kaabi">
+        <div class="pinfo">
+          <div class="pname">Ayoub El Kaabi</div>
+          <div class="pmeta">33 · $5M</div>
+          <div class="pdetail">#20 · ST · 182cm · Olympiacos</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUE8L3RleHQ+PC9zdmc+" alt="Ayoube Amaimouni">
+        <div class="pinfo">
+          <div class="pname">Ayoube Amaimouni</div>
+          <div class="pmeta">21 · $8M</div>
+          <div class="pdetail">#21 · ST · 183cm · Ein. Frankfurt</div>
+        </div>
+      </div>
+    </div>
+    <div class="roster-panel hai">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDIwOUYiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPkhBSTwvdGV4dD48L3N2Zz4=" alt="Haiti">
+        <div class="rh-name">Haiti</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U008L3RleHQ+PC9zdmc+" alt="Sébastien Migné">
+        <div class="pinfo">
+          <div class="pname">Sébastien Migné</div>
+          <div class="pmeta">52 · —</div>
+          <div class="pdetail">French · Manager since 2023</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SlA8L3RleHQ+PC9zdmc+" alt="Johny Placide (C)">
+        <div class="pinfo">
+          <div class="pname">Johny Placide (C) ⭐</div>
+          <div class="pmeta">38 · $0.3M</div>
+          <div class="pdetail">#1 · GK · 188cm · Bastia</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QVA8L3RleHQ+PC9zdmc+" alt="Alexandre Pierre">
+        <div class="pinfo">
+          <div class="pname">Alexandre Pierre</div>
+          <div class="pmeta">25 · $0.2M</div>
+          <div class="pdetail">#12 · GK · 190cm · Sochaux</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SkQ8L3RleHQ+PC9zdmc+" alt="Josué Duverger">
+        <div class="pinfo">
+          <div class="pname">Josué Duverger</div>
+          <div class="pmeta">26 · $0.1M</div>
+          <div class="pdetail">#23 · GK · 188cm · Cosmos Koblenz</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q0E8L3RleHQ+PC9zdmc+" alt="Carlens Arcus">
+        <div class="pinfo">
+          <div class="pname">Carlens Arcus ⭐</div>
+          <div class="pmeta">30 · $2M</div>
+          <div class="pdetail">#2 · RB · 180cm · Angers</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S1Q8L3RleHQ+PC9zdmc+" alt="Keeto Thermoncy">
+        <div class="pinfo">
+          <div class="pname">Keeto Thermoncy</div>
+          <div class="pmeta">20 · $0.5M</div>
+          <div class="pdetail">#3 · CB · 185cm · Young Boys</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UkE8L3RleHQ+PC9zdmc+" alt="Ricardo Adé">
+        <div class="pinfo">
+          <div class="pname">Ricardo Adé ⭐</div>
+          <div class="pmeta">36 · $0.8M</div>
+          <div class="pdetail">#4 · CB · 188cm · LDU Quito</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SEQ8L3RleHQ+PC9zdmc+" alt="Hannes Delcroix">
+        <div class="pinfo">
+          <div class="pname">Hannes Delcroix ⭐</div>
+          <div class="pmeta">27 · $3M</div>
+          <div class="pdetail">#5 · CB · 185cm · Lugano</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUU8L3RleHQ+PC9zdmc+" alt="Martin Expérience">
+        <div class="pinfo">
+          <div class="pname">Martin Expérience ⭐</div>
+          <div class="pmeta">27 · $1M</div>
+          <div class="pdetail">#8 · LB · 178cm · Nancy</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REw8L3RleHQ+PC9zdmc+" alt="Duke Lacroix">
+        <div class="pinfo">
+          <div class="pname">Duke Lacroix</div>
+          <div class="pmeta">32 · $0.4M</div>
+          <div class="pdetail">#13 · CB · 188cm · Colo. Switchbacks</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R008L3RleHQ+PC9zdmc+" alt="Garven Metusala">
+        <div class="pinfo">
+          <div class="pname">Garven Metusala</div>
+          <div class="pmeta">26 · $0.3M</div>
+          <div class="pdetail">#14 · CB · 190cm · Colo. Switchbacks</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Sks8L3RleHQ+PC9zdmc+" alt="Jean-Kévin Duverne">
+        <div class="pinfo">
+          <div class="pname">Jean-Kévin Duverne</div>
+          <div class="pmeta">28 · $4M</div>
+          <div class="pdetail">#22 · CB · 188cm · Gent</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+V1A8L3RleHQ+PC9zdmc+" alt="Wilguens Paugain">
+        <div class="pinfo">
+          <div class="pname">Wilguens Paugain</div>
+          <div class="pmeta">24 · $1M</div>
+          <div class="pdetail">#24 · RB · 180cm · Zulte Waregem</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q1M8L3RleHQ+PC9zdmc+" alt="Carl Sainté">
+        <div class="pinfo">
+          <div class="pname">Carl Sainté</div>
+          <div class="pmeta">24 · $0.5M</div>
+          <div class="pdetail">#6 · CM · 175cm · El Paso Locomotive</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SkI8L3RleHQ+PC9zdmc+" alt="Jean-Ricner Bellegarde">
+        <div class="pinfo">
+          <div class="pname">Jean-Ricner Bellegarde ⭐</div>
+          <div class="pmeta">28 · $12M</div>
+          <div class="pdetail">#10 · CM · 170cm · Wolves</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REo8L3RleHQ+PC9zdmc+" alt="Danley Jean Jacques">
+        <div class="pinfo">
+          <div class="pname">Danley Jean Jacques ⭐</div>
+          <div class="pmeta">26 · $6M</div>
+          <div class="pdetail">#17 · CM · 183cm · Philadelphia Union</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RFM8L3RleHQ+PC9zdmc+" alt="Dominique Simon">
+        <div class="pinfo">
+          <div class="pname">Dominique Simon</div>
+          <div class="pmeta">25 · $0.2M</div>
+          <div class="pdetail">#25 · CM · 178cm · Tatran Prešov</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+V1AyPC90ZXh0Pjwvc3ZnPg==" alt="Woodensky Pierre">
+        <div class="pinfo">
+          <div class="pname">Woodensky Pierre</div>
+          <div class="pmeta">21 · $0.1M</div>
+          <div class="pdetail">#26 · CM · 175cm · Violette</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REU8L3RleHQ+PC9zdmc+" alt="Derrick Etienne Jr.">
+        <div class="pinfo">
+          <div class="pname">Derrick Etienne Jr.</div>
+          <div class="pmeta">29 · $2M</div>
+          <div class="pdetail">#7 · LW · 178cm · Toronto FC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RE48L3RleHQ+PC9zdmc+" alt="Duckens Nazon">
+        <div class="pinfo">
+          <div class="pname">Duckens Nazon 🤔</div>
+          <div class="pmeta">32 · $3M</div>
+          <div class="pdetail">#9 · ST · 181cm · Esteghlal</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEQ8L3RleHQ+PC9zdmc+" alt="Louicius Deedson">
+        <div class="pinfo">
+          <div class="pname">Louicius Deedson ⭐</div>
+          <div class="pmeta">25 · $3M</div>
+          <div class="pdetail">#11 · RW · 175cm · FC Dallas</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UlA8L3RleHQ+PC9zdmc+" alt="Ruben Providence">
+        <div class="pinfo">
+          <div class="pname">Ruben Providence ⭐</div>
+          <div class="pmeta">24 · $2M</div>
+          <div class="pdetail">#15 · LW · 172cm · Almere City</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEo8L3RleHQ+PC9zdmc+" alt="Lenny Joseph">
+        <div class="pinfo">
+          <div class="pname">Lenny Joseph</div>
+          <div class="pmeta">25 · $1M</div>
+          <div class="pdetail">#16 · ST · 183cm · Ferencváros</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+V0k8L3RleHQ+PC9zdmc+" alt="Wilson Isidor">
+        <div class="pinfo">
+          <div class="pname">Wilson Isidor ⭐</div>
+          <div class="pmeta">25 · $18M</div>
+          <div class="pdetail">#18 · ST · 185cm · Sunderland</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+WUY8L3RleHQ+PC9zdmc+" alt="Yassin Fortuné">
+        <div class="pinfo">
+          <div class="pname">Yassin Fortuné</div>
+          <div class="pmeta">27 · $0.5M</div>
+          <div class="pdetail">#19 · ST · 180cm · Vizela</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RlA8L3RleHQ+PC9zdmc+" alt="Frantzdy Pierrot">
+        <div class="pinfo">
+          <div class="pname">Frantzdy Pierrot ⭐</div>
+          <div class="pmeta">31 · $4M</div>
+          <div class="pdetail">#20 · ST · 188cm · Ç. Rizespor</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SkM8L3RleHQ+PC9zdmc+" alt="Josué Casimir">
+        <div class="pinfo">
+          <div class="pname">Josué Casimir</div>
+          <div class="pmeta">24 · $3M</div>
+          <div class="pdetail">#21 · RW · 178cm · Auxerre</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:10px;color:var(--muted);text-align:center;margin-top:4px;">
+    ⭐ = predicted starter &nbsp; 🤔 = doubtful &nbsp; Market values approximate USD. Source: Transfermarkt/FIFA, retrieved June 24, 2026.
+  </p>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Odds &amp; Probabilities</div>
+  <div class="card">
+    <h3>Moneyline (90 min + stoppage)</h3>
+    <table class="odds">
+      <tr><th>Outcome</th><th>Typical Line</th><th>Polymarket</th><th>Implied Prob</th></tr>
+      <tr><td><strong>Morocco Win</strong></td><td>−600</td><td>83¢</td><td>~83–86%</td></tr>
+      <tr><td><strong>Draw</strong></td><td>+600</td><td>12–13¢</td><td>~8–13%</td></tr>
+      <tr><td><strong>Haiti Win</strong></td><td>+1600</td><td>5¢</td><td>~5–6%</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Reading moneyline:</strong> −600 means bet $600 to win $100 profit. Morocco are heavy favorites.
+      Haiti at +1600 is a long-shot consolation bet only.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Totals &amp; Spreads</h3>
+    <table class="odds">
+      <tr><th>Market</th><th>Line</th><th>Odds</th><th>Implication</th></tr>
+      <tr><td>Total Goals</td><td>O/U 2.5</td><td>Over −170 / Under +155</td><td>Market expects 3+ goals</td></tr>
+      <tr><td>Asian Handicap</td><td>Morocco −2.0 to −2.5</td><td>−2.5 @ +135–146</td><td>3+ goal Morocco win priced as plausible</td></tr>
+      <tr><td>Both Teams Score</td><td>Yes/No</td><td>Yes +128 / No −179</td><td>Haiti clean-sheet failure unlikely; Morocco CS favored</td></tr>
+      <tr><td>Correct Score</td><td>Morocco 3-0</td><td>+550</td><td>Aligns with central score path</td></tr>
+      <tr><td>Team Goals</td><td>Morocco O/U 2.5</td><td>Over −121</td><td>Morocco alone expected to score 3</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Market Sentiment (Polymarket)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Morocco at 83%, Draw 12–13%, Haiti 5%. The prediction market strongly favors Morocco,
+      consistent with sportsbook moneyline pricing. The handicap market (−2.5 at plus money) suggests
+      bettors see value in a multi-goal Morocco win given Haiti's defensive record and elimination status.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Risk Assessment</div>
+  <div class="card">
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Morocco rotation risk:</strong> If Ouahbi rests Hakimi, Saibari, or Díaz with qualification nearly secured, the AH −2.5 thesis collapses. <span class="tag tag-assumed">Assumed full-strength</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Early Morocco goal then park the bus:</strong> A 1-0 or 2-0 win satisfies qualification but fails AH −2.5 and team goals Over 2.5. <span class="tag tag-assumed">Inference</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Haiti pride factor:</strong> Eliminated sides occasionally raise their level for a send-off. First-ever meeting adds unpredictability to Haiti's approach.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>New coach volatility:</strong> Ouahbi appointed only March 2026; tactical decisions less predictable than established managers.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Handicap line movement:</strong> Morocco −2.5 at plus money may shorten if sharp money arrives. Verify odds before kickoff.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Sources</div>
+  <div class="card">
+    <ol class="source-list">
+      <li><strong>FIFA</strong> — Official squads, standings, referee assignments. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank">fifa.com</a></li>
+      <li><strong>Wikipedia / FIFA Squad Pages</strong> — Morocco and Haiti 26-man squads. Retrieved June 24, 2026.</li>
+      <li><strong>BBC Sport</strong> — Morocco injury replacements (Aguerd, Ezzalzouli). <a href="https://www.bbc.co.uk/sport/articles/c15y9zqwy2go" target="_blank">bbc.com</a></li>
+      <li><strong>AS USA</strong> — Morocco squad and Group C schedule. <a href="https://en.as.com/soccer/world-cup/morocco-at-the-2026-world-cup-roster-list-players-group-and-schedule-f202606-n-3/" target="_blank">en.as.com</a></li>
+      <li><strong>Reuters</strong> — Haiti squad and fixtures. <a href="https://www.reuters.com/graphics/SOCCER-WORLDCUP/mopaoglqkpa/teams/haiti/" target="_blank">reuters.com</a></li>
+      <li><strong>Transfermarkt</strong> — Player market values. <a href="https://www.transfermarkt.com" target="_blank">transfermarkt.com</a></li>
+      <li><strong>Polymarket</strong> — Prediction market (Morocco 83%). <a href="https://polymarket.com" target="_blank">polymarket.com</a></li>
+      <li><strong>Mercedes-Benz Stadium</strong> — Venue capacity and roof configuration. <a href="https://www.mercedesbenzstadium.com" target="_blank">mercedesbenzstadium.com</a></li>
+      <li><strong>FootyMetrics</strong> — Danny Makkelie referee statistics.</li>
+      <li><strong>Sportstar</strong> — Haiti Pierre injury, Metusala call-up. <a href="https://sportstar.thehindu.com/football/fifa-world-cup/haiti-leverton-pierre-injury-ruled-out-fifa-world-cup-2026/article71092145.ece" target="_blank">sportstar.thehindu.com</a></li>
+    </ol>
+  </div>
+</div>
+
+<div class="footer wrap">
+  <strong>World Cup 2026 Match Report — Morocco vs Haiti</strong><br>
+  Generated by Assistant Coach Skill &middot; June 25, 2026<br>
+  This report is for entertainment purposes only. All predictions are inference.<br>
+  Gambling involves risk. Only bet what you can afford to lose.
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var budget=parseInt(p.get('budget'))||100;
+  var BET=2,total=Math.floor(budget/BET);
+  budget=total*BET;
+  var h=document.querySelector('.bet-card h3');
+  if(h) h.innerHTML='Budget: $'+budget+' USD &middot; $'+BET+' per bet &middot; '+total+' bets';
+  document.querySelectorAll('.play[data-pct]').forEach(function(el){
+    var pct=parseFloat(el.dataset.pct),odds=parseFloat(el.dataset.odds);
+    var bets=Math.round(pct*total),alloc=bets*BET;
+    var pay=(alloc*odds).toFixed(2).replace(/\.00$/,''),prof=(alloc*odds-alloc).toFixed(2).replace(/\.00$/,'');
+    var lb=el.querySelector('.play-label');
+    if(lb) lb.textContent=lb.textContent.replace(/\(\d+%\s*=\s*\d+\s*bets\s*=\s*\$\d+\)/,'('+Math.round(pct*100)+'% = '+bets+' bets = $'+alloc+')');
+    var dt=el.querySelector('.play-detail');
+    if(dt) dt.innerHTML=dt.innerHTML.replace(/\$\d+(\.\d+)?\s*×/,'$'+alloc+' ×').replace(/=\s*\$[\d,.]+\s*\(profit\s*\$[\d,.]+\)/,'= $'+pay+' (profit $'+prof+')');
+  });
+  var w=document.querySelector('.bet-card .warning');
+  if(w) w.innerHTML=w.innerHTML.replace(/\$100/g,'$'+budget);
+})();
+</script>
+</body>
+</html>

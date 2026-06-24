@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Scotland vs Brazil Pre-Match Analysis Report</title>
+  <style>
+    @page { size: A5 portrait; margin: 12mm 10mm 14mm; }
+    :root {
+      --ink: #102033;
+      --muted: #697586;
+      --line: #d9e2df;
+      --paper: #eaf1eb;
+      --panel: #ffffff;
+      --green: #0b6b47;
+      --gold: #fece14;
+      --blue: #102a57;
+      --red: #b33a3a;
+      --grass: #147a4d;
+      --deep: #071527;
+      --stadium: #020f2a;
+      --soft-green: #e4f4ec;
+      --soft-gold: #fff6cc;
+      --soft-blue: #e7eef9;
+      --soft-red: #fbeaea;
+      --shadow: 0 18px 44px rgba(7,21,39,.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #06172a 0, #082b25 310px, var(--paper) 620px, #eef4f1 100%);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    .wrap { max-width: 520px; margin: 0 auto; padding: 0 12px; }
+    .hero {
+      position: relative; color: #fff; padding: 40px 16px 36px; overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(255,255,255,.15), transparent 15%),
+        radial-gradient(circle at 82% 18%, rgba(254,206,20,.35), transparent 20%),
+        linear-gradient(110deg, rgba(2,15,42,.97), rgba(4,56,39,.80) 50%, rgba(2,15,42,.93));
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: auto -10% -38% -10%; height: 52%;
+      background: linear-gradient(180deg, rgba(20,122,77,.55), rgba(8,72,47,.90));
+      border-top: 1px solid rgba(255,255,255,.18); transform: skewY(-3deg); pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800;
+      letter-spacing: .08em; color: #101820; background: var(--gold); border-radius: 999px;
+      padding: 4px 10px; margin-bottom: 10px; text-transform: uppercase;
+    }
+    h1 { font-size: 34px; line-height: .96; margin: 0 0 10px; letter-spacing: -.5px; }
+    .subtitle { margin: 0; color: rgba(255,255,255,.82); font-size: 13px; }
+    .team-strip {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center;
+      margin-top: 22px; padding: 12px; background: rgba(255,255,255,.08);
+      border-radius: 8px; border: 1px solid rgba(255,255,255,.12);
+    }
+    .team-strip .team { text-align: center; }
+    .team-strip .team img { width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: rgba(255,255,255,.1); }
+    .team-strip .team .name { font-size: 14px; font-weight: 700; margin-top: 4px; }
+    .team-strip .team .rank { font-size: 10px; color: rgba(255,255,255,.6); }
+    .team-strip .vs { font-size: 22px; font-weight: 800; color: var(--gold); }
+    .notice {
+      margin: 16px auto; max-width: 520px; padding: 10px 14px; font-size: 11px;
+      background: var(--soft-gold); border-left: 3px solid var(--gold); border-radius: 4px;
+      color: #5a4e00;
+    }
+    .notice strong { color: #3d3500; }
+    .section { max-width: 520px; margin: 20px auto; }
+    .section-title {
+      font-size: 16px; font-weight: 800; color: var(--green); margin: 0 0 12px;
+      padding-bottom: 6px; border-bottom: 2px solid var(--gold);
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .card {
+      background: var(--panel); border-radius: 8px; padding: 14px 16px;
+      margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      border: 1px solid var(--line);
+    }
+    .card h3 { font-size: 13px; margin: 0 0 6px; color: var(--green); text-transform: uppercase; letter-spacing: .04em; }
+    .conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .metric-card {
+      background: var(--panel); border-radius: 8px; padding: 12px;
+      border: 1px solid var(--line); text-align: center;
+    }
+    .metric-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+    .metric-card .value { font-size: 22px; font-weight: 800; color: var(--green); margin: 2px 0; }
+    .metric-card .sub { font-size: 10px; color: var(--muted); }
+    .tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin: 2px 2px 0 0; text-transform: uppercase; }
+    .tag-verified { background: var(--soft-green); color: var(--green); }
+    .tag-assumed { background: var(--soft-gold); color: #7a6800; }
+    .tag-not-verified { background: var(--soft-red); color: var(--red); }
+    .bet-card {
+      background: linear-gradient(135deg, #071527 0%, #0b3d2b 100%);
+      color: #fff; border-radius: 8px; padding: 16px; margin-bottom: 12px;
+    }
+    .bet-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 14px; }
+    .bet-card .play { background: rgba(255,255,255,.08); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+    .bet-card .play-label { font-size: 10px; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+    .bet-card .play-title { font-size: 15px; font-weight: 800; }
+    .bet-card .play-detail { font-size: 11px; color: rgba(255,255,255,.7); margin-top: 4px; }
+    .bet-card .warning {
+      background: rgba(179,58,58,.25); border: 1px solid rgba(179,58,58,.5);
+      border-radius: 4px; padding: 8px 10px; font-size: 11px; margin-top: 10px;
+    }
+    .bet-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
+    .bet-table th { text-align: left; font-size: 10px; color: var(--gold); padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .bet-table td { padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
+    .env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .env-item { background: var(--soft-blue); border-radius: 6px; padding: 8px 10px; }
+    .env-item .env-label { font-size: 10px; font-weight: 700; color: var(--blue); text-transform: uppercase; }
+    .env-item .env-value { font-size: 13px; font-weight: 600; }
+    .pitch-container { background: var(--panel); border-radius: 8px; padding: 12px; border: 1px solid var(--line); margin-bottom: 14px; page-break-inside: avoid; break-inside: avoid; }
+    .pitch {
+      position: relative; width: 100%; height: 520px; background: linear-gradient(180deg, #1a7a42 0%, #15653a 50%, #1a7a42 100%);
+      border-radius: 6px; overflow: hidden; border: 2px solid rgba(255,255,255,.3);
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .pitch::before {
+      content: ""; position: absolute; left: 5%; right: 5%; top: 49.5%; height: 1%;
+      border-top: 2px solid rgba(255,255,255,.4); border-bottom: 2px solid rgba(255,255,255,.4);
+    }
+    .pitch .center-circle {
+      position: absolute; left: 50%; top: 50%; width: 60px; height: 60px;
+      border: 2px solid rgba(255,255,255,.3); border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .pitch .penalty-box-top { position: absolute; left: 25%; right: 25%; top: 0; height: 12%; border: 2px solid rgba(255,255,255,.3); border-top: none; }
+    .pitch .penalty-box-bot { position: absolute; left: 25%; right: 25%; bottom: 0; height: 12%; border: 2px solid rgba(255,255,255,.3); border-bottom: none; }
+    .pitch .goal-top { position: absolute; left: 38%; right: 38%; top: 0; height: 5%; border: 2px solid rgba(255,255,255,.3); border-top: none; }
+    .pitch .goal-bot { position: absolute; left: 38%; right: 38%; bottom: 0; height: 5%; border: 2px solid rgba(255,255,255,.3); border-bottom: none; }
+    .player-dot { position: absolute; transform: translate(-50%, -50%); text-align: center; z-index: 2; }
+    .player-dot .dot {
+      width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 11px; font-weight: 800; margin: 0 auto 2px;
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .player-dot .pname { font-size: 8px; color: #fff; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+    .dot-sco { background: #003399; color: #fff; }
+    .dot-bra { background: #FFDF00; color: #009739; }
+    .formation-label {
+      position: absolute; left: 8px; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.7);
+      text-transform: uppercase; letter-spacing: .05em;
+    }
+    .venue-badge {
+      position: absolute; right: 6px; bottom: 6px; background: rgba(0,0,0,.5);
+      padding: 3px 6px; border-radius: 3px; font-size: 8px; color: rgba(255,255,255,.8);
+    }
+    .roster-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .roster-panel { background: #f5f8f6; border-radius: 8px; padding: 10px; border: 1px solid var(--line); }
+    .roster-panel.sco { background: #eef2fa; }
+    .roster-panel.bra { background: #fffbe6; }
+    .roster-header { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+    .roster-header img { width: 24px; height: 24px; border-radius: 50%; object-fit: contain; }
+    .roster-header .rh-name { font-size: 13px; font-weight: 800; }
+    .pos-group-title { font-size: 10px; font-weight: 800; color: var(--green); text-transform: uppercase; margin: 8px 0 4px; letter-spacing: .05em; }
+    .player-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,.04); }
+    .player-row:last-child { border-bottom: none; }
+    .player-row .avatar {
+      width: 30px; height: 30px; border-radius: 50%; object-fit: cover;
+      background: #ddd; flex-shrink: 0; border: 1px solid rgba(0,0,0,.08);
+    }
+    .player-row .pinfo { min-width: 0; }
+    .player-row .pinfo .pname { font-size: 11px; font-weight: 700; line-height: 1.2; }
+    .player-row .pinfo .pmeta { font-size: 9px; color: var(--muted); line-height: 1.3; }
+    .player-row .pinfo .pdetail { font-size: 8px; color: #999; line-height: 1.3; }
+    table.odds { width: 100%; border-collapse: collapse; font-size: 12px; }
+    table.odds th { text-align: left; font-size: 10px; color: var(--muted); padding: 6px 8px; border-bottom: 2px solid var(--line); font-weight: 700; text-transform: uppercase; }
+    table.odds td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+    table.odds tr:last-child td { border-bottom: none; }
+    .risk-item { display: flex; gap: 8px; margin-bottom: 8px; }
+    .risk-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; }
+    .risk-high { background: var(--soft-red); color: var(--red); }
+    .risk-med { background: var(--soft-gold); color: #7a6800; }
+    .source-list { font-size: 10px; color: var(--muted); }
+    .source-list a { font-size: 10px; word-break: break-all; }
+    .source-list li { margin-bottom: 4px; }
+    .footer {
+      max-width: 520px; margin: 30px auto 20px; padding: 14px 16px; text-align: center;
+      font-size: 10px; color: var(--muted); border-top: 1px solid var(--line);
+    }
+    @media print {
+      body { background: #fff; }
+      .hero { break-after: avoid; }
+      .section { break-inside: avoid; }
+      .card { break-inside: avoid; }
+      .bet-card { break-inside: avoid; }
+      .roster-grid { break-inside: auto; }
+      .roster-panel { break-inside: avoid; }
+    }
+    .adj-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 6px; }
+    .adj-table th { text-align: left; font-size: 10px; padding: 4px 6px; background: var(--soft-green); color: var(--green); }
+    .adj-table td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
+    .adj-up { color: var(--red); font-weight: 700; }
+    .adj-down { color: var(--green); font-weight: 700; }
+    .adj-none { color: var(--muted); }
+    .subs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .sub-panel { background: rgba(255,255,255,.06); border-radius: 6px; padding: 8px; }
+    .sub-panel h4 { font-size: 10px; color: var(--gold); margin: 0 0 4px; text-transform: uppercase; }
+    .sub-row { font-size: 10px; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .tactic-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .tactic-table th { text-align: left; font-size: 10px; padding: 5px 6px; background: var(--soft-green); color: var(--green); font-weight: 700; }
+    .tactic-table td { padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">⚽ FIFA World Cup 2026 · Group C · Matchday 3 · Match 49</div>
+    <h1>Scotland vs Brazil</h1>
+    <p class="subtitle">
+      Tuesday, June 24, 2026 · 6:00 PM ET / 6:00 AM MYT (June 25)<br>
+      Hard Rock Stadium, Miami Gardens, FL · Referee: César Arturo Ramos (MEX)
+    </p>
+    <div class="team-strip">
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDMzOTkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPlNDTzwvdGV4dD48L3N2Zz4=" alt="Scotland">
+        <div class="name">Scotland</div>
+        <div class="rank">FIFA #39 · 3 pts · Must Win</div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNGRkRGMDAiIHN0cm9rZT0iIzAwOTczOSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iIzAwOTczOSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPkJSQTwvdGV4dD48L3N2Zz4=" alt="Brazil">
+        <div class="name">Brazil</div>
+        <div class="rank">FIFA #5 · 4 pts · ~$930M squad</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="notice wrap">
+  <strong>Report generated:</strong> June 25, 2026, 00:30 MYT (GMT+8).<br>
+  <strong>Exchange rate:</strong> 1 EUR ≈ 1.08 USD (approximate, June 2026).<br>
+  <strong>Betslip status:</strong> Pre-purchase — verify odds at your sportsbook before placing bets. Lineups are predicted, not confirmed.<br>
+  <strong>Disclaimer:</strong> This report is entertainment-oriented analysis, not investment advice. Gambling involves risk of losing your entire budget.
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Match Conclusion</div>
+  <div class="conclusion-grid">
+    <div class="metric-card">
+      <div class="label">Central Score Path</div>
+      <div class="value">2–0 BRA</div>
+      <div class="sub">Clinical Brazil; Scotland limited attack</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Alternative Path</div>
+      <div class="value">1–0 / 1–1</div>
+      <div class="sub">Scotland defensive resilience holds</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Brazil Win Prob</div>
+      <div class="value">~71%</div>
+      <div class="sub">De-vigged ML / Polymarket 71–75%</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Total Goals Line</div>
+      <div class="value">O/U 2.5</div>
+      <div class="sub">Over −118 · BTTS No favored</div>
+    </div>
+  </div>
+  <div class="card">
+    <p style="margin:0;font-size:12px;">
+      <strong>Verdict:</strong> Scotland must win to guarantee a top-two finish; a draw leaves only a third-place pathway. Brazil, level on points with Morocco but superior on goal difference, can advance with a point but will push for victory. Carlo Ancelotti's side (~$930M squad value vs Scotland's ~$172M) brings Vinícius Júnior and Matheus Cunha against a Scotland attack that managed just 1 goal and 2 shots on target in two group matches. Neymar is available off the bench; Raphinha is out with a hamstring. The central path is a controlled Brazil 2-0.
+    </p>
+    <div style="margin-top:8px;">
+      <span class="tag tag-verified">Verified: Group C standings</span>
+      <span class="tag tag-verified">Verified: Raphinha OUT</span>
+      <span class="tag tag-verified">Verified: Neymar fit (Ancelotti)</span>
+      <span class="tag tag-verified">Verified: Gilmour OUT</span>
+      <span class="tag tag-assumed">Assumed: Brazil −1.5 path</span>
+      <span class="tag tag-assumed">Assumed: Predicted XIs</span>
+      <span class="tag tag-not-verified">Not verified: Official lineups</span>
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Concentrated Betting Plan</div>
+  <div class="bet-card">
+    <h3>Budget: $100 USD · $2 per bet · 50 bets</h3>
+
+    <div class="play" data-pct="0.65" data-odds="2.00">
+      <div class="play-label">Selection 1 — Core (65% = 33 bets = $66)</div>
+      <div class="play-title">Brazil −1.5 Asian Handicap @ +100</div>
+      <div class="play-detail">
+        Brazil's talent gap, Neymar available as a sub, and Scotland's limited attack (2 SOT in 2 games, 1 goal total)
+        support a multi-goal margin. Vinícius and Cunha should create enough against a compact 3-5-2.<br>
+        <strong>Potential payout:</strong> $66 × 2.00 = $132 (profit $66)<br>
+        <strong>Min acceptable odds:</strong> −110 (1.91)<br>
+        <strong>Cancel if:</strong> Ancelotti rests 4+ starters or Neymar declared unfit late.
+      </div>
+    </div>
+
+    <div class="play" data-pct="0.35" data-odds="2.00">
+      <div class="play-label">Selection 2 — Adjacent (35% = 17 bets = $34)</div>
+      <div class="play-title">Brazil Win to Nil @ even money (−100)</div>
+      <div class="play-detail">
+        Scotland managed just 1 goal in 2 World Cup matches. BTTS No is priced at −166, implying
+        strong market confidence in a Brazil clean sheet. Alisson and a settled back four should contain Adams and Gannon-Doak.<br>
+        <strong>Potential payout:</strong> $34 × 2.00 = $68 (profit $34)<br>
+        <strong>Min acceptable odds:</strong> −120 (1.83)<br>
+        <strong>Cancel if:</strong> Hickey returns to strengthen Scotland's wing threat, or Brazil rotate the entire back line.
+      </div>
+    </div>
+
+    <table class="bet-table">
+      <tr><th>Pre-Purchase Check</th><th>Action</th></tr>
+      <tr><td>Brazil −1.5 drops below −110</td><td>Reduce Selection 1 to 50%; shift to Win to Nil</td></tr>
+      <tr><td>Neymar ruled unfit in pre-match presser</td><td>Cancel Selection 1; reduce Selection 2 to 20%</td></tr>
+      <tr><td>Ancelotti rests 4+ starters</td><td>Cancel both selections; consider Brazil ML only at −200 or better</td></tr>
+      <tr><td>Scotland confirms Hickey + full-strength XI</td><td>Drop Win to Nil; reconsider Draw +410 as small tail</td></tr>
+      <tr><td>Heat index exceeds 105°F at kickoff</td><td>Reduce total-goals expectations; favor Under 2.5 hedge on 20%</td></tr>
+    </table>
+
+    <div class="warning">
+      ⚠️ <strong>Whole-Budget-Loss Warning:</strong> This concentrated plan accepts a high probability of losing the entire $100 entertainment budget.
+      Scotland's defensive organization held Morocco to 1-0; a resilient low block could keep Brazil −1.5 from cashing.
+      Only bet what you can afford to lose. This is entertainment analysis, not guaranteed returns.
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Score Thesis</div>
+  <div class="card">
+    <h3>Baseline Score Range (Market-Derived)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      De-vigged sportsbook odds: Brazil ~71%, Draw ~17%, Scotland ~12%. Total goals O/U 2.5 (Over −118, slight lean).
+      Polymarket: Brazil 71–75%, Draw 17–18%, Scotland 10–14%. Correct score Brazil 2-0 priced at +425 — aligned with central path.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Baseline central path:</strong> 2–3 total goals, lean Brazil clean sheet. Most likely scores: 2-0, 1-0, 2-1 Brazil.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Score-Impact Adjustments</h3>
+    <table class="adj-table">
+      <tr><th>Factor</th><th>Evidence</th><th>Direction</th></tr>
+      <tr>
+        <td>Brazil talent gap ($930M vs $172M)</td>
+        <td>Transfermarkt squad values. Verified.</td>
+        <td class="adj-up">↑ Brazil scoring +0.4</td>
+      </tr>
+      <tr>
+        <td>Scotland attack: 1 goal, 2 SOT in 2 games</td>
+        <td>WC 2026 group matches. Verified.</td>
+        <td class="adj-down">↓ Scotland scoring −0.3</td>
+      </tr>
+      <tr>
+        <td>Raphinha OUT; Neymar available</td>
+        <td>Team news, Ancelotti presser. Verified.</td>
+        <td class="adj-none">→ NO CHANGE (net)</td>
+      </tr>
+      <tr>
+        <td>Scotland must-win mentality</td>
+        <td>3 pts; draw = 3rd-place pathway only. Verified.</td>
+        <td class="adj-up">↑ Open game risk +0.1</td>
+      </tr>
+      <tr>
+        <td>Referee Ramos: ~4.4 YC/match</td>
+        <td>Career avg; 1 YC in Iran 2-2 NZ. Verified.</td>
+        <td class="adj-none">→ NO CHANGE</td>
+      </tr>
+      <tr>
+        <td>Heat: 83–87°F, 70–74% humidity, HI ~103°F</td>
+        <td>AccuWeather Miami Gardens. Verified.</td>
+        <td class="adj-down">↓ Total tempo −0.2</td>
+      </tr>
+      <tr>
+        <td>H2H: Brazil 8W-2D-0L; 0 Scotland wins</td>
+        <td>10 meetings, 4 prior WC group games. Verified.</td>
+        <td class="adj-up">↑ Brazil confidence +0.1</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Resulting Score Paths</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Central path:</strong> Brazil 2 – 0 Scotland. Clinical Seleção control; Vinícius and Cunha convert against a limited Scotland attack. Confidence: <strong>Medium-High</strong>.<br>
+      <strong>Alternative path:</strong> Brazil 1 – 0 or Scotland 1 – 1 Draw. Scotland's defensive resilience (0-1 vs Morocco) frustrates Brazil in Miami heat. Confidence: <strong>Medium</strong>.<br>
+      <strong>Tail-risk trigger:</strong> Scotland scores early on a set piece → Brazil push opens gaps → 2-1 or 3-1 Brazil shootout.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Referee &amp; Environment</div>
+  <div class="card">
+    <h3>Referee: César Arturo Ramos (Mexico, age 42)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      FIFA international referee since 2012. This is his 9th World Cup match — the most by any Mexican referee.
+      In WC 2026, he officiated Iran 2-2 New Zealand with 1 yellow card, 0 red cards, and 18 fouls called.
+      Career average: ~4.4 yellow cards per match.
+    </p>
+    <table class="adj-table">
+      <tr><th>Stat</th><th>WC 2026 (1 match)</th><th>Career Avg</th></tr>
+      <tr><td>Yellow cards</td><td>1</td><td>~4.4 per match</td></tr>
+      <tr><td>Red cards</td><td>0</td><td>Low frequency</td></tr>
+      <tr><td>Fouls called</td><td>18</td><td>Moderate</td></tr>
+      <tr><td>Penalties</td><td>0</td><td>Occasional</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Assessment:</strong> Ramos allows play to flow; low card count in Iran-NZ suggests he won't interrupt Brazil's rhythm excessively.
+      Scotland's physical midfield (McTominay, McGinn) may draw fouls but unlikely to trigger mass bookings. <strong>Score impact: NO CHANGE.</strong>
+      <span class="tag tag-verified">Verified: FIFA assignment</span>
+    </p>
+  </div>
+
+  <div class="env-grid" style="margin-top:12px;">
+    <div class="env-item">
+      <div class="env-label">Venue</div>
+      <div class="env-value">Hard Rock Stadium</div>
+      <div style="font-size:10px;color:var(--muted);">Miami Gardens, FL · 65,000 · Open-air</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Surface</div>
+      <div class="env-value">Natural Grass</div>
+      <div style="font-size:10px;color:var(--muted);">Temporary WC pitch, no roof</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Kickoff Weather</div>
+      <div class="env-value">83–87°F / 28–31°C</div>
+      <div style="font-size:10px;color:var(--muted);">70–74% humidity · HI ~103°F earlier</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Wind &amp; Rain</div>
+      <div class="env-value">SE 5–9 mph</div>
+      <div style="font-size:10px;color:var(--muted);">~20% rain chance evening</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--muted);margin-top:8px;">
+    <strong>Environment impact:</strong> Miami's June heat and humidity favor deeper Brazilian squad rotation experience in CONCACAF conditions.
+    Evening kickoff (6 PM ET) moderates peak heat but humidity remains high. Open-air venue — no climate control.
+  <strong>Score adjustment:</strong> Slight reduction in tempo (−0.2 total goals). Source: AccuWeather (Miami Gardens, FL), retrieved June 24, 2026.
+  </p>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Event Background</div>
+  <div class="card">
+    <h3>Group C — Final Matchday</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Matchday 3 closes Group C simultaneously with Morocco vs Haiti. Brazil and Morocco are level on 4 points;
+      Scotland sit third on 3 points. Haiti are eliminated with 0 points. Scotland <strong>must win</strong> to guarantee
+      a top-two finish; a draw leaves them dependent on other results and the third-place ranking.
+    </p>
+    <table class="odds" style="margin-top:8px;">
+      <tr><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Brazil</strong></td><td>2</td><td>1</td><td>1</td><td>0</td><td>4</td><td>1</td><td>+3</td><td><strong>4</strong></td></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Morocco</strong></td><td>2</td><td>1</td><td>1</td><td>0</td><td>2</td><td>1</td><td>+1</td><td><strong>4</strong></td></tr>
+      <tr><td><strong>Scotland</strong></td><td>2</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td><strong>3</strong></td></tr>
+      <tr style="background:var(--soft-red);"><td><strong>Haiti</strong></td><td>2</td><td>0</td><td>0</td><td>2</td><td>0</td><td>4</td><td>−4</td><td><strong>0</strong></td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      Brazil results: 1-1 Morocco, 3-0 Haiti. Scotland results: 1-0 Haiti, 0-1 Morocco.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Match Context</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Brazil:</strong> Carlo Ancelotti (appointed May 2025, replacing Dorival Júnior) leads a star-studded squad worth ~$930M.
+      Neymar is fit for 90 minutes per Ancelotti but may start on the bench with Cunha leading the line. Raphinha (hamstring) is out.
+      Brazil can advance with a draw but will target top spot and goal-difference advantage over Morocco.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Scotland:</strong> Steve Clarke's side (~$172M) returned to the World Cup after 28 years. Billy Gilmour (knee) is out for the tournament;
+      Tyler Fletcher replaced him in the squad. Aaron Hickey is doubtful with a knock. Captain Andy Robertson leads a compact 3-5-2
+      built around McTominay and McGinn in midfield. Scotland need a historic first-ever win over Brazil to control their destiny.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Head-to-Head (10 meetings)</h3>
+    <table class="odds">
+      <tr><th>Record</th><th>Detail</th></tr>
+      <tr><td>Overall</td><td>Brazil 8W · 2D · Scotland 0W</td></tr>
+      <tr><td>World Cup</td><td>4 meetings (1974, 1982, 1990, 1998) — Brazil 3W, 1D</td></tr>
+      <tr><td>2026 significance</td><td>5th WC group-stage meeting — joint record</td></tr>
+      <tr><td>Scotland WC H2H</td><td>Never beaten Brazil in any competition</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      Brazil have scored in every competitive meeting. Scotland's best WC result vs Brazil was a 0-0 draw in 1974.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Team Overview</div>
+  <div class="card">
+    <h3>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Steve Clarke (Scotland) · <strong>FIFA Ranking:</strong> #39 ·
+      <strong>Squad Value:</strong> ~$172M · <strong>Style:</strong> 3-5-2 compact block with wing-back width<br>
+      <strong>WC History:</strong> 9th appearance (first since 1998). Best: group stage exits.<br>
+      <strong>Key Players:</strong> Scott McTominay (Napoli, $35M), Andy Robertson (Liverpool, $8M, captain), John McGinn (Aston Villa, $18M).<br>
+      <strong>Strengths:</strong> Organized defensive structure, set-piece threat, McTominay's aerial presence, tournament experience via Robertson/McGinn.<br>
+      <strong>Weaknesses:</strong> Limited attacking output (1 goal, 2 SOT in 2 games), Gilmour OUT, Hickey doubtful, massive quality gap vs Brazil.<br>
+      <strong>Form:</strong> W 1-0 vs Haiti, L 0-1 vs Morocco.
+    </p>
+  </div>
+  <div class="card">
+    <h3>🇧🇷 Brazil</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Carlo Ancelotti (Italy, since May 2025) · <strong>FIFA Ranking:</strong> #5 ·
+      <strong>Squad Value:</strong> ~$930M · <strong>Style:</strong> 4-2-3-1 possession with wide Vinícius threat<br>
+      <strong>WC History:</strong> 23rd appearance. 5-time champions (1958, 1962, 1970, 1994, 2002).<br>
+      <strong>Key Players:</strong> Vinícius Júnior (Real Madrid, $180M), Bruno Guimarães (Newcastle, $75M), Marquinhos (PSG, $25M, captain).<br>
+      <strong>Strengths:</strong> Elite attacking depth, Ancelotti's big-game management, Neymar available, dominant H2H record.<br>
+      <strong>Weaknesses:</strong> Raphinha OUT, occasional complacency (1-1 vs Morocco), heat management in open-air Miami.<br>
+      <strong>Form:</strong> D 1-1 vs Morocco, W 3-0 vs Haiti.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Predicted Starters &amp; Tactics</div>
+
+  <div class="pitch-container">
+    <div class="pitch">
+      <div class="penalty-box-top"></div>
+      <div class="goal-top"></div>
+      <div class="center-circle"></div>
+      <div class="penalty-box-bot"></div>
+      <div class="goal-bot"></div>
+
+      <div class="formation-label" style="top:3%;">SCOTLAND 3-5-2</div>
+      <div class="formation-label" style="bottom:3%;">BRAZIL 4-2-3-1</div>
+
+      <div class="player-dot" style="left:50%;top:5%;"><div class="dot dot-sco">1</div><div class="pname">Gunn</div></div>
+      <div class="player-dot" style="left:20%;top:15%;"><div class="dot dot-sco">2</div><div class="pname">Patterson</div></div>
+      <div class="player-dot" style="left:50%;top:15%;"><div class="dot dot-sco">5</div><div class="pname">Hanley</div></div>
+      <div class="player-dot" style="left:80%;top:15%;"><div class="dot dot-sco">4</div><div class="pname">Hendry</div></div>
+      <div class="player-dot" style="left:8%;top:32%;"><div class="dot dot-sco">3</div><div class="pname">Robertson</div></div>
+      <div class="player-dot" style="left:25%;top:30%;"><div class="dot dot-sco">11</div><div class="pname">McGinn</div></div>
+      <div class="player-dot" style="left:50%;top:28%;"><div class="dot dot-sco">6</div><div class="pname">McTominay</div></div>
+      <div class="player-dot" style="left:75%;top:30%;"><div class="dot dot-sco">10</div><div class="pname">Ferguson</div></div>
+      <div class="player-dot" style="left:92%;top:32%;"><div class="dot dot-sco">8</div><div class="pname">Christie</div></div>
+      <div class="player-dot" style="left:35%;top:42%;"><div class="dot dot-sco">9</div><div class="pname">Adams</div></div>
+      <div class="player-dot" style="left:65%;top:42%;"><div class="dot dot-sco">7</div><div class="pname">Doak</div></div>
+
+      <div class="player-dot" style="left:50%;top:95%;"><div class="dot dot-bra">1</div><div class="pname">Alisson</div></div>
+      <div class="player-dot" style="left:85%;top:85%;"><div class="dot dot-bra">2</div><div class="pname">Danilo</div></div>
+      <div class="player-dot" style="left:63%;top:85%;"><div class="dot dot-bra">5</div><div class="pname">Marquinhos</div></div>
+      <div class="player-dot" style="left:37%;top:85%;"><div class="dot dot-bra">3</div><div class="pname">Gabriel</div></div>
+      <div class="player-dot" style="left:15%;top:85%;"><div class="dot dot-bra">16</div><div class="pname">Santos</div></div>
+      <div class="player-dot" style="left:37%;top:73%;"><div class="dot dot-bra">5</div><div class="pname">Casemiro</div></div>
+      <div class="player-dot" style="left:63%;top:73%;"><div class="dot dot-bra">8</div><div class="pname">Bruno G.</div></div>
+      <div class="player-dot" style="left:82%;top:63%;"><div class="dot dot-bra">21</div><div class="pname">Rayan</div></div>
+      <div class="player-dot" style="left:50%;top:65%;"><div class="dot dot-bra">10</div><div class="pname">Paquetá</div></div>
+      <div class="player-dot" style="left:18%;top:63%;"><div class="dot dot-bra">7</div><div class="pname">Vinícius</div></div>
+      <div class="player-dot" style="left:50%;top:56%;"><div class="dot dot-bra">9</div><div class="pname">Cunha</div></div>
+
+      <div class="venue-badge">Hard Rock Stadium · 85°F · Humid</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Tactical Analysis</h3>
+    <table class="tactic-table">
+      <tr><th>Observation</th><th>Betting Implication</th></tr>
+      <tr>
+        <td>Scotland's 3-5-2 low block with Robertson/Patterson wing-backs</td>
+        <td>Limits space in wide areas; supports Brazil Win to Nil</td>
+      </tr>
+      <tr>
+        <td>Vinícius vs Patterson/Robertson — pace mismatch favors Brazil</td>
+        <td>Brazil −1.5 viable if wide overloads convert</td>
+      </tr>
+      <tr>
+        <td>McTominay aerial threat on set pieces</td>
+        <td>Tail risk for Scotland 1-1; tempers clean-sheet confidence slightly</td>
+      </tr>
+      <tr>
+        <td>Neymar on bench — second-half injection risk</td>
+        <td>Live-bet Brazil 2H goals if score is 0-0 or 1-0 at HT</td>
+      </tr>
+      <tr>
+        <td>Scotland must push if trailing — opens counter space for Cunha/Vinícius</td>
+        <td>Supports Brazil −1.5 over Brazil ML when Scotland chase</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card" style="background:var(--stadium);color:#fff;">
+    <h3 style="color:var(--gold);">Likely Substitutes</h3>
+    <div class="subs-grid">
+      <div class="sub-panel">
+        <h4>🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland Bench</h4>
+        <div class="sub-row">GK: Gordon, Kelly</div>
+        <div class="sub-row">DEF: Tierney, McKenna, Ralston, Hyam, Souttar, Hickey?</div>
+        <div class="sub-row">MID: McLean, Curtis, Fletcher</div>
+        <div class="sub-row">FWD: Dykes, Shankland, Stewart, Hirst</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">? = Hickey doubtful (knock)</div>
+      </div>
+      <div class="sub-panel">
+        <h4>🇧🇷 Brazil Bench</h4>
+        <div class="sub-row">GK: Ederson, Weverton</div>
+        <div class="sub-row">DEF: Bremer, Alex Sandro, Léo Pereira, Ibañez, Éderson</div>
+        <div class="sub-row">MID: Fabinho, Danilo Santos</div>
+        <div class="sub-row">FWD: Neymar 🪑, Martinelli, Endrick, Luiz Henrique, Igor Thiago</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">🪑 = fit for 90 min, expected sub · Raphinha OUT</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Full Squad Rosters</div>
+  <div class="roster-grid">
+
+    <div class="roster-panel sco">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDMzOTkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPlNDTzwvdGV4dD48L3N2Zz4=" alt="Scotland">
+        <div class="rh-name">Scotland</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0M8L3RleHQ+PC9zdmc+" alt="Steve Clarke">
+        <div class="pinfo">
+          <div class="pname">Steve Clarke</div>
+          <div class="pmeta">62 · $—</div>
+          <div class="pdetail">Head Coach · Scottish · Record: WC 2026</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q0c8L3RleHQ+PC9zdmc+" alt="Craig Gordon">
+        <div class="pinfo">
+          <div class="pname">Craig Gordon</div>
+          <div class="pmeta">43 · $0.3M</div>
+          <div class="pdetail">#1 · GK · 193cm · Hearts</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUc8L3RleHQ+PC9zdmc+" alt="Angus Gunn ⭐">
+        <div class="pinfo">
+          <div class="pname">Angus Gunn ⭐ ⭐</div>
+          <div class="pmeta">30 · $4M</div>
+          <div class="pdetail">#12 · GK · 196cm · Nott'm Forest</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEs8L3RleHQ+PC9zdmc+" alt="Liam Kelly">
+        <div class="pinfo">
+          <div class="pname">Liam Kelly</div>
+          <div class="pmeta">29 · $1M</div>
+          <div class="pdetail">#21 · GK · 188cm · Rangers</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R0g8L3RleHQ+PC9zdmc+" alt="Grant Hanley ⭐">
+        <div class="pinfo">
+          <div class="pname">Grant Hanley ⭐ ⭐</div>
+          <div class="pmeta">33 · $1M</div>
+          <div class="pdetail">#5 · CB · 188cm · Hibernian</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Skg8L3RleHQ+PC9zdmc+" alt="Jack Hendry ⭐">
+        <div class="pinfo">
+          <div class="pname">Jack Hendry ⭐ ⭐</div>
+          <div class="pmeta">30 · $2M</div>
+          <div class="pdetail">#4 · CB · 195cm · Al Ettifaq</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUg8L3RleHQ+PC9zdmc+" alt="Aaron Hickey">
+        <div class="pinfo">
+          <div class="pname">Aaron Hickey 🤕</div>
+          <div class="pmeta">23 · $18M</div>
+          <div class="pdetail">#3 · WB · 178cm · Brentford</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REg8L3RleHQ+PC9zdmc+" alt="Dom Hyam">
+        <div class="pinfo">
+          <div class="pname">Dom Hyam</div>
+          <div class="pmeta">29 · $1M</div>
+          <div class="pdetail">#15 · CB · 188cm · Wrexham</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U008L3RleHQ+PC9zdmc+" alt="Scott McKenna">
+        <div class="pinfo">
+          <div class="pname">Scott McKenna</div>
+          <div class="pmeta">28 · $8M</div>
+          <div class="pdetail">#6 · CB · 188cm · Dinamo Zagreb</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TlA8L3RleHQ+PC9zdmc+" alt="Nathan Patterson ⭐">
+        <div class="pinfo">
+          <div class="pname">Nathan Patterson ⭐ ⭐</div>
+          <div class="pmeta">24 · $14M</div>
+          <div class="pdetail">#2 · RB · 183cm · Everton</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QVI8L3RleHQ+PC9zdmc+" alt="Anthony Ralston">
+        <div class="pinfo">
+          <div class="pname">Anthony Ralston</div>
+          <div class="pmeta">27 · $5M</div>
+          <div class="pdetail">#22 · RB · 183cm · Celtic</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QVIyPC90ZXh0Pjwvc3ZnPg==" alt="Andy Robertson (C) ⭐">
+        <div class="pinfo">
+          <div class="pname">Andy Robertson (C) ⭐ ⭐</div>
+          <div class="pmeta">32 · $8M</div>
+          <div class="pdetail">#3 · LB · 178cm · Liverpool</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SlM8L3RleHQ+PC9zdmc+" alt="John Souttar">
+        <div class="pinfo">
+          <div class="pname">John Souttar</div>
+          <div class="pmeta">28 · $3M</div>
+          <div class="pdetail">#14 · CB · 185cm · Rangers</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S1Q8L3RleHQ+PC9zdmc+" alt="Kieran Tierney">
+        <div class="pinfo">
+          <div class="pname">Kieran Tierney</div>
+          <div class="pmeta">28 · $10M</div>
+          <div class="pdetail">#18 · LB · 178cm · Celtic</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UkM8L3RleHQ+PC9zdmc+" alt="Ryan Christie ⭐">
+        <div class="pinfo">
+          <div class="pname">Ryan Christie ⭐ ⭐</div>
+          <div class="pmeta">30 · $12M</div>
+          <div class="pdetail">#8 · CM · 178cm · Bournemouth</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RkM8L3RleHQ+PC9zdmc+" alt="Findlay Curtis">
+        <div class="pinfo">
+          <div class="pname">Findlay Curtis</div>
+          <div class="pmeta">19 · $2M</div>
+          <div class="pdetail">#26 · AM · 175cm · Kilmarnock</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEY8L3RleHQ+PC9zdmc+" alt="Lewis Ferguson ⭐">
+        <div class="pinfo">
+          <div class="pname">Lewis Ferguson ⭐ ⭐</div>
+          <div class="pmeta">26 · $22M</div>
+          <div class="pdetail">#10 · CM · 181cm · Bologna</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Qkc8L3RleHQ+PC9zdmc+" alt="Ben Gannon-Doak ⭐">
+        <div class="pinfo">
+          <div class="pname">Ben Gannon-Doak ⭐ ⭐</div>
+          <div class="pmeta">20 · $15M</div>
+          <div class="pdetail">#7 · RW · 175cm · Bournemouth</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VEY8L3RleHQ+PC9zdmc+" alt="Tyler Fletcher">
+        <div class="pinfo">
+          <div class="pname">Tyler Fletcher</div>
+          <div class="pmeta">18 · $8M</div>
+          <div class="pdetail">#16 · CM · 180cm · Man United</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Sk08L3RleHQ+PC9zdmc+" alt="John McGinn ⭐">
+        <div class="pinfo">
+          <div class="pname">John McGinn ⭐ ⭐</div>
+          <div class="pmeta">31 · $18M</div>
+          <div class="pdetail">#11 · CM · 177cm · Aston Villa</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S008L3RleHQ+PC9zdmc+" alt="Kenny McLean">
+        <div class="pinfo">
+          <div class="pname">Kenny McLean</div>
+          <div class="pmeta">33 · $1M</div>
+          <div class="pdetail">#17 · CM · 183cm · Norwich</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U00yPC90ZXh0Pjwvc3ZnPg==" alt="Scott McTominay ⭐">
+        <div class="pinfo">
+          <div class="pname">Scott McTominay ⭐ ⭐</div>
+          <div class="pmeta">29 · $35M</div>
+          <div class="pdetail">#6 · CM · 193cm · Napoli</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q0E8L3RleHQ+PC9zdmc+" alt="Che Adams ⭐">
+        <div class="pinfo">
+          <div class="pname">Che Adams ⭐ ⭐</div>
+          <div class="pmeta">29 · $8M</div>
+          <div class="pdetail">#9 · ST · 175cm · Torino</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEQ8L3RleHQ+PC9zdmc+" alt="Lyndon Dykes">
+        <div class="pinfo">
+          <div class="pname">Lyndon Dykes</div>
+          <div class="pmeta">30 · $2M</div>
+          <div class="pdetail">#19 · ST · 188cm · Charlton</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R0gyPC90ZXh0Pjwvc3ZnPg==" alt="George Hirst">
+        <div class="pinfo">
+          <div class="pname">George Hirst</div>
+          <div class="pmeta">26 · $5M</div>
+          <div class="pdetail">#20 · ST · 191cm · Ipswich</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TFM8L3RleHQ+PC9zdmc+" alt="Lawrence Shankland">
+        <div class="pinfo">
+          <div class="pname">Lawrence Shankland</div>
+          <div class="pmeta">29 · $4M</div>
+          <div class="pdetail">#13 · ST · 185cm · Hearts</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UlM8L3RleHQ+PC9zdmc+" alt="Ross Stewart">
+        <div class="pinfo">
+          <div class="pname">Ross Stewart</div>
+          <div class="pmeta">29 · $6M</div>
+          <div class="pdetail">#24 · ST · 188cm · Southampton</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roster-panel bra">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNGRkRGMDAiIHN0cm9rZT0iIzAwOTczOSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iIzAwOTczOSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPkJSQTwvdGV4dD48L3N2Zz4=" alt="Brazil">
+        <div class="rh-name">Brazil</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q0E8L3RleHQ+PC9zdmc+" alt="Carlo Ancelotti">
+        <div class="pinfo">
+          <div class="pname">Carlo Ancelotti</div>
+          <div class="pmeta">66 · $—</div>
+          <div class="pdetail">Head Coach · Italian · Since May 2025</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUI8L3RleHQ+PC9zdmc+" alt="Alisson Becker ⭐">
+        <div class="pinfo">
+          <div class="pname">Alisson Becker ⭐ ⭐</div>
+          <div class="pmeta">33 · $20M</div>
+          <div class="pdetail">#1 · GK · 193cm · Liverpool</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RUQ8L3RleHQ+PC9zdmc+" alt="Ederson">
+        <div class="pinfo">
+          <div class="pname">Ederson</div>
+          <div class="pmeta">32 · $12M</div>
+          <div class="pdetail">#23 · GK · 188cm · Fenerbahçe</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+V1Y8L3RleHQ+PC9zdmc+" alt="Weverton">
+        <div class="pinfo">
+          <div class="pname">Weverton</div>
+          <div class="pmeta">38 · $0.5M</div>
+          <div class="pdetail">#12 · GK · 189cm · Grêmio</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QVM8L3RleHQ+PC9zdmc+" alt="Alex Sandro">
+        <div class="pinfo">
+          <div class="pname">Alex Sandro</div>
+          <div class="pmeta">35 · $3M</div>
+          <div class="pdetail">#6 · LB · 180cm · Flamengo</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QlI8L3RleHQ+PC9zdmc+" alt="Bremer">
+        <div class="pinfo">
+          <div class="pname">Bremer</div>
+          <div class="pmeta">29 · $35M</div>
+          <div class="pdetail">#4 · CB · 188cm · Juventus</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REE8L3RleHQ+PC9zdmc+" alt="Danilo ⭐">
+        <div class="pinfo">
+          <div class="pname">Danilo ⭐ ⭐</div>
+          <div class="pmeta">34 · $4M</div>
+          <div class="pdetail">#2 · RB · 184cm · Flamengo</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RFM8L3RleHQ+PC9zdmc+" alt="Douglas Santos ⭐">
+        <div class="pinfo">
+          <div class="pname">Douglas Santos ⭐ ⭐</div>
+          <div class="pmeta">32 · $5M</div>
+          <div class="pdetail">#16 · LB · 178cm · Zenit</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R0E8L3RleHQ+PC9zdmc+" alt="Gabriel Magalhães ⭐">
+        <div class="pinfo">
+          <div class="pname">Gabriel Magalhães ⭐ ⭐</div>
+          <div class="pmeta">28 · $55M</div>
+          <div class="pdetail">#3 · CB · 190cm · Arsenal</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SUI8L3RleHQ+PC9zdmc+" alt="Roger Ibañez">
+        <div class="pinfo">
+          <div class="pname">Roger Ibañez</div>
+          <div class="pmeta">27 · $12M</div>
+          <div class="pdetail">#13 · CB · 187cm · Al-Ahli</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TFA8L3RleHQ+PC9zdmc+" alt="Léo Pereira">
+        <div class="pinfo">
+          <div class="pname">Léo Pereira</div>
+          <div class="pmeta">30 · $15M</div>
+          <div class="pdetail">#14 · CB · 189cm · Flamengo</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TVE8L3RleHQ+PC9zdmc+" alt="Marquinhos (C) ⭐">
+        <div class="pinfo">
+          <div class="pname">Marquinhos (C) ⭐ ⭐</div>
+          <div class="pmeta">32 · $25M</div>
+          <div class="pdetail">#5 · CB · 183cm · PSG</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RVM8L3RleHQ+PC9zdmc+" alt="Éderson">
+        <div class="pinfo">
+          <div class="pname">Éderson</div>
+          <div class="pmeta">26 · $25M</div>
+          <div class="pdetail">#17 · LB · 183cm · Atalanta</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QkcyPC90ZXh0Pjwvc3ZnPg==" alt="Bruno Guimarães ⭐">
+        <div class="pinfo">
+          <div class="pname">Bruno Guimarães ⭐ ⭐</div>
+          <div class="pmeta">28 · $75M</div>
+          <div class="pdetail">#8 · CM · 182cm · Newcastle</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q1M8L3RleHQ+PC9zdmc+" alt="Casemiro ⭐">
+        <div class="pinfo">
+          <div class="pname">Casemiro ⭐ ⭐</div>
+          <div class="pmeta">34 · $10M</div>
+          <div class="pdetail">#5 · DM · 185cm · Man United</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RFMyPC90ZXh0Pjwvc3ZnPg==" alt="Danilo Santos">
+        <div class="pinfo">
+          <div class="pname">Danilo Santos</div>
+          <div class="pmeta">25 · $12M</div>
+          <div class="pdetail">#15 · CM · 177cm · Botafogo</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RkI8L3RleHQ+PC9zdmc+" alt="Fabinho">
+        <div class="pinfo">
+          <div class="pname">Fabinho</div>
+          <div class="pmeta">32 · $8M</div>
+          <div class="pdetail">#18 · DM · 188cm · Al-Ittihad</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TFAyPC90ZXh0Pjwvc3ZnPg==" alt="Lucas Paquetá ⭐">
+        <div class="pinfo">
+          <div class="pname">Lucas Paquetá ⭐ ⭐</div>
+          <div class="pmeta">28 · $45M</div>
+          <div class="pdetail">#10 · AM · 180cm · Flamengo</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RU48L3RleHQ+PC9zdmc+" alt="Endrick">
+        <div class="pinfo">
+          <div class="pname">Endrick</div>
+          <div class="pmeta">19 · $35M</div>
+          <div class="pdetail">#9 · ST · 173cm · Lyon</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R008L3RleHQ+PC9zdmc+" alt="Gabriel Martinelli">
+        <div class="pinfo">
+          <div class="pname">Gabriel Martinelli</div>
+          <div class="pmeta">24 · $55M</div>
+          <div class="pdetail">#11 · LW · 178cm · Arsenal</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SVQ8L3RleHQ+PC9zdmc+" alt="Igor Thiago">
+        <div class="pinfo">
+          <div class="pname">Igor Thiago</div>
+          <div class="pmeta">24 · $25M</div>
+          <div class="pdetail">#19 · ST · 186cm · Brentford</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEg8L3RleHQ+PC9zdmc+" alt="Luiz Henrique">
+        <div class="pinfo">
+          <div class="pname">Luiz Henrique</div>
+          <div class="pmeta">25 · $20M</div>
+          <div class="pdetail">#20 · RW · 181cm · Zenit</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUM8L3RleHQ+PC9zdmc+" alt="Matheus Cunha ⭐">
+        <div class="pinfo">
+          <div class="pname">Matheus Cunha ⭐ ⭐</div>
+          <div class="pmeta">26 · $55M</div>
+          <div class="pdetail">#7 · ST · 184cm · Man United</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TkU8L3RleHQ+PC9zdmc+" alt="Neymar">
+        <div class="pinfo">
+          <div class="pname">Neymar 🪑</div>
+          <div class="pmeta">34 · $12M</div>
+          <div class="pdetail">#10 · FW · 175cm · Santos</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UkE8L3RleHQ+PC9zdmc+" alt="Raphinha">
+        <div class="pinfo">
+          <div class="pname">Raphinha 🤕</div>
+          <div class="pmeta">29 · $70M</div>
+          <div class="pdetail">#22 · RW · 176cm · Barcelona</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Ulk8L3RleHQ+PC9zdmc+" alt="Rayan ⭐">
+        <div class="pinfo">
+          <div class="pname">Rayan ⭐ ⭐</div>
+          <div class="pmeta">19 · $30M</div>
+          <div class="pdetail">#21 · AM · 175cm · Bournemouth</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Vko8L3RleHQ+PC9zdmc+" alt="Vinícius Júnior ⭐">
+        <div class="pinfo">
+          <div class="pname">Vinícius Júnior ⭐ ⭐</div>
+          <div class="pmeta">25 · $180M</div>
+          <div class="pdetail">#7 · LW · 176cm · Real Madrid</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p style="font-size:10px;color:var(--muted);text-align:center;margin-top:4px;">
+    ⭐ = predicted starter &nbsp; 🤕 = injury &nbsp; 🪑 = bench (fit) &nbsp; Gilmour OUT (replaced by Fletcher)<br>
+    Market values in USD, converted at 1 EUR ≈ 1.08 USD. Source: Transfermarkt, retrieved June 24, 2026.
+  </p>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Odds &amp; Probabilities</div>
+  <div class="card">
+    <h3>Moneyline (90 min + stoppage)</h3>
+    <table class="odds">
+      <tr><th>Outcome</th><th>Odds</th><th>Polymarket</th><th>Implied Prob</th></tr>
+      <tr><td><strong>Brazil Win</strong></td><td>−280</td><td>71–75¢</td><td>~71–74%</td></tr>
+      <tr><td><strong>Draw</strong></td><td>+410</td><td>17–18¢</td><td>~17–20%</td></tr>
+      <tr><td><strong>Scotland Win</strong></td><td>+700</td><td>10–14¢</td><td>~10–13%</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Reading moneyline:</strong> −280 means bet $280 to win $100 profit. +700 means $100 bet returns $800 total ($700 profit).
+      Brazil are heavy favorites reflecting squad quality, H2H dominance, and Scotland's attacking struggles.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Totals, Handicap &amp; Props</h3>
+    <table class="odds">
+      <tr><th>Market</th><th>Line</th><th>Odds</th><th>Implication</th></tr>
+      <tr><td>Total Goals</td><td>O/U 2.5</td><td>Over −118 / Under −104</td><td>Slight lean Over; 2-3 goals expected</td></tr>
+      <tr><td>Both Teams Score</td><td>Yes/No</td><td>Yes +130 / No −166</td><td>Market favors Brazil clean sheet</td></tr>
+      <tr><td>Asian Handicap</td><td>Brazil −1.5</td><td>+100</td><td>Even money on 2+ goal margin</td></tr>
+      <tr><td>Correct Score</td><td>Brazil 2-0</td><td>+425</td><td>Aligned with central score path</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Market Sentiment (Polymarket)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Brazil 71–75%, Draw 17–18%, Scotland 10–14%. Sportsbook and prediction-market pricing are closely aligned —
+      no major divergence unlike some other Group C fixtures. The market prices Scotland's must-win desperation
+      as insufficient to overcome the talent gap. Brazil −1.5 at +100 offers value if the central 2-0 path materializes.
+    </p>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Risk Assessment</div>
+  <div class="card">
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Scotland defensive resilience:</strong> Held Morocco to 1-0 with organized 3-5-2. Could replicate against Brazil and keep −1.5 from cashing. <span class="tag tag-verified">Verified</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Miami heat &amp; humidity:</strong> 83–87°F with 70–74% humidity and heat index near 103°F may slow Brazil's tempo and reduce goal output. <span class="tag tag-verified">Verified</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Brazil rotation risk:</strong> Ancelotti may rest starters with qualification nearly secured, especially with knockout rounds ahead.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Scotland must-win chaos:</strong> Desperate teams can produce unpredictable results — early Scotland goal would flip game state entirely.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Neymar late introduction:</strong> If Brazil trail or draw at 60', Neymar off the bench could break the game open — or disrupt settled rhythm.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section wrap">
+  <div class="section-title">Sources</div>
+  <div class="card">
+    <ol class="source-list">
+      <li><strong>FIFA</strong> — Official standings, referee assignments, match schedule. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank">fifa.com</a></li>
+      <li><strong>Scottish FA</strong> — Scotland squad announcement. <a href="https://www.scottishfa.co.uk/en/news/steve-clarke-names-squad-for-2026-fifa-world-cup" target="_blank">scottishfa.co.uk</a></li>
+      <li><strong>BBC Sport</strong> — Scotland &amp; Brazil squad news, injury updates. <a href="https://www.bbc.com/sport/football" target="_blank">bbc.com/sport</a></li>
+      <li><strong>ESPN</strong> — Scotland squad analysis, Gilmour injury. <a href="https://www.espn.co.uk/football/story/_/id/48769157/" target="_blank">espn.com</a></li>
+      <li><strong>Sporting News / BBC</strong> — Brazil squad under Carlo Ancelotti, Neymar inclusion. <a href="https://www.sportingnews.com/us/soccer/news/brazil-world-cup-roster-2026-squad-players/" target="_blank">sportingnews.com</a></li>
+      <li><strong>Transfermarkt</strong> — Player market values for both squads. <a href="https://www.transfermarkt.com" target="_blank">transfermarkt.com</a>. Retrieved June 24, 2026.</li>
+      <li><strong>DraftKings / FanDuel</strong> — Sportsbook odds (ML, O/U, AH, BTTS). Retrieved June 24, 2026.</li>
+      <li><strong>Polymarket</strong> — Prediction market pricing (Brazil 71–75%). <a href="https://polymarket.com" target="_blank">polymarket.com</a></li>
+      <li><strong>AccuWeather</strong> — Miami Gardens forecast. <a href="https://www.accuweather.com" target="_blank">accuweather.com</a>. Retrieved June 24, 2026.</li>
+      <li><strong>FootyMetrics / FIFA</strong> — Referee César Ramos career statistics. Retrieved June 24, 2026.</li>
+      <li><strong>UEFA.com</strong> — Scotland WC 2026 context and fixtures. <a href="https://www.uefa.com" target="_blank">uefa.com</a></li>
+      <li><strong>11v11 / FIFA Archives</strong> — Head-to-head records (Brazil 8W-2D-0L). Retrieved June 24, 2026.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="footer wrap">
+  <strong>World Cup 2026 Match Report — Scotland vs Brazil</strong><br>
+  Generated by Assistant Coach Skill · June 25, 2026<br>
+  This report is for entertainment purposes only. All predictions are inference.<br>
+  Gambling involves risk. Only bet what you can afford to lose.
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var budget=parseInt(p.get('budget'))||100;
+  var BET=2,total=Math.floor(budget/BET);
+  budget=total*BET;
+  var h=document.querySelector('.bet-card h3');
+  if(h) h.innerHTML='Budget: $'+budget+' USD &middot; $'+BET+' per bet &middot; '+total+' bets';
+  document.querySelectorAll('.play[data-pct]').forEach(function(el){
+    var pct=parseFloat(el.dataset.pct),odds=parseFloat(el.dataset.odds);
+    var bets=Math.round(pct*total),alloc=bets*BET;
+    var pay=(alloc*odds).toFixed(2).replace(/\.00$/,''),prof=(alloc*odds-alloc).toFixed(2).replace(/\.00$/,'');
+    var lb=el.querySelector('.play-label');
+    if(lb) lb.textContent=lb.textContent.replace(/\(\d+%\s*=\s*\d+\s*bets\s*=\s*\$\d+\)/,'('+Math.round(pct*100)+'% = '+bets+' bets = $'+alloc+')');
+    var dt=el.querySelector('.play-detail');
+    if(dt) dt.innerHTML=dt.innerHTML.replace(/\$\d+(\.\d+)?\s*×/,'$'+alloc+' ×').replace(/=\s*\$[\d,.]+\s*\(profit\s*\$[\d,.]+\)/,'= $'+pay+' (profit $'+prof+')');
+  });
+  var w=document.querySelector('.bet-card .warning');
+  if(w) w.innerHTML=w.innerHTML.replace(/\$100/g,'$'+budget);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Czechia vs Mexico Pre-Match Analysis Report</title>
+  <style>
+    @page { size: A5 portrait; margin: 12mm 10mm 14mm; }
+    :root {
+      --ink: #102033;
+      --muted: #697586;
+      --line: #d9e2df;
+      --paper: #eaf1eb;
+      --panel: #ffffff;
+      --green: #0b6b47;
+      --gold: #fece14;
+      --blue: #102a57;
+      --red: #b33a3a;
+      --grass: #147a4d;
+      --deep: #071527;
+      --stadium: #020f2a;
+      --soft-green: #e4f4ec;
+      --soft-gold: #fff6cc;
+      --soft-blue: #e7eef9;
+      --soft-red: #fbeaea;
+      --shadow: 0 18px 44px rgba(7,21,39,.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #06172a 0, #082b25 310px, var(--paper) 620px, #eef4f1 100%);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    .wrap { max-width: 520px; margin: 0 auto; padding: 0 12px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; color: #fff; padding: 40px 16px 36px; overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(255,255,255,.15), transparent 15%),
+        radial-gradient(circle at 82% 18%, rgba(254,206,20,.35), transparent 20%),
+        linear-gradient(110deg, rgba(2,15,42,.97), rgba(4,56,39,.80) 50%, rgba(2,15,42,.93));
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: auto -10% -38% -10%; height: 52%;
+      background: linear-gradient(180deg, rgba(20,122,77,.55), rgba(8,72,47,.90));
+      border-top: 1px solid rgba(255,255,255,.18); transform: skewY(-3deg); pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800;
+      letter-spacing: .08em; color: #101820; background: var(--gold); border-radius: 999px;
+      padding: 4px 10px; margin-bottom: 10px; text-transform: uppercase;
+    }
+    h1 { font-size: 34px; line-height: .96; margin: 0 0 10px; letter-spacing: -.5px; }
+    .subtitle { margin: 0; color: rgba(255,255,255,.82); font-size: 13px; }
+
+    .team-strip {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center;
+      margin-top: 22px; padding: 12px; background: rgba(255,255,255,.08);
+      border-radius: 8px; border: 1px solid rgba(255,255,255,.12);
+    }
+    .team-strip .team { text-align: center; }
+    .team-strip .team img { width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: rgba(255,255,255,.1); }
+    .team-strip .team .name { font-size: 14px; font-weight: 700; margin-top: 4px; }
+    .team-strip .team .rank { font-size: 10px; color: rgba(255,255,255,.6); }
+    .team-strip .vs { font-size: 22px; font-weight: 800; color: var(--gold); }
+
+    /* ── NOTICE ── */
+    .notice {
+      margin: 16px auto; max-width: 520px; padding: 10px 14px; font-size: 11px;
+      background: var(--soft-gold); border-left: 3px solid var(--gold); border-radius: 4px;
+      color: #5a4e00;
+    }
+    .notice strong { color: #3d3500; }
+
+    /* ── SECTIONS ── */
+    .section { max-width: 520px; margin: 20px auto; }
+    .section-title {
+      font-size: 16px; font-weight: 800; color: var(--green); margin: 0 0 12px;
+      padding-bottom: 6px; border-bottom: 2px solid var(--gold);
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .card {
+      background: var(--panel); border-radius: 8px; padding: 14px 16px;
+      margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      border: 1px solid var(--line);
+    }
+    .card h3 { font-size: 13px; margin: 0 0 6px; color: var(--green); text-transform: uppercase; letter-spacing: .04em; }
+
+    /* ── CONCLUSION CARDS ── */
+    .conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .metric-card {
+      background: var(--panel); border-radius: 8px; padding: 12px;
+      border: 1px solid var(--line); text-align: center;
+    }
+    .metric-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+    .metric-card .value { font-size: 22px; font-weight: 800; color: var(--green); margin: 2px 0; }
+    .metric-card .sub { font-size: 10px; color: var(--muted); }
+    .tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin: 2px 2px 0 0; text-transform: uppercase; }
+    .tag-verified { background: var(--soft-green); color: var(--green); }
+    .tag-assumed { background: var(--soft-gold); color: #7a6800; }
+    .tag-not-verified { background: var(--soft-red); color: var(--red); }
+
+    /* ── BETTING ── */
+    .bet-card {
+      background: linear-gradient(135deg, #071527 0%, #0b3d2b 100%);
+      color: #fff; border-radius: 8px; padding: 16px; margin-bottom: 12px;
+    }
+    .bet-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 14px; }
+    .bet-card .play { background: rgba(255,255,255,.08); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+    .bet-card .play-label { font-size: 10px; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+    .bet-card .play-title { font-size: 15px; font-weight: 800; }
+    .bet-card .play-detail { font-size: 11px; color: rgba(255,255,255,.7); margin-top: 4px; }
+    .bet-card .warning {
+      background: rgba(179,58,58,.25); border: 1px solid rgba(179,58,58,.5);
+      border-radius: 4px; padding: 8px 10px; font-size: 11px; margin-top: 10px;
+    }
+    .bet-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
+    .bet-table th { text-align: left; font-size: 10px; color: var(--gold); padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .bet-table td { padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
+
+    /* ── REFEREE &amp; ENV ── */
+    .env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .env-item { background: var(--soft-blue); border-radius: 6px; padding: 8px 10px; }
+    .env-item .env-label { font-size: 10px; font-weight: 700; color: var(--blue); text-transform: uppercase; }
+    .env-item .env-value { font-size: 13px; font-weight: 600; }
+
+    /* ── PITCH ── */
+    .pitch-container { background: var(--panel); border-radius: 8px; padding: 12px; border: 1px solid var(--line); margin-bottom: 14px; page-break-inside: avoid; break-inside: avoid; }
+    .pitch {
+      position: relative; width: 100%; height: 520px; background: linear-gradient(180deg, #1a7a42 0%, #15653a 50%, #1a7a42 100%);
+      border-radius: 6px; overflow: hidden; border: 2px solid rgba(255,255,255,.3);
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .pitch::before {
+      content: ""; position: absolute; left: 5%; right: 5%; top: 49.5%; height: 1%;
+      border-top: 2px solid rgba(255,255,255,.4); border-bottom: 2px solid rgba(255,255,255,.4);
+    }
+    .pitch .center-circle {
+      position: absolute; left: 50%; top: 50%; width: 60px; height: 60px;
+      border: 2px solid rgba(255,255,255,.3); border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .pitch .penalty-box-top {
+      position: absolute; left: 25%; right: 25%; top: 0; height: 12%;
+      border: 2px solid rgba(255,255,255,.3); border-top: none;
+    }
+    .pitch .penalty-box-bot {
+      position: absolute; left: 25%; right: 25%; bottom: 0; height: 12%;
+      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
+    }
+    .pitch .goal-top {
+      position: absolute; left: 38%; right: 38%; top: 0; height: 5%;
+      border: 2px solid rgba(255,255,255,.3); border-top: none;
+    }
+    .pitch .goal-bot {
+      position: absolute; left: 38%; right: 38%; bottom: 0; height: 5%;
+      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
+    }
+    .player-dot {
+      position: absolute; transform: translate(-50%, -50%); text-align: center; z-index: 2;
+    }
+    .player-dot .dot {
+      width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 11px; font-weight: 800; margin: 0 auto 2px;
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .player-dot .pname { font-size: 8px; color: #fff; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+    .dot-tur { background: #e30a17; color: #fff; }
+    .dot-cze { background: #11457E; color: #fff; }
+    .dot-mex { background: #006847; color: #fff; }
+
+    .formation-label {
+      position: absolute; left: 8px; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.7);
+      text-transform: uppercase; letter-spacing: .05em;
+    }
+    .venue-badge {
+      position: absolute; right: 6px; bottom: 6px; background: rgba(0,0,0,.5);
+      padding: 3px 6px; border-radius: 3px; font-size: 8px; color: rgba(255,255,255,.8);
+    }
+
+    /* ── ROSTER ── */
+    .roster-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .roster-panel { background: #f5f8f6; border-radius: 8px; padding: 10px; border: 1px solid var(--line); }
+    .roster-panel.cze { background: #eef3fa; }
+    .roster-panel.mex { background: #eef6f2; }
+    .roster-header { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+    .roster-header img { width: 24px; height: 24px; border-radius: 50%; object-fit: contain; }
+    .roster-header .rh-name { font-size: 13px; font-weight: 800; }
+    .pos-group-title { font-size: 10px; font-weight: 800; color: var(--green); text-transform: uppercase; margin: 8px 0 4px; letter-spacing: .05em; }
+    .player-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,.04); }
+    .player-row:last-child { border-bottom: none; }
+    .player-row .avatar {
+      width: 30px; height: 30px; border-radius: 50%; object-fit: cover;
+      background: #ddd; flex-shrink: 0; border: 1px solid rgba(0,0,0,.08);
+    }
+    .player-row .pinfo { min-width: 0; }
+    .player-row .pinfo .pname { font-size: 11px; font-weight: 700; line-height: 1.2; }
+    .player-row .pinfo .pmeta { font-size: 9px; color: var(--muted); line-height: 1.3; }
+    .player-row .pinfo .pdetail { font-size: 8px; color: #999; line-height: 1.3; }
+
+    /* ── ODDS TABLE ── */
+    table.odds { width: 100%; border-collapse: collapse; font-size: 12px; }
+    table.odds th { text-align: left; font-size: 10px; color: var(--muted); padding: 6px 8px; border-bottom: 2px solid var(--line); font-weight: 700; text-transform: uppercase; }
+    table.odds td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+    table.odds tr:last-child td { border-bottom: none; }
+
+    /* ── RISK ── */
+    .risk-item { display: flex; gap: 8px; margin-bottom: 8px; }
+    .risk-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; }
+    .risk-high { background: var(--soft-red); color: var(--red); }
+    .risk-med { background: var(--soft-gold); color: #7a6800; }
+
+    /* ── SOURCES ── */
+    .source-list { font-size: 10px; color: var(--muted); }
+    .source-list a { font-size: 10px; word-break: break-all; }
+    .source-list li { margin-bottom: 4px; }
+
+    /* ── FOOTER ── */
+    .footer {
+      max-width: 520px; margin: 30px auto 20px; padding: 14px 16px; text-align: center;
+      font-size: 10px; color: var(--muted); border-top: 1px solid var(--line);
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; }
+      .hero { break-after: avoid; }
+      .section { break-inside: avoid; }
+      .card { break-inside: avoid; }
+      .bet-card { break-inside: avoid; }
+      .roster-grid { break-inside: auto; }
+      .roster-panel { break-inside: avoid; }
+    }
+
+    .adj-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 6px; }
+    .adj-table th { text-align: left; font-size: 10px; padding: 4px 6px; background: var(--soft-green); color: var(--green); }
+    .adj-table td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
+    .adj-up { color: var(--red); font-weight: 700; }
+    .adj-down { color: var(--green); font-weight: 700; }
+    .adj-none { color: var(--muted); }
+
+    .subs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .sub-panel { background: rgba(255,255,255,.06); border-radius: 6px; padding: 8px; }
+    .sub-panel h4 { font-size: 10px; color: var(--gold); margin: 0 0 4px; text-transform: uppercase; }
+    .sub-row { font-size: 10px; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+
+    .tactic-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .tactic-table th { text-align: left; font-size: 10px; padding: 5px 6px; background: var(--soft-green); color: var(--green); font-weight: 700; }
+    .tactic-table td { padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">⚽ FIFA World Cup 2026 &middot; Group A &middot; Matchday 3 &middot; Match 53</div>
+    <h1>Czechia vs Mexico</h1>
+    <p class="subtitle">
+      Tuesday, June 24, 2026 &middot; 9:00 PM ET / 7:00 PM CST<br>
+      Estadio Azteca, Mexico City &middot; Referee: Yael Falcón Pérez (ARG)
+    </p>
+    <div class="team-strip">
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMxMTQ1N0UiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPkNaRTwvdGV4dD48L3N2Zz4=" alt="Czechia">
+        <div class="name">Czechia</div>
+        <div class="rank">FIFA #34 &middot; 1 pt &middot; Must Win</div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDY4NDciIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPk1FWDwvdGV4dD48L3N2Zz4=" alt="Mexico">
+        <div class="name">Mexico</div>
+        <div class="rank">FIFA #14 &middot; 6 pts &middot; Group Winners</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ NOTICE ═══════════════════════ -->
+<div class="notice wrap">
+  <strong>Report generated:</strong> June 25, 2026, 09:00 MYT (GMT+8).<br>
+  <strong>Exchange rate:</strong> 1 EUR ≈ 1.08 USD (approximate, June 2026).<br>
+  <strong>Betslip status:</strong> Pre-purchase — verify odds at your sportsbook before placing bets. Lineups are predicted, not confirmed.<br>
+  <strong>Disclaimer:</strong> This report is entertainment-oriented analysis, not investment advice. Gambling involves risk of losing your entire budget.
+</div>
+
+<!-- ═══════════════════════ CONCLUSION ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Match Conclusion</div>
+  <div class="conclusion-grid">
+    <div class="metric-card">
+      <div class="label">Central Score Path</div>
+      <div class="value">1–0</div>
+      <div class="sub">Mexico edge at altitude; Czechia struggle to score</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Alternative Path</div>
+      <div class="value">1–1</div>
+      <div class="sub">Rotation + Czech desperation create upset window</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Mexico Win Prob</div>
+      <div class="value">~50%</div>
+      <div class="sub">Near pick'em &middot; Polymarket 50–56%</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Total Goals Line</div>
+      <div class="value">O/U 2.5</div>
+      <div class="sub">Under -138 favored &middot; altitude + rain</div>
+    </div>
+  </div>
+  <div class="card">
+    <p style="margin:0;font-size:12px;">
+      <strong>Verdict:</strong> The narrowest odds gap of all six Matchday 3 fixtures. Mexico have already qualified as Group A winners (6 pts, 0 goals conceded) and are expected to rotate heavily — Ochoa farewell start likely, youth players in. Czechia must win to keep any advancement hope alive; a draw eliminates them. The decisive factor is altitude: Estadio Azteca sits at 2,200m (7,220ft), where Czechia have no acclimatization (prior games at sea level and Atlanta). Combined with rain (63–100% chance) and Mexico's defensive solidity, the central path is a low-scoring Mexico win — but rotation uncertainty keeps Czechia's double-chance live.
+    </p>
+    <div style="margin-top:8px;">
+      <span class="tag tag-verified">Verified: Mexico qualified</span>
+      <span class="tag tag-verified">Verified: 2,200m altitude</span>
+      <span class="tag tag-verified">Verified: Jurásek OUT</span>
+      <span class="tag tag-verified">Verified: Montes returns</span>
+      <span class="tag tag-assumed">Assumed: Heavy Mexico rotation</span>
+      <span class="tag tag-assumed">Assumed: Czechia full-strength</span>
+      <span class="tag tag-not-verified">Not verified: Official lineups</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BETTING PLAN ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Concentrated Betting Plan</div>
+  <div class="bet-card">
+    <h3>Budget: $100 USD &middot; $2 per bet &middot; 50 bets</h3>
+
+    <div class="play" data-pct="0.55" data-odds="1.72">
+      <div class="play-label">Selection 1 — Core (55% = 28 bets = $56)</div>
+      <div class="play-title">Under 2.5 Goals @ -138</div>
+      <div class="play-detail">
+        Altitude at 2,200m reduces oxygen and accelerates fatigue, suppressing open play. Rain forecast (63–100%)
+        creates heavy pitch conditions. Mexico rotation likely prioritizes defensive shape over attacking risk.
+        Group A averages 2.0 goals/game through two matchdays. Mexico have conceded 0 goals in the tournament.<br>
+        <strong>Potential payout:</strong> $56 × 1.72 = $96.32 (profit $40.32)<br>
+        <strong>Min acceptable odds:</strong> -150 (1.67)<br>
+        <strong>Cancel if:</strong> Mexico announces near full-strength XI, or altitude/rain forecast changes dramatically.
+      </div>
+    </div>
+
+    <div class="play" data-pct="0.45" data-odds="1.87">
+      <div class="play-label">Selection 2 — Adjacent (45% = 22 bets = $44)</div>
+      <div class="play-title">Czechia Double Chance (X2) @ -115</div>
+      <div class="play-detail">
+        Mexico rotation + Czech desperation creates an upset window. Rotated players unfamiliar with Azteca altitude
+        may fatigue faster than acclimatized Czechia despite Czechia's own altitude disadvantage. Near pick'em
+        moneyline (+270 Czechia) reflects market uncertainty on rotation depth.<br>
+        <strong>Potential payout:</strong> $44 × 1.87 = $82.28 (profit $38.28)<br>
+        <strong>Min acceptable odds:</strong> -130 (1.77)<br>
+        <strong>Cancel if:</strong> Mexico fields near full-strength XI including Jiménez, Giménez, and Álvarez.
+      </div>
+    </div>
+
+    <table class="bet-table">
+      <tr><th>Pre-Purchase Check</th><th>Action</th></tr>
+      <tr><td>Mexico confirms full-strength XI</td><td>Cancel Selection 2; reduce Selection 1 to 40%</td></tr>
+      <tr><td>Under 2.5 odds worse than -150</td><td>Drop Selection 1; concentrate on Czechia X2</td></tr>
+      <tr><td>Rain forecast drops below 40%</td><td>Reduce Under 2.5 allocation by 20%</td></tr>
+      <tr><td>Czechia rests Schick or Souček</td><td>Cancel Selection 2 entirely</td></tr>
+      <tr><td>Mexico starts Ochoa + 6+ rotation players</td><td>Increase Czechia X2 to 55%</td></tr>
+    </table>
+
+    <div class="warning">
+      ⚠️ <strong>Whole-Budget-Loss Warning:</strong> This concentrated plan intentionally accepts a high probability of losing the entire $100 entertainment budget.
+      Altitude effects are unpredictable; Czechia must win but have scored only 2 goals in 2 matches.
+      Only bet what you can afford to lose. This is entertainment analysis, not guaranteed returns.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SCORE THESIS ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Score Thesis</div>
+  <div class="card">
+    <h3>Baseline Score Range (Market-Derived)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      De-vigged sportsbook odds: Mexico ~50%, Draw ~24%, Czechia ~26%. Total goals O/U 2.5 (Under favored at -138).
+      Polymarket: Mexico 50–56%, Draw 23–26%, Czechia 21–27%. Narrowest odds gap of all six Matchday 3 matches —
+      near pick'em due to rotation uncertainty.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Baseline central path:</strong> 1–2 total goals. Most likely scores: 1-0 Mexico, 0-0, 1-1 draw.
+      Correct score markets price Mexico 1-0 at 6.40 and Draw 1-1 at 7.00.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Score-Impact Adjustments</h3>
+    <table class="adj-table">
+      <tr><th>Factor</th><th>Evidence</th><th>Direction</th></tr>
+      <tr>
+        <td>Altitude 2,200m AMSL</td>
+        <td>Estadio Azteca open-air at 7,220ft. Czechia played sea-level (S. Korea) and Atlanta. Verified.</td>
+        <td class="adj-down">↓ Total goals −0.4</td>
+      </tr>
+      <tr>
+        <td>Mexico rotation (qualified)</td>
+        <td>6 pts, group winners. Ochoa farewell, youth players expected. Assumed from Aguirre comments.</td>
+        <td class="adj-up">↑ Czechia scoring +0.2</td>
+      </tr>
+      <tr>
+        <td>Mexico 0 goals conceded</td>
+        <td>2 clean sheets: 2-0 vs S. Africa, 1-0 vs S. Korea. Verified.</td>
+        <td class="adj-down">↓ Czechia scoring −0.3</td>
+      </tr>
+      <tr>
+        <td>Czechia must-win desperation</td>
+        <td>1 pt, -1 GD. Draw = eliminated. Verified.</td>
+        <td class="adj-up">↑ Czechia attacking +0.2</td>
+      </tr>
+      <tr>
+        <td>Referee (Falcón Pérez): low cards</td>
+        <td>1 YC, 0 RC, 18 fouls in Sweden 5-1 Tunisia. Career 5.27 Y/match.</td>
+        <td class="adj-none">→ NO CHANGE</td>
+      </tr>
+      <tr>
+        <td>Weather: rain 63–100%, 17–20°C</td>
+        <td>Cloudy, wind 10–22 km/h. Heavy conditions at altitude. AccuWeather.</td>
+        <td class="adj-down">↓ Total goals −0.3</td>
+      </tr>
+      <tr>
+        <td>Jurásek OUT (thigh)</td>
+        <td>Tournament-ending injury. Verified.</td>
+        <td class="adj-down">↓ Czechia width −0.1</td>
+      </tr>
+      <tr>
+        <td>Montes returns from suspension</td>
+        <td>Missed vs S. Korea (yellow). Back for MD3. Verified.</td>
+        <td class="adj-down">↓ Czechia scoring −0.1</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Resulting Score Paths</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Central path:</strong> Mexico 1 – 0 Czechia. Rotated Mexico still enough at altitude; Czechia struggle to break down Montes-led defense in heavy conditions. Confidence: <strong>Medium</strong>.<br>
+      <strong>Alternative path:</strong> Draw 1 – 1 or Czechia 1 – 0. Mexican rotation + Czech desperation creates upset window; altitude fatigue hits rotated players unfamiliar with Azteca. Confidence: <strong>Medium-Low</strong>.<br>
+      <strong>Tail-risk trigger:</strong> Mexico fields near full-strength XI → Mexico 2-0 comfortable win at altitude.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ REFEREE &amp; ENVIRONMENT ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Referee &amp; Environment</div>
+  <div class="card">
+    <h3>Referee: Yael Falcón Pérez (Argentina)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      FIFA international referee. In this tournament, his one match was Sweden 5-1 Tunisia with 1 yellow card,
+      0 red cards, and 18 fouls called — a notably low-card, low-foul affair despite a high-scoring game.
+    </p>
+    <table class="adj-table">
+      <tr><th>Stat</th><th>WC 2026 (1 match)</th><th>Career Avg</th></tr>
+      <tr><td>Yellow cards</td><td>1</td><td>5.27 per match</td></tr>
+      <tr><td>Red cards</td><td>0</td><td>Not verified</td></tr>
+      <tr><td>Fouls called</td><td>18</td><td>Not verified</td></tr>
+      <tr><td>Penalties</td><td>0</td><td>Not verified</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Assessment:</strong> Low-card referee. Open, flowing game likely unless altitude-induced fatigue triggers tactical fouls.
+      <strong>Score impact: NO CHANGE.</strong>
+      <span class="tag tag-verified">Verified: FIFA assignment</span>
+    </p>
+  </div>
+
+  <div class="card" style="border-left:4px solid var(--red);background:var(--soft-red);">
+    <h3 style="color:var(--red);">⚠️ Altitude Alert — Critical Factor</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Estadio Azteca: 2,200m (7,220 ft) above sea level.</strong> This is the highest-altitude venue in the 2026 World Cup group stage.
+      At altitude, oxygen partial pressure drops ~22%, causing faster fatigue, elevated heart rates, and reduced aerobic capacity.
+      Mexico are fully acclimatized — they opened the tournament here (2-0 vs S. Africa, 1-0 vs S. Korea).
+      Czechia played at near-sea-level in Charlotte (1-2 vs S. Korea) and Atlanta (1-1 vs S. Africa) with no altitude preparation.
+      Historical data from Azteca matches shows visiting European teams consistently underperform in the second half.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Score adjustment:</strong> Favors Mexico +0.3 goals, reduces total goals −0.4 (fatigue suppresses open play).
+      Combined with rain, expect a grinding, low-tempo match after the 60th minute.
+    </p>
+  </div>
+
+  <div class="env-grid" style="margin-top:12px;">
+    <div class="env-item">
+      <div class="env-label">Venue</div>
+      <div class="env-value">Estadio Azteca</div>
+      <div style="font-size:10px;color:var(--muted);">Mexico City · 87,500 capacity · 2,200m altitude</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Surface</div>
+      <div class="env-value">Natural Grass</div>
+      <div style="font-size:10px;color:var(--muted);">Open-air · no roof · iconic Azteca pitch</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Kickoff Weather</div>
+      <div class="env-value">63–68°F / 17–20°C</div>
+      <div style="font-size:10px;color:var(--muted);">Cloudy · rain 63–100% · wind 10–22 km/h</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Travel &amp; Rest</div>
+      <div class="env-value">6 days rest (both)</div>
+      <div style="font-size:10px;color:var(--muted);">Mexico acclimatized at Azteca; Czechia from Atlanta</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--muted);margin-top:8px;">
+    <strong>Environment impact:</strong> Altitude is the dominant factor. Rain compounds fatigue effects on a heavy pitch.
+    Evening kickoff (7 PM CST) keeps temperatures moderate but does not offset oxygen deficit.
+  </p>
+</div>
+
+<!-- ═══════════════════════ EVENT BACKGROUND ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Event Background</div>
+  <div class="card">
+    <h3>Group A — Final Matchday</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Mexico have clinched first place with 6 points and a +3 goal difference (2-0 vs S. Africa, 1-0 vs S. Korea).
+      Czechia sit third with 1 point (1-2 vs S. Korea, 1-1 vs S. Africa) and must win to have any advancement hope.
+      South Korea (3 pts) face South Africa (1 pt) simultaneously — Czechia likely need a win plus a Korea result.
+    </p>
+    <table class="odds" style="margin-top:8px;">
+      <tr><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Mexico</strong></td><td>2</td><td>2</td><td>0</td><td>0</td><td>3</td><td>0</td><td>+3</td><td><strong>6</strong></td></tr>
+      <tr><td>South Korea</td><td>2</td><td>1</td><td>0</td><td>1</td><td>3</td><td>3</td><td>0</td><td>3</td></tr>
+      <tr style="background:var(--soft-gold);"><td><strong>Czechia</strong></td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>3</td><td>−1</td><td><strong>1</strong></td></tr>
+      <tr><td>South Africa</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>3</td><td>−2</td><td>1</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Match Context</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Mexico:</strong> Co-hosts with a perfect defensive record — 0 goals conceded in 2 matches. Javier Aguirre
+      has already secured the group and will rotate heavily. Guillermo Ochoa (40, record 6th World Cup) is expected
+      for a farewell start. César Montes returns from yellow-card suspension. Youth prospects Gilberto Mora (18) and
+      Obed Vargas (20) may feature. Squad value ~$207M.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Czechia:</strong> First World Cup since 2006, managed by Miroslav Koubek (appointed Dec 2025, replacing
+      sacked Ivan Hašek). Must-win scenario with Patrik Schick leading the line. Tomáš Souček anchors midfield.
+      David Jurásek is OUT (thigh, tournament-ending). Prior games at sea level provide no altitude preparation.
+      Squad value ~$203M — remarkably close to Mexico.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Head-to-Head</h3>
+    <table class="odds">
+      <tr><th>Year</th><th>Competition</th><th>Result</th><th>Venue</th></tr>
+      <tr><td>2000</td><td>Friendly</td><td><strong>Czech Republic</strong> 2–1 Mexico</td><td>Hong Kong</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      1 meeting as Czech Republic (CZE win). 3 total meetings including Czechoslovakia era.
+      <strong>First competitive World Cup meeting.</strong>
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ TEAM OVERVIEW ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Team Overview</div>
+  <div class="card">
+    <h3>🇨🇿 Czechia</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Miroslav Koubek (Czech) &middot; <strong>FIFA Ranking:</strong> #34 &middot;
+      <strong>Squad Value:</strong> ~$203M &middot; <strong>Style:</strong> 3-4-2-1 compact block with Souček anchor<br>
+      <strong>WC History:</strong> 2nd appearance as Czechia (2006, 2026). Best: QF as Czechoslovakia (1962).<br>
+      <strong>Key Players:</strong> Patrik Schick (Bayer Leverkusen, $28M), Tomáš Souček (West Ham, $20M), Pavel Šulc (Lyon, $22M).<br>
+      <strong>Strengths:</strong> Physical midfield, set-piece threat via Souček/Schick, tactical discipline under Koubek.<br>
+      <strong>Weaknesses:</strong> No altitude acclimatization, Jurásek OUT, only 2 goals in 2 matches, must-win pressure.<br>
+      <strong>Form:</strong> L 1-2 vs S. Korea, D 1-1 vs S. Africa.
+    </p>
+  </div>
+  <div class="card">
+    <h3>🇲🇽 Mexico</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Javier Aguirre (Mexico) &middot; <strong>FIFA Ranking:</strong> #14 &middot;
+      <strong>Squad Value:</strong> ~$207M &middot; <strong>Style:</strong> 4-3-3 possession with width via Gallardo/Huerta<br>
+      <strong>WC History:</strong> 18th appearance. Best: QF (1970, 1986, both as hosts). First nation to host 3 World Cups.<br>
+      <strong>Key Players:</strong> Edson Álvarez (Fenerbahçe, $24M), Santiago Giménez (AC Milan, $32M), César Montes (Lokomotiv, $12M).<br>
+      <strong>Strengths:</strong> Altitude advantage, 2 clean sheets, home crowd at Azteca, squad depth for rotation.<br>
+      <strong>Weaknesses:</strong> Rotation uncertainty, aging Ochoa in goal, limited goals (3 in 2 matches).<br>
+      <strong>Form:</strong> W 2-0 vs S. Africa, W 1-0 vs S. Korea. Group winners with 6 pts.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ PREDICTED STARTERS + PITCH ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Predicted Starters &amp; Tactics</div>
+
+  <div class="pitch-container">
+    <div class="pitch">
+      <div class="penalty-box-top"></div>
+      <div class="goal-top"></div>
+      <div class="center-circle"></div>
+      <div class="penalty-box-bot"></div>
+      <div class="goal-bot"></div>
+
+      <div class="formation-label" style="top:3%;">CZECHIA 3-4-2-1</div>
+      <div class="formation-label" style="bottom:3%;">MEXICO 4-3-3</div>
+
+      <!-- CZECHIA (top half) -->
+      <div class="player-dot" style="left:50%;top:5%;"><div class="dot dot-cze">1</div><div class="pname">Kovář</div></div>
+      <div class="player-dot" style="left:22%;top:15%;"><div class="dot dot-cze">2</div><div class="pname">Zima</div></div>
+      <div class="player-dot" style="left:50%;top:15%;"><div class="dot dot-cze">4</div><div class="pname">Hranáč</div></div>
+      <div class="player-dot" style="left:78%;top:15%;"><div class="dot dot-cze">7</div><div class="pname">Krejčí</div></div>
+      <div class="player-dot" style="left:10%;top:28%;"><div class="dot dot-cze">5</div><div class="pname">Coufal</div></div>
+      <div class="player-dot" style="left:35%;top:28%;"><div class="dot dot-cze">22</div><div class="pname">Souček</div></div>
+      <div class="player-dot" style="left:65%;top:28%;"><div class="dot dot-cze">17</div><div class="pname">Provod</div></div>
+      <div class="player-dot" style="left:90%;top:28%;"><div class="dot dot-cze">21</div><div class="pname">Douděra</div></div>
+      <div class="player-dot" style="left:35%;top:38%;"><div class="dot dot-cze">15</div><div class="pname">Šulc</div></div>
+      <div class="player-dot" style="left:65%;top:38%;"><div class="dot dot-cze">18</div><div class="pname">Sadílek</div></div>
+      <div class="player-dot" style="left:50%;top:46%;"><div class="dot dot-cze">10</div><div class="pname">Schick</div></div>
+
+      <!-- MEXICO (bottom half) -->
+      <div class="player-dot" style="left:50%;top:95%;"><div class="dot dot-mex">13</div><div class="pname">Ochoa</div></div>
+      <div class="player-dot" style="left:85%;top:85%;"><div class="dot dot-mex">2</div><div class="pname">Sánchez</div></div>
+      <div class="player-dot" style="left:63%;top:85%;"><div class="dot dot-mex">3</div><div class="pname">Montes</div></div>
+      <div class="player-dot" style="left:37%;top:85%;"><div class="dot dot-mex">5</div><div class="pname">Vásquez</div></div>
+      <div class="player-dot" style="left:15%;top:85%;"><div class="dot dot-mex">23</div><div class="pname">Gallardo</div></div>
+      <div class="player-dot" style="left:25%;top:73%;"><div class="dot dot-mex">7</div><div class="pname">Romo</div></div>
+      <div class="player-dot" style="left:50%;top:73%;"><div class="dot dot-mex">8</div><div class="pname">Lira</div></div>
+      <div class="player-dot" style="left:75%;top:73%;"><div class="dot dot-mex">6</div><div class="pname">Vargas</div></div>
+      <div class="player-dot" style="left:18%;top:63%;"><div class="dot dot-mex">27</div><div class="pname">Alvarado</div></div>
+      <div class="player-dot" style="left:50%;top:56%;"><div class="dot dot-mex">21</div><div class="pname">González</div></div>
+      <div class="player-dot" style="left:82%;top:63%;"><div class="dot dot-mex">24</div><div class="pname">Huerta</div></div>
+
+      <div class="venue-badge">Azteca · 2,200m · Rain likely</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Tactical Analysis</h3>
+    <table class="tactic-table">
+      <tr><th>Observation</th><th>Betting Implication</th></tr>
+      <tr>
+        <td>Czechia 3-4-2-1 compact block with Souček shielding defense</td>
+        <td>Low block limits Mexico chances; supports Under 2.5</td>
+      </tr>
+      <tr>
+        <td>Mexico rotation XI with youth (Vargas 20, González 21, Huerta 24)</td>
+        <td>Less cutting edge; supports Czechia X2 and low scores</td>
+      </tr>
+      <tr>
+        <td>Altitude fatigue hits Czechia after 60 min — no acclimatization</td>
+        <td>Mexico more likely to score late; but total still low</td>
+      </tr>
+      <tr>
+        <td>Montes return strengthens Mexico's 0-conceded defensive record</td>
+        <td>Czechia scoring difficult; supports Under 2.5 and Mexico 1-0</td>
+      </tr>
+      <tr>
+        <td>Schick isolated up front vs rotated Mexico back line</td>
+        <td>Set pieces are Czechia's best chance; BTTS at 1.85 is fair coin flip</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card" style="background:var(--stadium);color:#fff;">
+    <h3 style="color:var(--gold);">Likely Substitutes</h3>
+    <div class="subs-grid">
+      <div class="sub-panel">
+        <h4>🇨🇿 Czechia Bench</h4>
+        <div class="sub-row">GK: Staněk, Horníček</div>
+        <div class="sub-row">DEF: Holeš, Chaloupek, Zelený</div>
+        <div class="sub-row">MID: Darida, Červ, Sojka, Sochůrek, Višinský</div>
+        <div class="sub-row">FWD: Hložek, Kuchta, Chytil, Chorý</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">OUT: Jurásek (thigh, tournament)</div>
+      </div>
+      <div class="sub-panel">
+        <h4>🇲🇽 Mexico Bench</h4>
+        <div class="sub-row">GK: Rangel, Acevedo</div>
+        <div class="sub-row">DEF: Álvarez, Reyes, Chávez</div>
+        <div class="sub-row">MID: Fidalgo, Pineda, Mora, Chávez, Gutiérrez</div>
+        <div class="sub-row">FWD: Jiménez, Giménez, Vega, Quiñones, Martínez</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">* = rested — group already won</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ FULL ROSTERS ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Full Squad Rosters</div>
+  <div class="roster-grid">
+    <div class="roster-panel cze">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMxMTQ1N0UiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPkNaRTwvdGV4dD48L3N2Zz4=" alt="Czechia">
+        <div class="rh-name">Czechia</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUs8L3RleHQ+PC9zdmc+" alt="Miroslav Koubek">
+        <div class="pinfo">
+          <div class="pname">Miroslav Koubek</div>
+          <div class="pmeta">62 · —</div>
+          <div class="pdetail">#— · Head Coach · — · Czech FA</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUs8L3RleHQ+PC9zdmc+" alt="Matěj Kovář">
+        <div class="pinfo">
+          <div class="pname">Matěj Kovář ⭐</div>
+          <div class="pmeta">26 · $14M</div>
+          <div class="pdetail">#1 · GK · 196cm · PSV Eindhoven</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SlM8L3RleHQ+PC9zdmc+" alt="Jindřich Staněk">
+        <div class="pinfo">
+          <div class="pname">Jindřich Staněk</div>
+          <div class="pmeta">30 · $3M</div>
+          <div class="pdetail">#16 · GK · 194cm · Slavia Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEg8L3RleHQ+PC9zdmc+" alt="Lukáš Horníček">
+        <div class="pinfo">
+          <div class="pname">Lukáš Horníček</div>
+          <div class="pmeta">23 · $5M</div>
+          <div class="pdetail">#23 · GK · 196cm · SC Braga</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RFo8L3RleHQ+PC9zdmc+" alt="David Zima">
+        <div class="pinfo">
+          <div class="pname">David Zima ⭐</div>
+          <div class="pmeta">25 · $12M</div>
+          <div class="pdetail">#2 · CB · 190cm · Slavia Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VEg8L3RleHQ+PC9zdmc+" alt="Tomáš Holeš">
+        <div class="pinfo">
+          <div class="pname">Tomáš Holeš</div>
+          <div class="pmeta">33 · $4M</div>
+          <div class="pdetail">#3 · CB · 183cm · Slavia Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Ukg8L3RleHQ+PC9zdmc+" alt="Robin Hranáč">
+        <div class="pinfo">
+          <div class="pname">Robin Hranáč ⭐</div>
+          <div class="pmeta">26 · $8M</div>
+          <div class="pdetail">#4 · CB · 185cm · Hoffenheim</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VkM8L3RleHQ+PC9zdmc+" alt="Vladimír Coufal">
+        <div class="pinfo">
+          <div class="pname">Vladimír Coufal ⭐</div>
+          <div class="pmeta">33 · $6M</div>
+          <div class="pdetail">#5 · RB · 179cm · Hoffenheim</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0M8L3RleHQ+PC9zdmc+" alt="Štěpán Chaloupek">
+        <div class="pinfo">
+          <div class="pname">Štěpán Chaloupek</div>
+          <div class="pmeta">23 · $3M</div>
+          <div class="pdetail">#6 · CB · 191cm · Slavia Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEs8L3RleHQ+PC9zdmc+" alt="Ladislav Krejčí">
+        <div class="pinfo">
+          <div class="pname">Ladislav Krejčí ⭐</div>
+          <div class="pmeta">27 · $18M</div>
+          <div class="pdetail">#7 · CB · 190cm · Wolverhampton</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REo8L3RleHQ+PC9zdmc+" alt="David Jurásek">
+        <div class="pinfo">
+          <div class="pname">David Jurásek 🚫</div>
+          <div class="pmeta">25 · $7M</div>
+          <div class="pdetail">#14 · LB · 183cm · Slavia Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Slo8L3RleHQ+PC9zdmc+" alt="Jaroslav Zelený">
+        <div class="pinfo">
+          <div class="pname">Jaroslav Zelený</div>
+          <div class="pmeta">33 · $2M</div>
+          <div class="pdetail">#20 · CB · 189cm · Sparta Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REQ8L3RleHQ+PC9zdmc+" alt="David Douděra">
+        <div class="pinfo">
+          <div class="pname">David Douděra ⭐</div>
+          <div class="pmeta">28 · $9M</div>
+          <div class="pdetail">#21 · RWB · 182cm · Slavia Prague</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VkQ8L3RleHQ+PC9zdmc+" alt="Vladimír Darida">
+        <div class="pinfo">
+          <div class="pname">Vladimír Darida</div>
+          <div class="pmeta">35 · $1M</div>
+          <div class="pdetail">#8 · CM · 172cm · Hradec Králové</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEM8L3RleHQ+PC9zdmc+" alt="Lukáš Červ">
+        <div class="pinfo">
+          <div class="pname">Lukáš Červ</div>
+          <div class="pmeta">25 · $6M</div>
+          <div class="pdetail">#12 · CM · 180cm · Viktoria Plzeň</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UFM8L3RleHQ+PC9zdmc+" alt="Pavel Šulc">
+        <div class="pinfo">
+          <div class="pname">Pavel Šulc ⭐</div>
+          <div class="pmeta">25 · $22M</div>
+          <div class="pdetail">#15 · AM · 181cm · Olympique Lyon</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TFA8L3RleHQ+PC9zdmc+" alt="Lukáš Provod">
+        <div class="pinfo">
+          <div class="pname">Lukáš Provod ⭐</div>
+          <div class="pmeta">29 · $14M</div>
+          <div class="pdetail">#17 · CM · 186cm · Slavia Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TVM8L3RleHQ+PC9zdmc+" alt="Michal Sadílek">
+        <div class="pinfo">
+          <div class="pname">Michal Sadílek ⭐</div>
+          <div class="pmeta">27 · $10M</div>
+          <div class="pdetail">#18 · CM · 169cm · Slavia Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VFM8L3RleHQ+PC9zdmc+" alt="Tomáš Souček">
+        <div class="pinfo">
+          <div class="pname">Tomáš Souček ⭐</div>
+          <div class="pmeta">31 · $20M</div>
+          <div class="pdetail">#22 · DM · 192cm · West Ham</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QVM8L3RleHQ+PC9zdmc+" alt="Alexandr Sojka">
+        <div class="pinfo">
+          <div class="pname">Alexandr Sojka</div>
+          <div class="pmeta">23 · $2M</div>
+          <div class="pdetail">#24 · CM · 180cm · Viktoria Plzeň</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SFM8L3RleHQ+PC9zdmc+" alt="Hugo Sochůrek">
+        <div class="pinfo">
+          <div class="pname">Hugo Sochůrek</div>
+          <div class="pmeta">17 · $1M</div>
+          <div class="pdetail">#25 · CM · 178cm · Sparta Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RFY8L3RleHQ+PC9zdmc+" alt="Denis Višinský">
+        <div class="pinfo">
+          <div class="pname">Denis Višinský</div>
+          <div class="pmeta">23 · $3M</div>
+          <div class="pdetail">#26 · AM · 180cm · Viktoria Plzeň</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUg8L3RleHQ+PC9zdmc+" alt="Adam Hložek">
+        <div class="pinfo">
+          <div class="pname">Adam Hložek</div>
+          <div class="pmeta">23 · $18M</div>
+          <div class="pdetail">#9 · ST · 188cm · Hoffenheim</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UFM8L3RleHQ+PC9zdmc+" alt="Patrik Schick">
+        <div class="pinfo">
+          <div class="pname">Patrik Schick ⭐</div>
+          <div class="pmeta">30 · $28M</div>
+          <div class="pdetail">#10 · ST · 191cm · Bayer Leverkusen</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Sks8L3RleHQ+PC9zdmc+" alt="Jan Kuchta">
+        <div class="pinfo">
+          <div class="pname">Jan Kuchta</div>
+          <div class="pmeta">29 · $8M</div>
+          <div class="pdetail">#11 · ST · 183cm · Sparta Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUM8L3RleHQ+PC9zdmc+" alt="Mojmír Chytil">
+        <div class="pinfo">
+          <div class="pname">Mojmír Chytil</div>
+          <div class="pmeta">27 · $5M</div>
+          <div class="pdetail">#13 · ST · 186cm · Slavia Prague</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VEM8L3RleHQ+PC9zdmc+" alt="Tomáš Chorý">
+        <div class="pinfo">
+          <div class="pname">Tomáš Chorý</div>
+          <div class="pmeta">31 · $4M</div>
+          <div class="pdetail">#19 · ST · 190cm · Slavia Prague</div>
+        </div>
+      </div>
+    </div>
+    <div class="roster-panel mex">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDY4NDciIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPk1FWDwvdGV4dD48L3N2Zz4=" alt="Mexico">
+        <div class="rh-name">Mexico</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SkE8L3RleHQ+PC9zdmc+" alt="Javier Aguirre">
+        <div class="pinfo">
+          <div class="pname">Javier Aguirre</div>
+          <div class="pmeta">68 · —</div>
+          <div class="pdetail">#— · Head Coach · — · Mexico FA</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R088L3RleHQ+PC9zdmc+" alt="Guillermo Ochoa">
+        <div class="pinfo">
+          <div class="pname">Guillermo Ochoa ⭐</div>
+          <div class="pmeta">40 · $1M</div>
+          <div class="pdetail">#13 · GK · 183cm · AEL Limassol</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UlI8L3RleHQ+PC9zdmc+" alt="Raúl Rangel">
+        <div class="pinfo">
+          <div class="pname">Raúl Rangel</div>
+          <div class="pmeta">24 · $3M</div>
+          <div class="pdetail">#12 · GK · 188cm · Chivas</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q0E8L3RleHQ+PC9zdmc+" alt="Carlos Acevedo">
+        <div class="pinfo">
+          <div class="pname">Carlos Acevedo</div>
+          <div class="pmeta">29 · $4M</div>
+          <div class="pdetail">#25 · GK · 185cm · Santos Laguna</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SlM8L3RleHQ+PC9zdmc+" alt="Jorge Sánchez">
+        <div class="pinfo">
+          <div class="pname">Jorge Sánchez ⭐</div>
+          <div class="pmeta">28 · $8M</div>
+          <div class="pdetail">#2 · RB · 178cm · PAOK</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q008L3RleHQ+PC9zdmc+" alt="César Montes">
+        <div class="pinfo">
+          <div class="pname">César Montes ⭐</div>
+          <div class="pmeta">28 · $12M</div>
+          <div class="pdetail">#3 · CB · 184cm · Lokomotiv Moscow</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RUE8L3RleHQ+PC9zdmc+" alt="Edson Álvarez">
+        <div class="pinfo">
+          <div class="pname">Edson Álvarez</div>
+          <div class="pmeta">28 · $24M</div>
+          <div class="pdetail">#4 · CB · 185cm · Fenerbahçe</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SlY8L3RleHQ+PC9zdmc+" alt="Johan Vásquez">
+        <div class="pinfo">
+          <div class="pname">Johan Vásquez ⭐</div>
+          <div class="pmeta">27 · $14M</div>
+          <div class="pdetail">#5 · CB · 185cm · Genoa</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SVI8L3RleHQ+PC9zdmc+" alt="Israel Reyes">
+        <div class="pinfo">
+          <div class="pname">Israel Reyes</div>
+          <div class="pmeta">25 · $6M</div>
+          <div class="pdetail">#15 · CB · 184cm · Club América</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUM8L3RleHQ+PC9zdmc+" alt="Mateo Chávez">
+        <div class="pinfo">
+          <div class="pname">Mateo Chávez</div>
+          <div class="pmeta">20 · $5M</div>
+          <div class="pdetail">#16 · LB · 175cm · AZ Alkmaar</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Skc8L3RleHQ+PC9zdmc+" alt="Jesús Gallardo">
+        <div class="pinfo">
+          <div class="pname">Jesús Gallardo ⭐</div>
+          <div class="pmeta">31 · $5M</div>
+          <div class="pdetail">#23 · LB · 178cm · Toluca</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TFI8L3RleHQ+PC9zdmc+" alt="Luis Romo">
+        <div class="pinfo">
+          <div class="pname">Luis Romo ⭐</div>
+          <div class="pmeta">30 · $6M</div>
+          <div class="pdetail">#7 · DM · 178cm · Chivas</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RUw8L3RleHQ+PC9zdmc+" alt="Erik Lira">
+        <div class="pinfo">
+          <div class="pname">Erik Lira ⭐</div>
+          <div class="pmeta">25 · $10M</div>
+          <div class="pdetail">#8 · DM · 176cm · Cruz Azul</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+T1Y8L3RleHQ+PC9zdmc+" alt="Obed Vargas">
+        <div class="pinfo">
+          <div class="pname">Obed Vargas ⭐</div>
+          <div class="pmeta">20 · $8M</div>
+          <div class="pdetail">#6 · CM · 175cm · Atlético Madrid</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUY8L3RleHQ+PC9zdmc+" alt="Álvaro Fidalgo">
+        <div class="pinfo">
+          <div class="pname">Álvaro Fidalgo</div>
+          <div class="pmeta">29 · $12M</div>
+          <div class="pdetail">#10 · AM · 178cm · Real Betis</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+T1A8L3RleHQ+PC9zdmc+" alt="Orbelín Pineda">
+        <div class="pinfo">
+          <div class="pname">Orbelín Pineda</div>
+          <div class="pmeta">29 · $7M</div>
+          <div class="pdetail">#17 · AM · 169cm · AEK Athens</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R008L3RleHQ+PC9zdmc+" alt="Gilberto Mora">
+        <div class="pinfo">
+          <div class="pname">Gilberto Mora</div>
+          <div class="pmeta">18 · $6M</div>
+          <div class="pdetail">#18 · AM · 170cm · Tijuana</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEM8L3RleHQ+PC9zdmc+" alt="Luis Chávez">
+        <div class="pinfo">
+          <div class="pname">Luis Chávez</div>
+          <div class="pmeta">29 · $9M</div>
+          <div class="pdetail">#19 · CM · 178cm · Dynamo Moscow</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Qkc8L3RleHQ+PC9zdmc+" alt="Brian Gutiérrez">
+        <div class="pinfo">
+          <div class="pname">Brian Gutiérrez</div>
+          <div class="pmeta">22 · $8M</div>
+          <div class="pdetail">#20 · CM · 176cm · Chivas</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Uko8L3RleHQ+PC9zdmc+" alt="Raúl Jiménez">
+        <div class="pinfo">
+          <div class="pname">Raúl Jiménez</div>
+          <div class="pmeta">34 · $5M</div>
+          <div class="pdetail">#9 · ST · 189cm · Fulham</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QVY8L3RleHQ+PC9zdmc+" alt="Alexis Vega">
+        <div class="pinfo">
+          <div class="pname">Alexis Vega</div>
+          <div class="pmeta">28 · $7M</div>
+          <div class="pdetail">#11 · LW · 173cm · Toluca</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0c8L3RleHQ+PC9zdmc+" alt="Santiago Giménez">
+        <div class="pinfo">
+          <div class="pname">Santiago Giménez</div>
+          <div class="pmeta">24 · $32M</div>
+          <div class="pdetail">#14 · ST · 182cm · AC Milan</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUc8L3RleHQ+PC9zdmc+" alt="Armando González">
+        <div class="pinfo">
+          <div class="pname">Armando González ⭐</div>
+          <div class="pmeta">21 · $4M</div>
+          <div class="pdetail">#21 · ST · 178cm · Chivas</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SlE8L3RleHQ+PC9zdmc+" alt="Julián Quiñones">
+        <div class="pinfo">
+          <div class="pname">Julián Quiñones</div>
+          <div class="pmeta">28 · $10M</div>
+          <div class="pdetail">#22 · ST · 183cm · Al-Qadsiah</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q0g8L3RleHQ+PC9zdmc+" alt="César Huerta">
+        <div class="pinfo">
+          <div class="pname">César Huerta ⭐</div>
+          <div class="pmeta">24 · $12M</div>
+          <div class="pdetail">#24 · LW · 173cm · Anderlecht</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R008L3RleHQ+PC9zdmc+" alt="Guillermo Martínez">
+        <div class="pinfo">
+          <div class="pname">Guillermo Martínez</div>
+          <div class="pmeta">31 · $3M</div>
+          <div class="pdetail">#26 · ST · 184cm · Pumas UNAM</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UkE8L3RleHQ+PC9zdmc+" alt="Roberto Alvarado">
+        <div class="pinfo">
+          <div class="pname">Roberto Alvarado ⭐</div>
+          <div class="pmeta">27 · $9M</div>
+          <div class="pdetail">#27 · RW · 176cm · Chivas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:10px;color:var(--muted);text-align:center;margin-top:4px;">
+    ⭐ = predicted starter &nbsp; 🚫 = ruled out &nbsp;
+    Market values in USD, converted at 1 EUR ≈ 1.08 USD. Source: Transfermarkt, retrieved June 24, 2026.
+  </p>
+</div>
+
+<!-- ═══════════════════════ ODDS &amp; PROBABILITIES ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Odds &amp; Probabilities</div>
+  <div class="card">
+    <h3>Moneyline (90 min + stoppage)</h3>
+    <table class="odds">
+      <tr><th>Outcome</th><th>Sportsbook</th><th>Polymarket</th><th>Implied Prob</th></tr>
+      <tr><td><strong>Mexico Win</strong></td><td>-110</td><td>50–56¢</td><td>~50–52%</td></tr>
+      <tr><td><strong>Draw</strong></td><td>+280</td><td>23–26¢</td><td>~23–26%</td></tr>
+      <tr><td><strong>Czechia Win</strong></td><td>+270</td><td>21–27¢</td><td>~21–27%</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Near pick'em:</strong> Narrowest odds gap of all six Matchday 3 matches. Rotation uncertainty keeps lines tight.
+      <strong>Reading moneyline:</strong> -110 means bet $110 to win $100. +270 means $100 bet returns $370 total.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Totals &amp; Spreads</h3>
+    <table class="odds">
+      <tr><th>Market</th><th>Line</th><th>Odds</th><th>Implication</th></tr>
+      <tr><td>Total Goals</td><td>O/U 2.5</td><td>Over +108 / Under -138</td><td>Under favored; altitude + rain suppress scoring</td></tr>
+      <tr><td>Asian Handicap</td><td>Mexico -0.5</td><td>1.88</td><td>Mexico must win outright; near coin flip</td></tr>
+      <tr><td>Both Teams Score</td><td>Yes/No</td><td>Yes 1.85 / No 1.85</td><td>Perfect coin flip; Mexico clean sheets vs Czech need</td></tr>
+      <tr><td>Correct Score</td><td>MEX 1-0</td><td>6.40</td><td>Central path priced accordingly</td></tr>
+      <tr><td>Correct Score</td><td>Draw 1-1</td><td>7.00</td><td>Alternative upset path</td></tr>
+      <tr><td>Double Chance</td><td>Czechia X2</td><td>-115</td><td>Czechia win or draw; rotation hedge</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Market Sentiment (Polymarket)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Mexico 50–56%, Draw 23–26%, Czechia 21–27%. Sportsbooks and prediction markets agree this is the most
+      uncertain Matchday 3 fixture. Mexico's home altitude advantage is offset by expected rotation.
+      Squad values nearly identical (~$203M vs ~$207M), reinforcing the pick'em pricing.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ RISKS ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Risk Assessment</div>
+  <div class="card">
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Altitude unpredictability:</strong> Czechia have no acclimatization. Second-half collapse is a real risk — but could also mean Mexico rotated players fade first. <span class="tag tag-verified">Verified</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Mexico lineup uncertainty:</strong> Aguirre may field anywhere from 3 to 8 rotation changes. Near full-strength XI would invalidate Czechia X2 thesis. <span class="tag tag-assumed">Assumed rotation</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Czechia must-win pressure:</strong> Desperation can produce heroic performances or tactical collapse. Schick's tournament form (1 goal in 2) is modest.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Rain impact:</strong> 63–100% precipitation probability could slow play (supports Under) or cause defensive errors (supports BTTS).
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Ochoa farewell narrative:</strong> Emotional send-off for a 40-year-old legend could inspire or distract rotated Mexico side.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SOURCES ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Sources</div>
+  <div class="card">
+    <ol class="source-list">
+      <li><strong>FIFA</strong> — Official squad lists, group standings, referee assignments. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank">fifa.com</a></li>
+      <li><strong>Fotbal.cz</strong> — Czechia official squad nomination. <a href="https://www.fotbal.cz/repre/nominace/nominace/1046" target="_blank">fotbal.cz</a></li>
+      <li><strong>BBC Sport</strong> — Czechia squad announcement. <a href="https://www.bbc.co.uk/sport/football/articles/ckgp77e0yp7o" target="_blank">bbc.com</a></li>
+      <li><strong>SI.com</strong> — Mexico 26-man World Cup roster. <a href="https://www.si.com/soccer/mexico-2026-world-cup-roster-confirmed-full-list-of-players-historic-inclusions" target="_blank">si.com</a></li>
+      <li><strong>Reuters</strong> — Czechia fixtures and squad. <a href="https://www.reuters.com/graphics/SOCCER-WORLDCUP/mopaoglqkpa/teams/czech-republic/" target="_blank">reuters.com</a></li>
+      <li><strong>Transfermarkt</strong> — Player market values for both squads. <a href="https://www.transfermarkt.com" target="_blank">transfermarkt.com</a>. Retrieved June 24, 2026.</li>
+      <li><strong>Polymarket</strong> — Prediction market pricing (Mexico 50–56%, Draw 23–26%, Czechia 21–27%). <a href="https://polymarket.com" target="_blank">polymarket.com</a></li>
+      <li><strong>AccuWeather</strong> — Mexico City kickoff forecast (17–20°C, rain 63–100%). <a href="https://www.accuweather.com" target="_blank">accuweather.com</a>. Retrieved June 24, 2026.</li>
+      <li><strong>UEFA.com</strong> — Czechia World Cup group preview. <a href="https://www.uefa.com/european-qualifiers/news/02a6-20d15945d06d-c1587a40d2a4-1000--czechia-at-the-world-cup-2026-squad-fixtures-group-and-hi/" target="_blank">uefa.com</a></li>
+      <li><strong>Yahoo Sports</strong> — Mexico squad breakdown. <a href="https://sports.yahoo.com/articles/mexico-world-cup-2026-squad-162718406.html" target="_blank">sports.yahoo.com</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<div class="footer wrap">
+  <strong>World Cup 2026 Match Report — Czechia vs Mexico</strong><br>
+  Generated by Assistant Coach Skill &middot; June 25, 2026<br>
+  This report is for entertainment purposes only. All predictions are inference.<br>
+  Gambling involves risk. Only bet what you can afford to lose.
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var budget=parseInt(p.get('budget'))||100;
+  var BET=2,total=Math.floor(budget/BET);
+  budget=total*BET;
+  var h=document.querySelector('.bet-card h3');
+  if(h) h.innerHTML='Budget: $'+budget+' USD &middot; $'+BET+' per bet &middot; '+total+' bets';
+  document.querySelectorAll('.play[data-pct]').forEach(function(el){
+    var pct=parseFloat(el.dataset.pct),odds=parseFloat(el.dataset.odds);
+    var bets=Math.round(pct*total),alloc=bets*BET;
+    var pay=(alloc*odds).toFixed(2).replace(/\.00$/,''),prof=(alloc*odds-alloc).toFixed(2).replace(/\.00$/,'');
+    var lb=el.querySelector('.play-label');
+    if(lb) lb.textContent=lb.textContent.replace(/\(\d+%\s*=\s*\d+\s*bets\s*=\s*\$\d+\)/,'('+Math.round(pct*100)+'% = '+bets+' bets = $'+alloc+')');
+    var dt=el.querySelector('.play-detail');
+    if(dt) dt.innerHTML=dt.innerHTML.replace(/\$\d+(\.\d+)?\s*×/,'$'+alloc+' ×').replace(/=\s*\$[\d,.]+\s*\(profit\s*\$[\d,.]+\)/,'= $'+pay+' (profit $'+prof+')');
+  });
+  var w=document.querySelector('.bet-card .warning');
+  if(w) w.innerHTML=w.innerHTML.replace(/\$100/g,'$'+budget);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Switzerland vs Canada Pre-Match Analysis Report</title>
+  <style>
+
+    @page { size: A5 portrait; margin: 12mm 10mm 14mm; }
+    :root {
+      --ink: #102033;
+      --muted: #697586;
+      --line: #d9e2df;
+      --paper: #eaf1eb;
+      --panel: #ffffff;
+      --green: #0b6b47;
+      --gold: #fece14;
+      --blue: #102a57;
+      --red: #b33a3a;
+      --grass: #147a4d;
+      --deep: #071527;
+      --stadium: #020f2a;
+      --soft-green: #e4f4ec;
+      --soft-gold: #fff6cc;
+      --soft-blue: #e7eef9;
+      --soft-red: #fbeaea;
+      --shadow: 0 18px 44px rgba(7,21,39,.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #06172a 0, #082b25 310px, var(--paper) 620px, #eef4f1 100%);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+    a { color: var(--blue); text-decoration: none; }
+    .wrap { max-width: 520px; margin: 0 auto; padding: 0 12px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; color: #fff; padding: 40px 16px 36px; overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 14%, rgba(255,255,255,.15), transparent 15%),
+        radial-gradient(circle at 82% 18%, rgba(254,206,20,.35), transparent 20%),
+        linear-gradient(110deg, rgba(2,15,42,.97), rgba(4,56,39,.80) 50%, rgba(2,15,42,.93));
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: auto -10% -38% -10%; height: 52%;
+      background: linear-gradient(180deg, rgba(20,122,77,.55), rgba(8,72,47,.90));
+      border-top: 1px solid rgba(255,255,255,.18); transform: skewY(-3deg); pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800;
+      letter-spacing: .08em; color: #101820; background: var(--gold); border-radius: 999px;
+      padding: 4px 10px; margin-bottom: 10px; text-transform: uppercase;
+    }
+    h1 { font-size: 34px; line-height: .96; margin: 0 0 10px; letter-spacing: -.5px; }
+    .subtitle { margin: 0; color: rgba(255,255,255,.82); font-size: 13px; }
+
+    .team-strip {
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center;
+      margin-top: 22px; padding: 12px; background: rgba(255,255,255,.08);
+      border-radius: 8px; border: 1px solid rgba(255,255,255,.12);
+    }
+    .team-strip .team { text-align: center; }
+    .team-strip .team img { width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: rgba(255,255,255,.1); }
+    .team-strip .team .name { font-size: 14px; font-weight: 700; margin-top: 4px; }
+    .team-strip .team .rank { font-size: 10px; color: rgba(255,255,255,.6); }
+    .team-strip .vs { font-size: 22px; font-weight: 800; color: var(--gold); }
+
+    /* ── NOTICE ── */
+    .notice {
+      margin: 16px auto; max-width: 520px; padding: 10px 14px; font-size: 11px;
+      background: var(--soft-gold); border-left: 3px solid var(--gold); border-radius: 4px;
+      color: #5a4e00;
+    }
+    .notice strong { color: #3d3500; }
+
+    /* ── SECTIONS ── */
+    .section { max-width: 520px; margin: 20px auto; }
+    .section-title {
+      font-size: 16px; font-weight: 800; color: var(--green); margin: 0 0 12px;
+      padding-bottom: 6px; border-bottom: 2px solid var(--gold);
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .card {
+      background: var(--panel); border-radius: 8px; padding: 14px 16px;
+      margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06);
+      border: 1px solid var(--line);
+    }
+    .card h3 { font-size: 13px; margin: 0 0 6px; color: var(--green); text-transform: uppercase; letter-spacing: .04em; }
+
+    /* ── CONCLUSION CARDS ── */
+    .conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+    .metric-card {
+      background: var(--panel); border-radius: 8px; padding: 12px;
+      border: 1px solid var(--line); text-align: center;
+    }
+    .metric-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
+    .metric-card .value { font-size: 22px; font-weight: 800; color: var(--green); margin: 2px 0; }
+    .metric-card .sub { font-size: 10px; color: var(--muted); }
+    .tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin: 2px 2px 0 0; text-transform: uppercase; }
+    .tag-verified { background: var(--soft-green); color: var(--green); }
+    .tag-assumed { background: var(--soft-gold); color: #7a6800; }
+    .tag-not-verified { background: var(--soft-red); color: var(--red); }
+
+    /* ── BETTING ── */
+    .bet-card {
+      background: linear-gradient(135deg, #071527 0%, #0b3d2b 100%);
+      color: #fff; border-radius: 8px; padding: 16px; margin-bottom: 12px;
+    }
+    .bet-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 14px; }
+    .bet-card .play { background: rgba(255,255,255,.08); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
+    .bet-card .play-label { font-size: 10px; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+    .bet-card .play-title { font-size: 15px; font-weight: 800; }
+    .bet-card .play-detail { font-size: 11px; color: rgba(255,255,255,.7); margin-top: 4px; }
+    .bet-card .warning {
+      background: rgba(179,58,58,.25); border: 1px solid rgba(179,58,58,.5);
+      border-radius: 4px; padding: 8px 10px; font-size: 11px; margin-top: 10px;
+    }
+    .bet-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
+    .bet-table th { text-align: left; font-size: 10px; color: var(--gold); padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .bet-table td { padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
+
+    /* ── REFEREE &amp; ENV ── */
+    .env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .env-item { background: var(--soft-blue); border-radius: 6px; padding: 8px 10px; }
+    .env-item .env-label { font-size: 10px; font-weight: 700; color: var(--blue); text-transform: uppercase; }
+    .env-item .env-value { font-size: 13px; font-weight: 600; }
+
+    /* ── PITCH ── */
+    .pitch-container { background: var(--panel); border-radius: 8px; padding: 12px; border: 1px solid var(--line); margin-bottom: 14px; page-break-inside: avoid; break-inside: avoid; }
+    .pitch {
+      position: relative; width: 100%; height: 520px; background: linear-gradient(180deg, #1a7a42 0%, #15653a 50%, #1a7a42 100%);
+      border-radius: 6px; overflow: hidden; border: 2px solid rgba(255,255,255,.3);
+      page-break-inside: avoid; break-inside: avoid;
+    }
+    .pitch::before {
+      content: ""; position: absolute; left: 5%; right: 5%; top: 49.5%; height: 1%;
+      border-top: 2px solid rgba(255,255,255,.4); border-bottom: 2px solid rgba(255,255,255,.4);
+    }
+    .pitch .center-circle {
+      position: absolute; left: 50%; top: 50%; width: 60px; height: 60px;
+      border: 2px solid rgba(255,255,255,.3); border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .pitch .penalty-box-top {
+      position: absolute; left: 25%; right: 25%; top: 0; height: 12%;
+      border: 2px solid rgba(255,255,255,.3); border-top: none;
+    }
+    .pitch .penalty-box-bot {
+      position: absolute; left: 25%; right: 25%; bottom: 0; height: 12%;
+      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
+    }
+    .pitch .goal-top {
+      position: absolute; left: 38%; right: 38%; top: 0; height: 5%;
+      border: 2px solid rgba(255,255,255,.3); border-top: none;
+    }
+    .pitch .goal-bot {
+      position: absolute; left: 38%; right: 38%; bottom: 0; height: 5%;
+      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
+    }
+    .player-dot {
+      position: absolute; transform: translate(-50%, -50%); text-align: center; z-index: 2;
+    }
+    .player-dot .dot {
+      width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 11px; font-weight: 800; margin: 0 auto 2px;
+      border: 2px solid rgba(255,255,255,.5);
+    }
+    .player-dot .pname { font-size: 8px; color: #fff; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+    .dot-sui { background: #FF0000; color: #fff; }
+    .dot-can { background: #FF0000; color: #fff; }
+
+    .formation-label {
+      position: absolute; left: 8px; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.7);
+      text-transform: uppercase; letter-spacing: .05em;
+    }
+    .venue-badge {
+      position: absolute; right: 6px; bottom: 6px; background: rgba(0,0,0,.5);
+      padding: 3px 6px; border-radius: 3px; font-size: 8px; color: rgba(255,255,255,.8);
+    }
+
+    /* ── ROSTER ── */
+    .roster-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .roster-panel { background: #f5f8f6; border-radius: 8px; padding: 10px; border: 1px solid var(--line); }
+    .roster-panel.sui { background: #fef5f5; }
+    .roster-panel.can { background: #fff5f5; }
+    .roster-header { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+    .roster-header img { width: 24px; height: 24px; border-radius: 50%; object-fit: contain; }
+    .roster-header .rh-name { font-size: 13px; font-weight: 800; }
+    .pos-group-title { font-size: 10px; font-weight: 800; color: var(--green); text-transform: uppercase; margin: 8px 0 4px; letter-spacing: .05em; }
+    .player-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,.04); }
+    .player-row:last-child { border-bottom: none; }
+    .player-row .avatar {
+      width: 30px; height: 30px; border-radius: 50%; object-fit: cover;
+      background: #ddd; flex-shrink: 0; border: 1px solid rgba(0,0,0,.08);
+    }
+    .player-row .pinfo { min-width: 0; }
+    .player-row .pinfo .pname { font-size: 11px; font-weight: 700; line-height: 1.2; }
+    .player-row .pinfo .pmeta { font-size: 9px; color: var(--muted); line-height: 1.3; }
+    .player-row .pinfo .pdetail { font-size: 8px; color: #999; line-height: 1.3; }
+
+    /* ── ODDS TABLE ── */
+    table.odds { width: 100%; border-collapse: collapse; font-size: 12px; }
+    table.odds th { text-align: left; font-size: 10px; color: var(--muted); padding: 6px 8px; border-bottom: 2px solid var(--line); font-weight: 700; text-transform: uppercase; }
+    table.odds td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
+    table.odds tr:last-child td { border-bottom: none; }
+
+    /* ── RISK ── */
+    .risk-item { display: flex; gap: 8px; margin-bottom: 8px; }
+    .risk-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; }
+    .risk-high { background: var(--soft-red); color: var(--red); }
+    .risk-med { background: var(--soft-gold); color: #7a6800; }
+
+    /* ── SOURCES ── */
+    .source-list { font-size: 10px; color: var(--muted); }
+    .source-list a { font-size: 10px; word-break: break-all; }
+    .source-list li { margin-bottom: 4px; }
+
+    /* ── FOOTER ── */
+    .footer {
+      max-width: 520px; margin: 30px auto 20px; padding: 14px 16px; text-align: center;
+      font-size: 10px; color: var(--muted); border-top: 1px solid var(--line);
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; }
+      .hero { break-after: avoid; }
+      .section { break-inside: avoid; }
+      .card { break-inside: avoid; }
+      .bet-card { break-inside: avoid; }
+      .roster-grid { break-inside: auto; }
+      .roster-panel { break-inside: avoid; }
+    }
+
+    .adj-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 6px; }
+    .adj-table th { text-align: left; font-size: 10px; padding: 4px 6px; background: var(--soft-green); color: var(--green); }
+    .adj-table td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
+    .adj-up { color: var(--red); font-weight: 700; }
+    .adj-down { color: var(--green); font-weight: 700; }
+    .adj-none { color: var(--muted); }
+
+    .subs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+    .sub-panel { background: rgba(255,255,255,.06); border-radius: 6px; padding: 8px; }
+    .sub-panel h4 { font-size: 10px; color: var(--gold); margin: 0 0 4px; text-transform: uppercase; }
+    .sub-row { font-size: 10px; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+
+    .tactic-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .tactic-table th { text-align: left; font-size: 10px; padding: 5px 6px; background: var(--soft-green); color: var(--green); font-weight: 700; }
+    .tactic-table td { padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">⚽ FIFA World Cup 2026 &middot; Group B &middot; Matchday 3 &middot; Match 51</div>
+    <h1>Switzerland vs Canada</h1>
+    <p class="subtitle">
+      Tuesday, June 24, 2026 &middot; 3:00 PM ET / 12:00 PM PT<br>
+      Wednesday, June 25, 2026 &middot; 3:00 AM MYT<br>
+      BC Place, Vancouver, British Columbia &middot; Referee: Ramon Abatti (BRA)
+    </p>
+    <div class="team-strip">
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNGRjAwMDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPlNVSTwvdGV4dD48L3N2Zz4=" alt="Switzerland">
+        <div class="name">Switzerland</div>
+        <div class="rank">FIFA #17 &middot; 4 pts &middot; Qualified</div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNGRjAwMDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiI+8J+NgTwvdGV4dD48dGV4dCB4PSIzMCIgeT0iNDIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjkiIGZvbnQtd2VpZ2h0PSI4MDAiPkNBTjwvdGV4dD48L3N2Zz4=" alt="Canada">
+        <div class="name">Canada</div>
+        <div class="rank">FIFA #30 &middot; 4 pts &middot; Group B leader (GD)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ NOTICE ═══════════════════════ -->
+<div class="notice wrap">
+  <strong>Report generated:</strong> June 25, 2026, 02:45 MYT (GMT+8).<br>
+  <strong>Exchange rate:</strong> 1 EUR ≈ 1.08 USD (approximate, June 2026).<br>
+  <strong>Betslip status:</strong> Pre-purchase — verify odds at your sportsbook before placing bets. Lineups are predicted, not confirmed.<br>
+  <strong>Disclaimer:</strong> This report is entertainment-oriented analysis, not investment advice. Gambling involves risk of losing your entire budget.
+</div>
+
+<!-- ═══════════════════════ CONCLUSION ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Match Conclusion</div>
+  <div class="conclusion-grid">
+    <div class="metric-card">
+      <div class="label">Central Score Path</div>
+      <div class="value">1–0 / 1–1</div>
+      <div class="sub">Low-stakes, cagey group decider</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Alternative Path</div>
+      <div class="value">2–1 CAN</div>
+      <div class="sub">David scores at home in Vancouver</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Switzerland Win Prob</div>
+      <div class="value">~40%</div>
+      <div class="sub">De-vigged sportsbook / ~40% Polymarket</div>
+    </div>
+    <div class="metric-card">
+      <div class="label">Total Goals Line</div>
+      <div class="value">O/U 2.5</div>
+      <div class="sub">Under −140 &middot; lean low scoring</div>
+    </div>
+  </div>
+  <div class="card">
+    <p style="margin:0;font-size:12px;">
+      <strong>Verdict:</strong> Both sides have already qualified from Group B, but Canada leads on goal difference and can clinch the group with a draw.
+      Switzerland need a win to overtake Canada on points. Expect a tactically conservative match: Murat Yakin's side may protect Elvedi and Zakaria (both one yellow from suspension),
+      while Jesse Marsch may rest Alphonso Davies (hamstring) and is without Ismaël Koné (broken leg, tournament). The home crowd at BC Place favors Canada emotionally,
+      but Switzerland's European experience and slight market edge (+130 vs +240) suggest a tight, low-event contest rather than an open shootout.
+    </p>
+    <div style="margin-top:8px;">
+      <span class="tag tag-verified">Verified: Both qualified</span>
+      <span class="tag tag-verified">Verified: Koné OUT (broken leg)</span>
+      <span class="tag tag-verified">Verified: Canada leads on GD</span>
+      <span class="tag tag-assumed">Assumed: Davies on bench</span>
+      <span class="tag tag-assumed">Assumed: Low-intensity approach</span>
+      <span class="tag tag-not-verified">Not verified: Official lineups</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ BETTING PLAN ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Concentrated Betting Plan</div>
+  <div class="bet-card">
+    <h3>Budget: $100 USD &middot; $2 per bet &middot; 50 bets</h3>
+
+    <div class="play" data-pct="0.60" data-odds="3.00">
+      <div class="play-label">Selection 1 — Core (60% = 30 bets = $60)</div>
+      <div class="play-title">Draw @ +200</div>
+      <div class="play-detail">
+        Both teams are already through; Canada only needs a point to win Group B on goal difference.
+        Switzerland may adopt a conservative posture with Elvedi and Zakaria on yellow-card watch.
+        A draw satisfies Canada's primary objective without risking injury ahead of the round of 32.<br>
+        <strong>Potential payout:</strong> $60 × 3.00 = $180 (profit $120)<br>
+        <strong>Min acceptable odds:</strong> +175 (2.75)<br>
+        <strong>Cancel if:</strong> Either team announces an aggressive full-strength attacking lineup.
+      </div>
+    </div>
+
+    <div class="play" data-pct="0.40" data-odds="1.71">
+      <div class="play-label">Selection 2 — Adjacent (40% = 20 bets = $40)</div>
+      <div class="play-title">Under 2.5 Goals @ −140</div>
+      <div class="play-detail">
+        Low-stakes match dynamics: both coaches may protect key players (Davies doubtful, Koné out,
+        Swiss yellow-card concerns). Neither side needs a result badly enough to chase goals.
+        Referee Abatti's WC match (Belgium 1–1 Egypt) saw only 2 goals despite 30 fouls.<br>
+        <strong>Potential payout:</strong> $40 × 1.71 = $68.40 (profit $28.40)<br>
+        <strong>Min acceptable odds:</strong> −155 (1.65)<br>
+        <strong>Cancel if:</strong> Both teams confirm full-strength attacking lineups, or early team news suggests open approach.
+      </div>
+    </div>
+
+    <table class="bet-table">
+      <tr><th>Pre-Purchase Check</th><th>Action</th></tr>
+      <tr><td>Draw odds worse than +175</td><td>Reduce Selection 1 to 40%; shift to Under 2.5</td></tr>
+      <tr><td>Davies starts at left-back</td><td>Reconsider Draw; Canada win path more live</td></tr>
+      <tr><td>Switzerland rests Xhaka or Embolo</td><td>Increase Under 2.5 allocation to 55%</td></tr>
+      <tr><td>Under 2.5 odds worse than −155</td><td>Drop Selection 2; concentrate on Draw only</td></tr>
+      <tr><td>BC Place roof open in rain</td><td>No action — roof likely closed; climate-controlled</td></tr>
+    </table>
+
+    <div class="warning">
+      ⚠️ <strong>Whole-Budget-Loss Warning:</strong> This concentrated plan intentionally accepts a high probability of losing the entire $100 entertainment budget.
+      A late Swiss winner or an open Canada attacking display would void both selections. Only bet what you can afford to lose.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SCORE THESIS ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Score Thesis</div>
+  <div class="card">
+    <h3>Baseline Score Range (Market-Derived)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      De-vigged sportsbook odds: Switzerland ~40%, Draw ~30%, Canada ~30%. Total goals O/U 2.5 (Under favored at −140).
+      Polymarket: Switzerland 39–41%, Draw 31–32%, Canada 28–30%. Markets agree on a slight Swiss lean with elevated draw probability.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Baseline central path:</strong> 1–2 total goals. Most likely scores: 1–0 SUI, 1–1, 0–0, 2–1 CAN.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Score-Impact Adjustments</h3>
+    <table class="adj-table">
+      <tr><th>Factor</th><th>Evidence</th><th>Direction</th></tr>
+      <tr>
+        <td>Both teams already qualified</td>
+        <td>Canada 4 pts (+6 GD), Switzerland 4 pts (+3 GD). Verified group standings.</td>
+        <td class="adj-down">↓ Total goals −0.4</td>
+      </tr>
+      <tr>
+        <td>Canada needs only draw for group win</td>
+        <td>GD advantage (+6 vs +3). Draw clinches Group B for Canada.</td>
+        <td class="adj-up">↑ Draw probability +0.15</td>
+      </tr>
+      <tr>
+        <td>Koné OUT; Davies doubtful</td>
+        <td>Koné broken leg (tournament). Davies hamstring — bench expected.</td>
+        <td class="adj-down">↓ Canada scoring −0.2</td>
+      </tr>
+      <tr>
+        <td>Swiss yellow-card watch (Elvedi, Zakaria)</td>
+        <td>Both on 1 YC from suspension. May play cautiously.</td>
+        <td class="adj-down">↓ Switzerland intensity −0.1</td>
+      </tr>
+      <tr>
+        <td>Referee (Abatti): moderate discipline</td>
+        <td>Belgium 1–1 Egypt: 4 YC, 30 fouls, 0 pens. Career ~4.8 YC/game.</td>
+        <td class="adj-none">→ NO CHANGE</td>
+      </tr>
+      <tr>
+        <td>BC Place roof closed, climate-controlled</td>
+        <td>23°C outside; indoor ~22°C. Mix of sun and cloud outside.</td>
+        <td class="adj-none">→ NO CHANGE</td>
+      </tr>
+      <tr>
+        <td>Home crowd at BC Place (54,500)</td>
+        <td>Canada co-host, Vancouver home venue. Emotional lift for David/Larin.</td>
+        <td class="adj-up">↑ Canada scoring +0.1</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Resulting Score Paths</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Central path:</strong> Switzerland 1 – 0 Canada or 1 – 1 Draw. A cagey affair where Switzerland's midfield control (Xhaka, Freuler) meets Canada's pragmatic block.
+      Confidence: <strong>Medium</strong>.<br>
+      <strong>Alternative path:</strong> Canada 2 – 1 Switzerland. Jonathan David capitalizes on home support; Switzerland push for a winner and leave space.
+      Confidence: <strong>Medium-Low</strong>.<br>
+      <strong>Tail-risk trigger:</strong> Davies starts and Canada chase a statement win → 2–0 or 3–1 Canada blowout.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ REFEREE &amp; ENVIRONMENT ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Referee &amp; Environment</div>
+  <div class="card">
+    <h3>Referee: Ramon Abatti (Brazil, age 44)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      FIFA international referee since 2015. Officiated at the 2018 and 2022 World Cups. In WC 2026, his one match was
+      Belgium 1–1 Egypt with 4 yellow cards, 0 red cards, 30 fouls called, and 0 penalties awarded.
+    </p>
+    <table class="adj-table">
+      <tr><th>Stat</th><th>WC 2026 (1 match)</th><th>Career Avg</th></tr>
+      <tr><td>Yellow cards</td><td>4</td><td>~4.8 per match</td></tr>
+      <tr><td>Red cards</td><td>0</td><td>~0.2 per match</td></tr>
+      <tr><td>Fouls called</td><td>30</td><td>~28 per match</td></tr>
+      <tr><td>Penalties</td><td>0</td><td>~0.3 per match</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Assessment:</strong> Moderate discipline, typical foul count. Low-stakes qualifier context should see fewer contentious moments.
+      Elvedi and Zakaria on yellow-card watch adds caution incentive. <strong>Score impact: NO CHANGE.</strong>
+      <span class="tag tag-verified">Verified: FIFA assignment</span>
+    </p>
+  </div>
+
+  <div class="env-grid" style="margin-top:12px;">
+    <div class="env-item">
+      <div class="env-label">Venue</div>
+      <div class="env-value">BC Place</div>
+      <div style="font-size:10px;color:var(--muted);">Vancouver, BC · 54,500 capacity · retractable roof</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Surface</div>
+      <div class="env-value">Artificial Turf</div>
+      <div style="font-size:10px;color:var(--muted);">FIFA-approved hybrid turf system</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Kickoff Weather</div>
+      <div class="env-value">23°C / 73°F</div>
+      <div style="font-size:10px;color:var(--muted);">Mix of sun and cloud; roof likely CLOSED (~22°C indoor)</div>
+    </div>
+    <div class="env-item">
+      <div class="env-label">Travel &amp; Rest</div>
+      <div class="env-value">5 days rest (both)</div>
+      <div style="font-size:10px;color:var(--muted);">Canada based in Vancouver; Switzerland from Toronto base</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--muted);margin-top:8px;">
+    <strong>Environment impact:</strong> BC Place's retractable roof will likely be closed for climate control, neutralizing external weather variance.
+    Artificial surface may slightly favor Canada's pace on the wings (Buchanan, Ahmed). Minimal travel fatigue for Canada.
+    <strong>Score adjustment: NO CHANGE.</strong> Source: Environment Canada / AccuWeather (Vancouver), retrieved June 24, 2026.
+  </p>
+</div>
+
+<!-- ═══════════════════════ EVENT BACKGROUND ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Event Background</div>
+  <div class="card">
+    <h3>Group B — Final Matchday</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Match 51 decides the Group B winner. Both Switzerland and Canada have 4 points and are through to the round of 32.
+      Canada leads on goal difference (+6 vs +3) after a 6–0 demolition of Qatar and a 1–1 draw with Bosnia.
+      Switzerland drew 1–1 with Qatar and beat Bosnia 4–1. Bosnia (1 pt) and Qatar (1 pt) are eliminated.
+      The parallel fixture is Bosnia vs Qatar — a dead rubber.
+    </p>
+    <table class="odds" style="margin-top:8px;">
+      <tr><th>Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Canada</strong></td><td>2</td><td>1</td><td>1</td><td>0</td><td>7</td><td>1</td><td>+6</td><td><strong>4</strong></td></tr>
+      <tr style="background:var(--soft-green);"><td><strong>Switzerland</strong></td><td>2</td><td>1</td><td>1</td><td>0</td><td>5</td><td>2</td><td>+3</td><td><strong>4</strong></td></tr>
+      <tr><td>Bosnia</td><td>2</td><td>0</td><td>1</td><td>1</td><td>2</td><td>5</td><td>−3</td><td>1</td></tr>
+      <tr style="background:var(--soft-red);"><td>Qatar</td><td>2</td><td>0</td><td>1</td><td>1</td><td>1</td><td>7</td><td>−6</td><td>1</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Match Context</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Canada:</strong> Co-hosts playing in front of a passionate Vancouver crowd. Jesse Marsch's side has scored 7 goals in 2 matches
+      but faces rotation questions: Koné is out for the tournament (broken leg), and captain Alphonso Davies is doubtful with a hamstring issue.
+      Jonathan David (39 international goals) is in form. A draw is enough to top the group.
+    </p>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Switzerland:</strong> Murat Yakin brings an experienced European side led by Granit Xhaka (146 caps) and Breel Embolo.
+      Must win to claim Group B; a draw leaves them second. Nico Elvedi and Denis Zakaria are one yellow card from suspension,
+      which may temper their aggression. Switzerland's +130 moneyline reflects slight market favoritism despite playing away in Canada.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Head-to-Head (1 meeting)</h3>
+    <table class="odds">
+      <tr><th>Year</th><th>Competition</th><th>Result</th><th>Venue</th></tr>
+      <tr><td>2002</td><td>Friendly</td><td><strong>Canada</strong> 3–1 Switzerland</td><td>Canada</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">Record: Canada 1 win. 4 total goals. Limited historical sample — inference weight: low.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ TEAM OVERVIEW ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Team Overview</div>
+  <div class="card">
+    <h3>🇨🇭 Switzerland</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Murat Yakin (Switzerland) &middot; <strong>FIFA Ranking:</strong> #17 &middot;
+      <strong>Squad Value:</strong> ~$280M &middot; <strong>Style:</strong> 4-3-3 organized press with Xhaka pivot<br>
+      <strong>WC History:</strong> 13th appearance. Best: QF in 1954, 1938; R16 in 2014, 2018, 2022.<br>
+      <strong>Key Players:</strong> Granit Xhaka (Sunderland, $14M, captain), Breel Embolo (Rennes, $18M), Manuel Akanji (Inter Milan, $22M).<br>
+      <strong>Strengths:</strong> Tactical discipline, European tournament experience, solid defensive core (Akanji, Elvedi).<br>
+      <strong>Weaknesses:</strong> Yellow-card accumulation risk, limited cutting edge without Okafor/Amdouni starting.<br>
+      <strong>Form:</strong> D 1-1 vs Qatar, W 4-1 vs Bosnia. 5 goals scored, 2 conceded in Group B.
+    </p>
+  </div>
+  <div class="card">
+    <h3>🇨🇦 Canada</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      <strong>Manager:</strong> Jesse Marsch (USA) &middot; <strong>FIFA Ranking:</strong> #30 &middot;
+      <strong>Squad Value:</strong> ~$195M &middot; <strong>Style:</strong> 4-4-2 high-tempo with wide overloads<br>
+      <strong>WC History:</strong> 3rd appearance (1986, 2022, 2026). Best: Group stage exits.<br>
+      <strong>Key Players:</strong> Jonathan David (Juventus, $45M), Alphonso Davies (Bayern Munich, $50M — doubtful), Tajon Buchanan (Villarreal, $14M).<br>
+      <strong>Strengths:</strong> Home support, attacking depth (David 39 goals), youthful energy (de Fougerolles, Saliba).<br>
+      <strong>Weaknesses:</strong> Koné OUT (broken leg), Davies hamstring doubt, defensive depth tested without full-strength back line.<br>
+      <strong>Form:</strong> D 1-1 vs Bosnia, W 6-0 vs Qatar. 7 goals scored, 1 conceded in Group B.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ PREDICTED STARTERS + PITCH ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Predicted Starters &amp; Tactics</div>
+
+  <div class="pitch-container">
+    <div class="pitch">
+      <div class="penalty-box-top"></div>
+      <div class="goal-top"></div>
+      <div class="center-circle"></div>
+      <div class="penalty-box-bot"></div>
+      <div class="goal-bot"></div>
+
+      <div class="formation-label" style="top:3%;">SWITZERLAND 4-3-3</div>
+      <div class="formation-label" style="bottom:3%;">CANADA 4-4-2</div>
+
+      <!-- SWITZERLAND (top) -->
+      <div class="player-dot" style="left:50%;top:5%;"><div class="dot dot-sui">1</div><div class="pname">Kobel</div></div>
+      <div class="player-dot" style="left:15%;top:15%;"><div class="dot dot-sui">3</div><div class="pname">Widmer</div></div>
+      <div class="player-dot" style="left:37%;top:15%;"><div class="dot dot-sui">4</div><div class="pname">Elvedi</div></div>
+      <div class="player-dot" style="left:63%;top:15%;"><div class="dot dot-sui">5</div><div class="pname">Akanji</div></div>
+      <div class="player-dot" style="left:85%;top:15%;"><div class="dot dot-sui">13</div><div class="pname">Rodriguez</div></div>
+      <div class="player-dot" style="left:22%;top:28%;"><div class="dot dot-sui">20</div><div class="pname">Aebischer</div></div>
+      <div class="player-dot" style="left:50%;top:26%;"><div class="dot dot-sui">10</div><div class="pname">Xhaka</div></div>
+      <div class="player-dot" style="left:78%;top:28%;"><div class="dot dot-sui">8</div><div class="pname">Freuler</div></div>
+      <div class="player-dot" style="left:18%;top:40%;"><div class="dot dot-sui">11</div><div class="pname">Ndoye</div></div>
+      <div class="player-dot" style="left:50%;top:42%;"><div class="dot dot-sui">7</div><div class="pname">Embolo</div></div>
+      <div class="player-dot" style="left:82%;top:40%;"><div class="dot dot-sui">17</div><div class="pname">Vargas</div></div>
+
+      <!-- CANADA (bottom) -->
+      <div class="player-dot" style="left:50%;top:95%;"><div class="dot dot-can">16</div><div class="pname">Crépeau</div></div>
+      <div class="player-dot" style="left:85%;top:85%;"><div class="dot dot-can">2</div><div class="pname">Johnston</div></div>
+      <div class="player-dot" style="left:63%;top:85%;"><div class="dot dot-can">4</div><div class="pname">de Fougerolles</div></div>
+      <div class="player-dot" style="left:37%;top:85%;"><div class="dot dot-can">15</div><div class="pname">Bombito</div></div>
+      <div class="player-dot" style="left:15%;top:85%;"><div class="dot dot-can">22</div><div class="pname">Laryea</div></div>
+      <div class="player-dot" style="left:82%;top:72%;"><div class="dot dot-can">17</div><div class="pname">Buchanan</div></div>
+      <div class="player-dot" style="left:58%;top:74%;"><div class="dot dot-can">25</div><div class="pname">Saliba</div></div>
+      <div class="player-dot" style="left:42%;top:74%;"><div class="dot dot-can">7</div><div class="pname">Eustáquio</div></div>
+      <div class="player-dot" style="left:18%;top:72%;"><div class="dot dot-can">20</div><div class="pname">Ahmed</div></div>
+      <div class="player-dot" style="left:38%;top:58%;"><div class="dot dot-can">10</div><div class="pname">David</div></div>
+      <div class="player-dot" style="left:62%;top:58%;"><div class="dot dot-can">9</div><div class="pname">Larin</div></div>
+
+      <div class="venue-badge">BC Place · 73°F · Roof Closed</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Tactical Analysis</h3>
+    <table class="tactic-table">
+      <tr><th>Observation</th><th>Betting Implication</th></tr>
+      <tr>
+        <td>Switzerland's Xhaka–Freuler double pivot controls tempo against Canada's rotated midfield</td>
+        <td>Favors Switzerland not losing; supports Draw and Swiss +0.25 AH</td>
+      </tr>
+      <tr>
+        <td>Canada without Koné and likely Davies — less vertical threat on transitions</td>
+        <td>Reduces Canada win probability; supports Under 2.5</td>
+      </tr>
+      <tr>
+        <td>David + Larin front two can exploit Elvedi/Zakaria caution on yellow cards</td>
+        <td>Canada 2–1 alternative path live; BTTS Yes at −135 has value</td>
+      </tr>
+      <tr>
+        <td>Both qualified — low tactical intensity expected in first 60 minutes</td>
+        <td>Strong support for Draw and Under 2.5</td>
+      </tr>
+      <tr>
+        <td>BC Place home crowd energizes Canada but Switzerland are tournament veterans</td>
+        <td>Markets split; no clear favorite despite Swiss +130 ML</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card" style="background:var(--stadium);color:#fff;">
+    <h3 style="color:var(--gold);">Likely Substitutes</h3>
+    <div class="subs-grid">
+      <div class="sub-panel">
+        <h4>🇨🇭 Switzerland Bench</h4>
+        <div class="sub-row">GK: Mvogo, Keller</div>
+        <div class="sub-row">DEF: Muheim, Cömert, Amenda, Jaquez</div>
+        <div class="sub-row">MID: Zakaria*, Sow, Jashari, Rieder, Manzambi</div>
+        <div class="sub-row">FWD: Okafor, Amdouni, Fassnacht, Itten</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">* = on yellow-card watch (1 YC from suspension)</div>
+      </div>
+      <div class="sub-panel">
+        <h4>🇨🇦 Canada Bench</h4>
+        <div class="sub-row">GK: St. Clair, Goodman</div>
+        <div class="sub-row">DEF: Davies* (hamstring), Cornelius, Waterman, Jones, Sigur</div>
+        <div class="sub-row">MID: Choinière, Millar, Osorio, Shaffelburg, Nelson</div>
+        <div class="sub-row">FWD: Oluwaseyi, Promise David</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">* = doubtful; Koné OUT (broken leg, tournament)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ FULL ROSTERS ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Full Squad Rosters</div>
+  <div class="roster-grid">
+
+    <div class="roster-panel sui">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNGRjAwMDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPlNVSTwvdGV4dD48L3N2Zz4=" alt="Switzerland">
+        <div class="rh-name">Switzerland</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TVk8L3RleHQ+PC9zdmc+" alt="Murat Yakin">
+        <div class="pinfo">
+          <div class="pname">Murat Yakin</div>
+          <div class="pmeta">51 · —</div>
+          <div class="pdetail">Swiss · Manager</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TkQ8L3RleHQ+PC9zdmc+" alt="Dan Ndoye">
+        <div class="pinfo">
+          <div class="pname">Dan Ndoye ⭐</div>
+          <div class="pmeta">25 · $28M</div>
+          <div class="pdetail">#11 · RW · 184cm · Nott'm Forest</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RU08L3RleHQ+PC9zdmc+" alt="Breel Embolo">
+        <div class="pinfo">
+          <div class="pname">Breel Embolo ⭐</div>
+          <div class="pmeta">29 · $18M</div>
+          <div class="pdetail">#7 · ST · 185cm · Rennes</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+VkE8L3RleHQ+PC9zdmc+" alt="Rubén Vargas">
+        <div class="pinfo">
+          <div class="pname">Rubén Vargas ⭐</div>
+          <div class="pmeta">27 · $14M</div>
+          <div class="pdetail">#17 · LW · 179cm · Sevilla</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+T0s8L3RleHQ+PC9zdmc+" alt="Noah Okafor">
+        <div class="pinfo">
+          <div class="pname">Noah Okafor</div>
+          <div class="pmeta">26 · $10M</div>
+          <div class="pdetail">#19 · LW · 185cm · Leeds United</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QU08L3RleHQ+PC9zdmc+" alt="Zeki Amdouni">
+        <div class="pinfo">
+          <div class="pname">Zeki Amdouni</div>
+          <div class="pmeta">25 · $16M</div>
+          <div class="pdetail">#23 · ST · 183cm · Burnley</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RkE8L3RleHQ+PC9zdmc+" alt="Christian Fassnacht">
+        <div class="pinfo">
+          <div class="pname">Christian Fassnacht</div>
+          <div class="pmeta">32 · $5M</div>
+          <div class="pdetail">#16 · RW · 192cm · Young Boys</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SVQ8L3RleHQ+PC9zdmc+" alt="Cedric Itten">
+        <div class="pinfo">
+          <div class="pname">Cedric Itten</div>
+          <div class="pmeta">29 · $3M</div>
+          <div class="pdetail">#26 · ST · 190cm · Fortuna Düsseldorf</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUU8L3RleHQ+PC9zdmc+" alt="Michel Aebischer">
+        <div class="pinfo">
+          <div class="pname">Michel Aebischer ⭐</div>
+          <div class="pmeta">29 · $6M</div>
+          <div class="pdetail">#20 · CM · 182cm · Pisa</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+WEg8L3RleHQ+PC9zdmc+" alt="Granit Xhaka (C)">
+        <div class="pinfo">
+          <div class="pname">Granit Xhaka (C) ⭐</div>
+          <div class="pmeta">33 · $14M</div>
+          <div class="pdetail">#10 · CM · 185cm · Sunderland</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RlI8L3RleHQ+PC9zdmc+" alt="Remo Freuler">
+        <div class="pinfo">
+          <div class="pname">Remo Freuler ⭐</div>
+          <div class="pmeta">34 · $5M</div>
+          <div class="pdetail">#8 · CM · 180cm · Bologna</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+WkE8L3RleHQ+PC9zdmc+" alt="Denis Zakaria">
+        <div class="pinfo">
+          <div class="pname">Denis Zakaria 🟡</div>
+          <div class="pmeta">29 · $18M</div>
+          <div class="pdetail">#6 · DM · 191cm · Monaco</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U088L3RleHQ+PC9zdmc+" alt="Djibril Sow">
+        <div class="pinfo">
+          <div class="pname">Djibril Sow</div>
+          <div class="pmeta">29 · $10M</div>
+          <div class="pdetail">#15 · CM · 184cm · Sevilla</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SkE8L3RleHQ+PC9zdmc+" alt="Ardon Jashari">
+        <div class="pinfo">
+          <div class="pname">Ardon Jashari</div>
+          <div class="pmeta">23 · $22M</div>
+          <div class="pdetail">#14 · CM · 181cm · AC Milan</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Ukk8L3RleHQ+PC9zdmc+" alt="Fabian Rieder">
+        <div class="pinfo">
+          <div class="pname">Fabian Rieder</div>
+          <div class="pmeta">24 · $12M</div>
+          <div class="pdetail">#22 · AM · 179cm · FC Augsburg</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUE8L3RleHQ+PC9zdmc+" alt="Johan Manzambi">
+        <div class="pinfo">
+          <div class="pname">Johan Manzambi</div>
+          <div class="pmeta">20 · $15M</div>
+          <div class="pdetail">#9 · AM · 178cm · SC Freiburg</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+V0k8L3RleHQ+PC9zdmc+" alt="Silvan Widmer">
+        <div class="pinfo">
+          <div class="pname">Silvan Widmer ⭐</div>
+          <div class="pmeta">33 · $4M</div>
+          <div class="pdetail">#3 · RB · 182cm · Mainz 05</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RUw8L3RleHQ+PC9zdmc+" alt="Nico Elvedi">
+        <div class="pinfo">
+          <div class="pname">Nico Elvedi ⭐ 🟡</div>
+          <div class="pmeta">29 · $12M</div>
+          <div class="pdetail">#4 · CB · 188cm · B. M'gladbach</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUs8L3RleHQ+PC9zdmc+" alt="Manuel Akanji">
+        <div class="pinfo">
+          <div class="pname">Manuel Akanji ⭐</div>
+          <div class="pmeta">30 · $22M</div>
+          <div class="pdetail">#5 · CB · 187cm · Inter Milan</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Uk88L3RleHQ+PC9zdmc+" alt="Ricardo Rodriguez">
+        <div class="pinfo">
+          <div class="pname">Ricardo Rodriguez ⭐</div>
+          <div class="pmeta">33 · $3M</div>
+          <div class="pdetail">#13 · LB · 180cm · Real Betis</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TVU8L3RleHQ+PC9zdmc+" alt="Miro Muheim">
+        <div class="pinfo">
+          <div class="pname">Miro Muheim</div>
+          <div class="pmeta">28 · $5M</div>
+          <div class="pdetail">#2 · LB · 182cm · Hamburger SV</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q088L3RleHQ+PC9zdmc+" alt="Eray Cömert">
+        <div class="pinfo">
+          <div class="pname">Eray Cömert</div>
+          <div class="pmeta">28 · $6M</div>
+          <div class="pdetail">#18 · CB · 183cm · Valencia</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QU08L3RleHQ+PC9zdmc+" alt="Aurèle Amenda">
+        <div class="pinfo">
+          <div class="pname">Aurèle Amenda</div>
+          <div class="pmeta">22 · $8M</div>
+          <div class="pdetail">#24 · CB · 195cm · Ein. Frankfurt</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+SkE8L3RleHQ+PC9zdmc+" alt="Luca Jaquez">
+        <div class="pinfo">
+          <div class="pname">Luca Jaquez</div>
+          <div class="pmeta">23 · $4M</div>
+          <div class="pdetail">#25 · CB · 186cm · VfB Stuttgart</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S088L3RleHQ+PC9zdmc+" alt="Gregor Kobel">
+        <div class="pinfo">
+          <div class="pname">Gregor Kobel ⭐</div>
+          <div class="pmeta">28 · $28M</div>
+          <div class="pdetail">#1 · GK · 193cm · Borussia Dortmund</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TVY8L3RleHQ+PC9zdmc+" alt="Yvon Mvogo">
+        <div class="pinfo">
+          <div class="pname">Yvon Mvogo</div>
+          <div class="pmeta">32 · $2M</div>
+          <div class="pdetail">#12 · GK · 190cm · Lorient</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S0U8L3RleHQ+PC9zdmc+" alt="Marvin Keller">
+        <div class="pinfo">
+          <div class="pname">Marvin Keller</div>
+          <div class="pmeta">23 · $1M</div>
+          <div class="pdetail">#21 · GK · 191cm · Young Boys</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roster-panel can">
+      <div class="roster-header">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNGRjAwMDAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiI+8J+NgTwvdGV4dD48dGV4dCB4PSIzMCIgeT0iNDIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjkiIGZvbnQtd2VpZ2h0PSI4MDAiPkNBTjwvdGV4dD48L3N2Zz4=" alt="Canada">
+        <div class="rh-name">Canada</div>
+      </div>
+      <div class="pos-group-title">Manager</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Sk08L3RleHQ+PC9zdmc+" alt="Jesse Marsch">
+        <div class="pinfo">
+          <div class="pname">Jesse Marsch</div>
+          <div class="pmeta">52 · —</div>
+          <div class="pdetail">American · Manager</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Forwards</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REE8L3RleHQ+PC9zdmc+" alt="Jonathan David">
+        <div class="pinfo">
+          <div class="pname">Jonathan David ⭐</div>
+          <div class="pmeta">26 · $45M</div>
+          <div class="pdetail">#10 · ST · 180cm · Juventus</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEE8L3RleHQ+PC9zdmc+" alt="Cyle Larin">
+        <div class="pinfo">
+          <div class="pname">Cyle Larin ⭐</div>
+          <div class="pmeta">31 · $6M</div>
+          <div class="pdetail">#9 · ST · 188cm · Southampton</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+T0w8L3RleHQ+PC9zdmc+" alt="Tani Oluwaseyi">
+        <div class="pinfo">
+          <div class="pname">Tani Oluwaseyi</div>
+          <div class="pmeta">26 · $8M</div>
+          <div class="pdetail">#12 · ST · 188cm · Villarreal</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+UEQ8L3RleHQ+PC9zdmc+" alt="Promise David">
+        <div class="pinfo">
+          <div class="pname">Promise David</div>
+          <div class="pmeta">24 · $10M</div>
+          <div class="pdetail">#24 · ST · 194cm · Union SG</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Midfielders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QlU8L3RleHQ+PC9zdmc+" alt="Tajon Buchanan">
+        <div class="pinfo">
+          <div class="pname">Tajon Buchanan ⭐</div>
+          <div class="pmeta">27 · $14M</div>
+          <div class="pdetail">#17 · RM · 183cm · Villarreal</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0E8L3RleHQ+PC9zdmc+" alt="Nathan Saliba">
+        <div class="pinfo">
+          <div class="pname">Nathan Saliba ⭐</div>
+          <div class="pmeta">22 · $6M</div>
+          <div class="pdetail">#25 · CM · 178cm · Anderlecht</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+RVU8L3RleHQ+PC9zdmc+" alt="Stephen Eustáquio">
+        <div class="pinfo">
+          <div class="pname">Stephen Eustáquio ⭐</div>
+          <div class="pmeta">29 · $12M</div>
+          <div class="pdetail">#7 · CM · 178cm · LAFC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUg8L3RleHQ+PC9zdmc+" alt="Ali Ahmed">
+        <div class="pinfo">
+          <div class="pname">Ali Ahmed ⭐</div>
+          <div class="pmeta">25 · $5M</div>
+          <div class="pdetail">#20 · LM · 178cm · Norwich City</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+S088L3RleHQ+PC9zdmc+" alt="Ismaël Koné">
+        <div class="pinfo">
+          <div class="pname">Ismaël Koné ❌ OUT</div>
+          <div class="pmeta">23 · $14M</div>
+          <div class="pdetail">#8 · CM · 188cm · Sassuolo</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q0g8L3RleHQ+PC9zdmc+" alt="Mathieu Choinière">
+        <div class="pinfo">
+          <div class="pname">Mathieu Choinière</div>
+          <div class="pmeta">27 · $4M</div>
+          <div class="pdetail">#6 · CM · 175cm · LAFC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TUk8L3RleHQ+PC9zdmc+" alt="Liam Millar">
+        <div class="pinfo">
+          <div class="pname">Liam Millar</div>
+          <div class="pmeta">26 · $5M</div>
+          <div class="pdetail">#11 · LW · 181cm · Hull City</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+T1M8L3RleHQ+PC9zdmc+" alt="Jonathan Osorio">
+        <div class="pinfo">
+          <div class="pname">Jonathan Osorio</div>
+          <div class="pmeta">33 · $3M</div>
+          <div class="pdetail">#21 · CM · 175cm · Toronto FC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0g8L3RleHQ+PC9zdmc+" alt="Jacob Shaffelburg">
+        <div class="pinfo">
+          <div class="pname">Jacob Shaffelburg</div>
+          <div class="pmeta">26 · $6M</div>
+          <div class="pdetail">#14 · LW · 173cm · LAFC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TkU8L3RleHQ+PC9zdmc+" alt="Jayden Nelson">
+        <div class="pinfo">
+          <div class="pname">Jayden Nelson</div>
+          <div class="pmeta">23 · $4M</div>
+          <div class="pdetail">#26 · RW · 175cm · Austin FC</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Defenders</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Sk88L3RleHQ+PC9zdmc+" alt="Alistair Johnston">
+        <div class="pinfo">
+          <div class="pname">Alistair Johnston ⭐</div>
+          <div class="pmeta">27 · $18M</div>
+          <div class="pdetail">#2 · RB · 181cm · Celtic</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REY8L3RleHQ+PC9zdmc+" alt="Luc de Fougerolles">
+        <div class="pinfo">
+          <div class="pname">Luc de Fougerolles ⭐</div>
+          <div class="pmeta">20 · $8M</div>
+          <div class="pdetail">#4 · CB · 188cm · Fulham</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Qk88L3RleHQ+PC9zdmc+" alt="Moïse Bombito">
+        <div class="pinfo">
+          <div class="pname">Moïse Bombito ⭐</div>
+          <div class="pmeta">26 · $12M</div>
+          <div class="pdetail">#15 · CB · 190cm · Nice</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+TEE8L3RleHQ+PC9zdmc+" alt="Richie Laryea">
+        <div class="pinfo">
+          <div class="pname">Richie Laryea ⭐</div>
+          <div class="pmeta">31 · $3M</div>
+          <div class="pdetail">#22 · LB · 175cm · Toronto FC</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+REE8L3RleHQ+PC9zdmc+" alt="Alphonso Davies (C)">
+        <div class="pinfo">
+          <div class="pname">Alphonso Davies (C) 🤕</div>
+          <div class="pmeta">25 · $50M</div>
+          <div class="pdetail">#19 · LB · 183cm · Bayern Munich</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q088L3RleHQ+PC9zdmc+" alt="Derek Cornelius">
+        <div class="pinfo">
+          <div class="pname">Derek Cornelius</div>
+          <div class="pmeta">28 · $6M</div>
+          <div class="pdetail">#13 · CB · 187cm · Rangers</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+V0E8L3RleHQ+PC9zdmc+" alt="Joel Waterman">
+        <div class="pinfo">
+          <div class="pname">Joel Waterman</div>
+          <div class="pmeta">30 · $2M</div>
+          <div class="pdetail">#5 · CB · 188cm · Chicago Fire</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+QUo8L3RleHQ+PC9zdmc+" alt="Alfie Jones">
+        <div class="pinfo">
+          <div class="pname">Alfie Jones</div>
+          <div class="pmeta">28 · $3M</div>
+          <div class="pdetail">#3 · CB · 191cm · Middlesbrough</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0k8L3RleHQ+PC9zdmc+" alt="Niko Sigur">
+        <div class="pinfo">
+          <div class="pname">Niko Sigur</div>
+          <div class="pmeta">22 · $4M</div>
+          <div class="pdetail">#23 · CB · 186cm · Hajduk Split</div>
+        </div>
+      </div>
+      <div class="pos-group-title">Goalkeepers</div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+U0M8L3RleHQ+PC9zdmc+" alt="Dayne St. Clair">
+        <div class="pinfo">
+          <div class="pname">Dayne St. Clair</div>
+          <div class="pmeta">29 · $4M</div>
+          <div class="pdetail">#1 · GK · 191cm · Inter Miami</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+Q1I8L3RleHQ+PC9zdmc+" alt="Maxime Crépeau">
+        <div class="pinfo">
+          <div class="pname">Maxime Crépeau ⭐</div>
+          <div class="pmeta">32 · $3M</div>
+          <div class="pdetail">#16 · GK · 185cm · Orlando City</div>
+        </div>
+      </div>
+      <div class="player-row">
+        <img class="avatar" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PHJlY3Qgd2lkdGg9IjYwIiBoZWlnaHQ9IjYwIiByeD0iMzAiIGZpbGw9IiMwYjZiNDciLz48dGV4dCB4PSIzMCIgeT0iMzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJjZW50cmFsIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCI+R088L3RleHQ+PC9zdmc+" alt="Owen Goodman">
+        <div class="pinfo">
+          <div class="pname">Owen Goodman</div>
+          <div class="pmeta">22 · $2M</div>
+          <div class="pdetail">#18 · GK · 193cm · Barnsley</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:10px;color:var(--muted);text-align:center;margin-top:4px;">
+    ⭐ = predicted starter &nbsp; 🟡 = on yellow card (1 from suspension) &nbsp; 🤕 = injury doubt &nbsp; ❌ = ruled out<br>
+    Market values in USD, converted at 1 EUR ≈ 1.08 USD. Source: Transfermarkt / FIFA squads, retrieved June 24, 2026.
+  </p>
+</div>
+
+<!-- ═══════════════════════ ODDS &amp; PROBABILITIES ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Odds &amp; Probabilities</div>
+  <div class="card">
+    <h3>Moneyline (90 min + stoppage)</h3>
+    <table class="odds">
+      <tr><th>Outcome</th><th>DraftKings</th><th>FanDuel</th><th>Polymarket</th><th>Implied Prob</th></tr>
+      <tr><td><strong>Switzerland Win</strong></td><td>+130</td><td>+125</td><td>40¢</td><td>~39–43%</td></tr>
+      <tr><td><strong>Draw</strong></td><td>+200</td><td>+210</td><td>32¢</td><td>~30–33%</td></tr>
+      <tr><td><strong>Canada Win</strong></td><td>+240</td><td>+235</td><td>29¢</td><td>~28–30%</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:11px;color:var(--muted);">
+      <strong>Line movement:</strong> Opened Switzerland +120 / Canada +260. Market has tightened toward Canada after their 6–0 win over Qatar.
+      Swiss +130 reflects slight favorite status despite away fixture in Vancouver.<br>
+      <strong>Reading moneyline:</strong> +200 Draw means a $100 bet returns $300 total ($200 profit). Positive numbers indicate underdogs or less-likely outcomes.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Totals &amp; Spreads</h3>
+    <table class="odds">
+      <tr><th>Market</th><th>Line</th><th>Odds</th><th>Implication</th></tr>
+      <tr><td>Total Goals</td><td>O/U 2.5</td><td>Over +100 / Under −140</td><td>Market leans Under; 0–2 goals expected</td></tr>
+      <tr><td>Asian Handicap</td><td>Switzerland −0.25</td><td>~−110</td><td>Slight Swiss edge; quarter-ball line</td></tr>
+      <tr><td>Both Teams Score</td><td>Yes/No</td><td>Yes −135 / No +102</td><td>BTTS slightly favored despite low-stakes context</td></tr>
+      <tr><td>Correct Score</td><td>1–1</td><td>~+550</td><td>Most likely single correct score</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Market Sentiment (Polymarket)</h3>
+    <p style="margin:4px 0;font-size:12px;">
+      Switzerland 39–41%, Draw 31–32%, Canada 28–30%. Polymarket and sportsbooks largely agree:
+      Switzerland slight favorite, elevated draw probability reflecting both teams' qualification status.
+      The Under 2.5 at −140 aligns with low-stakes group-decider dynamics.
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════ RISKS ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Risk Assessment</div>
+  <div class="card">
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Lineup uncertainty:</strong> Davies fitness and Swiss rotation for yellow-card management could materially shift the match dynamic.
+        An aggressive Canada XI invalidates the Draw thesis. <span class="tag tag-assumed">Assumed rotations</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-high">!</div>
+      <div>
+        <strong>Low-stakes unpredictability:</strong> Qualified teams can produce either dull 0–0 draws or surprisingly open games when pride is at stake.
+        Switzerland need a win for the group — late push risk. <span class="tag tag-verified">Verified stakes</span>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Home crowd factor:</strong> 54,500 at BC Place could lift Canada beyond market expectations, especially if Davies enters late.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>BTTS vs Under tension:</strong> BTTS Yes at −135 conflicts with Under 2.5 thesis. If both score, Over 2.5 becomes more likely.
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon risk-med">~</div>
+      <div>
+        <strong>Odds volatility:</strong> Lines may shift sharply once official lineups are announced ~1 hour before kickoff.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SOURCES ═══════════════════════ -->
+<div class="section wrap">
+  <div class="section-title">Sources</div>
+  <div class="card">
+    <ol class="source-list">
+      <li><strong>FIFA</strong> — Official squad lists, group standings, referee assignments. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026" target="_blank">fifa.com</a></li>
+      <li><strong>Canada Soccer</strong> — Official CANMNT roster and updates. <a href="https://news.canadasoccer.com/canada-soccer-announces-canmnt-squad-for-fifa-world-cup-2026" target="_blank">canadasoccer.com</a></li>
+      <li><strong>Swiss Football Association</strong> — Switzerland squad announcement. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/switzerland-squad-announcement-murat-yakin" target="_blank">fifa.com</a></li>
+      <li><strong>ESPN</strong> — Injury updates, Koné broken leg, Davies hamstring status. <a href="https://www.espn.com/soccer/" target="_blank">espn.com</a></li>
+      <li><strong>Transfermarkt</strong> — Player market values for both squads. <a href="https://www.transfermarkt.com" target="_blank">transfermarkt.com</a>. Retrieved June 24, 2026.</li>
+      <li><strong>DraftKings / FanDuel</strong> — Sportsbook odds (SUI +130, Draw +200, CAN +240). <a href="https://www.vegasinsider.com" target="_blank">vegasinsider.com</a></li>
+      <li><strong>Polymarket</strong> — Prediction market pricing (SUI 40%, Draw 32%, CAN 29%). <a href="https://polymarket.com" target="_blank">polymarket.com</a></li>
+      <li><strong>FootyMetrics</strong> — Referee Ramon Abatti career statistics. <a href="https://www.footymetrics.com" target="_blank">footymetrics.com</a></li>
+      <li><strong>Environment Canada / AccuWeather</strong> — Vancouver kickoff forecast. <a href="https://www.accuweather.com/en/ca/vancouver/v5/weather-forecast/53286" target="_blank">accuweather.com</a>. Retrieved June 24, 2026.</li>
+      <li><strong>BC Place</strong> — Venue specifications, retractable roof. <a href="https://www.bcplace.com" target="_blank">bcplace.com</a></li>
+      <li><strong>Wikipedia / Reuters</strong> — 2026 FIFA World Cup squads and group data. <a href="https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_squads" target="_blank">wikipedia.org</a></li>
+      <li><strong>Sportsnet</strong> — Canada roster updates, Nelson for Flores. <a href="https://www.sportsnet.ca/fifa-world-cup/" target="_blank">sportsnet.ca</a></li>
+      <li><strong>11v11</strong> — Head-to-head record (Canada 3–1 Switzerland, May 2002). <a href="https://www.11v11.com" target="_blank">11v11.com</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<div class="footer wrap">
+  <strong>World Cup 2026 Match Report — Switzerland vs Canada</strong><br>
+  Generated by Assistant Coach Skill &middot; June 25, 2026<br>
+  This report is for entertainment purposes only. All predictions are inference.<br>
+  Gambling involves risk. Only bet what you can afford to lose.
+</div>
+
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var budget=parseInt(p.get('budget'))||100;
+  var BET=2,total=Math.floor(budget/BET);
+  budget=total*BET;
+  var h=document.querySelector('.bet-card h3');
+  if(h) h.innerHTML='Budget: $'+budget+' USD &middot; $'+BET+' per bet &middot; '+total+' bets';
+  document.querySelectorAll('.play[data-pct]').forEach(function(el){
+    var pct=parseFloat(el.dataset.pct),odds=parseFloat(el.dataset.odds);
+    var bets=Math.round(pct*total),alloc=bets*BET;
+    var pay=(alloc*odds).toFixed(2).replace(/\.00$/,''),prof=(alloc*odds-alloc).toFixed(2).replace(/\.00$/,'');
+    var lb=el.querySelector('.play-label');
+    if(lb) lb.textContent=lb.textContent.replace(/\(\d+%\s*=\s*\d+\s*bets\s*=\s*\$\d+\)/,'('+Math.round(pct*100)+'% = '+bets+' bets = $'+alloc+')');
+    var dt=el.querySelector('.play-detail');
+    if(dt) dt.innerHTML=dt.innerHTML.replace(/\$\d+(\.\d+)?\s*×/,'$'+alloc+' ×').replace(/=\s*\$[\d,.]+\s*\(profit\s*\$[\d,.]+\)/,'= $'+pay+' (profit $'+prof+')');
+  });
+  var w=document.querySelector('.bet-card .warning');
+  if(w) w.innerHTML=w.innerHTML.replace(/\$100/g,'$'+budget);
+})();
+</script>
+</body>
+</html>
