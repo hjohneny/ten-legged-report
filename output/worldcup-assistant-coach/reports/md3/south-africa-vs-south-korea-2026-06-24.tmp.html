@@ -5,257 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
   <title>South Africa vs South Korea Pre-Match Analysis Report</title>
-  <style>
-    @page { size: A5 portrait; margin: 12mm 10mm 14mm; }
-    :root {
-      --ink: #102033;
-      --muted: #697586;
-      --line: #d9e2df;
-      --paper: #eaf1eb;
-      --panel: #ffffff;
-      --green: #0b6b47;
-      --gold: #fece14;
-      --blue: #102a57;
-      --red: #b33a3a;
-      --grass: #147a4d;
-      --deep: #071527;
-      --stadium: #020f2a;
-      --soft-green: #e4f4ec;
-      --soft-gold: #fff6cc;
-      --soft-blue: #e7eef9;
-      --soft-red: #fbeaea;
-      --shadow: 0 18px 44px rgba(7,21,39,.12);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: linear-gradient(180deg, #06172a 0, #082b25 310px, var(--paper) 620px, #eef4f1 100%);
-      line-height: 1.55;
-      font-size: 13px;
-    }
-    a { color: var(--blue); text-decoration: none; }
-    .wrap { max-width: 520px; margin: 0 auto; padding: 0 12px; }
-
-    /* ── HERO ── */
-    .hero {
-      position: relative; color: #fff; padding: 40px 16px 36px; overflow: hidden;
-      background:
-        radial-gradient(circle at 18% 14%, rgba(255,255,255,.15), transparent 15%),
-        radial-gradient(circle at 82% 18%, rgba(254,206,20,.35), transparent 20%),
-        linear-gradient(110deg, rgba(2,15,42,.97), rgba(4,56,39,.80) 50%, rgba(2,15,42,.93));
-    }
-    .hero::after {
-      content: ""; position: absolute; inset: auto -10% -38% -10%; height: 52%;
-      background: linear-gradient(180deg, rgba(20,122,77,.55), rgba(8,72,47,.90));
-      border-top: 1px solid rgba(255,255,255,.18); transform: skewY(-3deg); pointer-events: none;
-    }
-    .hero-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800;
-      letter-spacing: .08em; color: #101820; background: var(--gold); border-radius: 999px;
-      padding: 4px 10px; margin-bottom: 10px; text-transform: uppercase;
-    }
-    h1 { font-size: 34px; line-height: .96; margin: 0 0 10px; letter-spacing: -.5px; }
-    .subtitle { margin: 0; color: rgba(255,255,255,.82); font-size: 13px; }
-
-    .team-strip {
-      display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center;
-      margin-top: 22px; padding: 12px; background: rgba(255,255,255,.08);
-      border-radius: 8px; border: 1px solid rgba(255,255,255,.12);
-    }
-    .team-strip .team { text-align: center; }
-    .team-strip .team img { width: 48px; height: 48px; border-radius: 50%; object-fit: contain; background: rgba(255,255,255,.1); }
-    .team-strip .team .name { font-size: 14px; font-weight: 700; margin-top: 4px; }
-    .team-strip .team .rank { font-size: 10px; color: rgba(255,255,255,.6); }
-    .team-strip .vs { font-size: 22px; font-weight: 800; color: var(--gold); }
-
-    /* ── NOTICE ── */
-    .notice {
-      margin: 16px auto; max-width: 520px; padding: 10px 14px; font-size: 11px;
-      background: var(--soft-gold); border-left: 3px solid var(--gold); border-radius: 4px;
-      color: #5a4e00;
-    }
-    .notice strong { color: #3d3500; }
-
-    /* ── SECTIONS ── */
-    .section { max-width: 520px; margin: 20px auto; }
-    .section-title {
-      font-size: 16px; font-weight: 800; color: var(--green); margin: 0 0 12px;
-      padding-bottom: 6px; border-bottom: 2px solid var(--gold);
-      text-transform: uppercase; letter-spacing: .04em;
-    }
-    .card {
-      background: var(--panel); border-radius: 8px; padding: 14px 16px;
-      margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.06);
-      border: 1px solid var(--line);
-    }
-    .card h3 { font-size: 13px; margin: 0 0 6px; color: var(--green); text-transform: uppercase; letter-spacing: .04em; }
-
-    /* ── CONCLUSION CARDS ── */
-    .conclusion-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
-    .metric-card {
-      background: var(--panel); border-radius: 8px; padding: 12px;
-      border: 1px solid var(--line); text-align: center;
-    }
-    .metric-card .label { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 700; }
-    .metric-card .value { font-size: 22px; font-weight: 800; color: var(--green); margin: 2px 0; }
-    .metric-card .sub { font-size: 10px; color: var(--muted); }
-    .tag { display: inline-block; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin: 2px 2px 0 0; text-transform: uppercase; }
-    .tag-verified { background: var(--soft-green); color: var(--green); }
-    .tag-assumed { background: var(--soft-gold); color: #7a6800; }
-    .tag-not-verified { background: var(--soft-red); color: var(--red); }
-
-    /* ── BETTING ── */
-    .bet-card {
-      background: linear-gradient(135deg, #071527 0%, #0b3d2b 100%);
-      color: #fff; border-radius: 8px; padding: 16px; margin-bottom: 12px;
-    }
-    .bet-card h3 { color: var(--gold); margin: 0 0 8px; font-size: 14px; }
-    .bet-card .play { background: rgba(255,255,255,.08); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; }
-    .bet-card .play-label { font-size: 10px; color: var(--gold); font-weight: 700; text-transform: uppercase; }
-    .bet-card .play-title { font-size: 15px; font-weight: 800; }
-    .bet-card .play-detail { font-size: 11px; color: rgba(255,255,255,.7); margin-top: 4px; }
-    .bet-card .warning {
-      background: rgba(179,58,58,.25); border: 1px solid rgba(179,58,58,.5);
-      border-radius: 4px; padding: 8px 10px; font-size: 11px; margin-top: 10px;
-    }
-    .bet-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 8px; }
-    .bet-table th { text-align: left; font-size: 10px; color: var(--gold); padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.15); }
-    .bet-table td { padding: 4px 6px; border-bottom: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.85); }
-
-    /* ── REFEREE &amp; ENV ── */
-    .env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .env-item { background: var(--soft-blue); border-radius: 6px; padding: 8px 10px; }
-    .env-item .env-label { font-size: 10px; font-weight: 700; color: var(--blue); text-transform: uppercase; }
-    .env-item .env-value { font-size: 13px; font-weight: 600; }
-
-    /* ── PITCH ── */
-    .pitch-container { background: var(--panel); border-radius: 8px; padding: 12px; border: 1px solid var(--line); margin-bottom: 14px; page-break-inside: avoid; break-inside: avoid; }
-    .pitch {
-      position: relative; width: 100%; height: 520px; background: linear-gradient(180deg, #1a7a42 0%, #15653a 50%, #1a7a42 100%);
-      border-radius: 6px; overflow: hidden; border: 2px solid rgba(255,255,255,.3);
-      page-break-inside: avoid; break-inside: avoid;
-    }
-    .pitch::before {
-      content: ""; position: absolute; left: 5%; right: 5%; top: 49.5%; height: 1%;
-      border-top: 2px solid rgba(255,255,255,.4); border-bottom: 2px solid rgba(255,255,255,.4);
-    }
-    .pitch .center-circle {
-      position: absolute; left: 50%; top: 50%; width: 60px; height: 60px;
-      border: 2px solid rgba(255,255,255,.3); border-radius: 50%;
-      transform: translate(-50%, -50%);
-    }
-    .pitch .penalty-box-top {
-      position: absolute; left: 25%; right: 25%; top: 0; height: 12%;
-      border: 2px solid rgba(255,255,255,.3); border-top: none;
-    }
-    .pitch .penalty-box-bot {
-      position: absolute; left: 25%; right: 25%; bottom: 0; height: 12%;
-      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
-    }
-    .pitch .goal-top {
-      position: absolute; left: 38%; right: 38%; top: 0; height: 5%;
-      border: 2px solid rgba(255,255,255,.3); border-top: none;
-    }
-    .pitch .goal-bot {
-      position: absolute; left: 38%; right: 38%; bottom: 0; height: 5%;
-      border: 2px solid rgba(255,255,255,.3); border-bottom: none;
-    }
-    .player-dot {
-      position: absolute; transform: translate(-50%, -50%); text-align: center; z-index: 2;
-    }
-    .player-dot .dot {
-      width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center;
-      justify-content: center; font-size: 11px; font-weight: 800; margin: 0 auto 2px;
-      border: 2px solid rgba(255,255,255,.5);
-    }
-    .player-dot .pname { font-size: 8px; color: #fff; font-weight: 600; white-space: nowrap; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
-    .dot-tur { background: #e30a17; color: #fff; }
-    .dot-rsa { background: #007749; color: #FFB81C; }
-    .dot-kor { background: #CD2E3A; color: #fff; }
-
-    .formation-label {
-      position: absolute; left: 8px; font-size: 9px; font-weight: 700; color: rgba(255,255,255,.7);
-      text-transform: uppercase; letter-spacing: .05em;
-    }
-    .venue-badge {
-      position: absolute; right: 6px; bottom: 6px; background: rgba(0,0,0,.5);
-      padding: 3px 6px; border-radius: 3px; font-size: 8px; color: rgba(255,255,255,.8);
-    }
-
-    /* ── ROSTER ── */
-    .roster-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .roster-panel { background: #f5f8f6; border-radius: 8px; padding: 10px; border: 1px solid var(--line); }
-    
-    .roster-panel.rsa { background: #e8f5ee; }
-    .roster-panel.kor { background: #fdf0f1; }
-    .roster-header { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
-    .roster-header img { width: 24px; height: 24px; border-radius: 50%; object-fit: contain; }
-    .roster-header .rh-name { font-size: 13px; font-weight: 800; }
-    .pos-group-title { font-size: 10px; font-weight: 800; color: var(--green); text-transform: uppercase; margin: 8px 0 4px; letter-spacing: .05em; }
-    .player-row { display: flex; align-items: center; gap: 6px; padding: 4px 0; border-bottom: 1px solid rgba(0,0,0,.04); }
-    .player-row:last-child { border-bottom: none; }
-    .player-row .avatar {
-      width: 30px; height: 30px; border-radius: 50%; object-fit: cover;
-      background: #ddd; flex-shrink: 0; border: 1px solid rgba(0,0,0,.08);
-    }
-    .player-row .pinfo { min-width: 0; }
-    .player-row .pinfo .pname { font-size: 11px; font-weight: 700; line-height: 1.2; }
-    .player-row .pinfo .pmeta { font-size: 9px; color: var(--muted); line-height: 1.3; }
-    .player-row .pinfo .pdetail { font-size: 8px; color: #999; line-height: 1.3; }
-
-    /* ── ODDS TABLE ── */
-    table.odds { width: 100%; border-collapse: collapse; font-size: 12px; }
-    table.odds th { text-align: left; font-size: 10px; color: var(--muted); padding: 6px 8px; border-bottom: 2px solid var(--line); font-weight: 700; text-transform: uppercase; }
-    table.odds td { padding: 6px 8px; border-bottom: 1px solid var(--line); }
-    table.odds tr:last-child td { border-bottom: none; }
-
-    /* ── RISK ── */
-    .risk-item { display: flex; gap: 8px; margin-bottom: 8px; }
-    .risk-icon { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; }
-    .risk-high { background: var(--soft-red); color: var(--red); }
-    .risk-med { background: var(--soft-gold); color: #7a6800; }
-
-    /* ── SOURCES ── */
-    .source-list { font-size: 10px; color: var(--muted); }
-    .source-list a { font-size: 10px; word-break: break-all; }
-    .source-list li { margin-bottom: 4px; }
-
-    /* ── FOOTER ── */
-    .footer {
-      max-width: 520px; margin: 30px auto 20px; padding: 14px 16px; text-align: center;
-      font-size: 10px; color: var(--muted); border-top: 1px solid var(--line);
-    }
-
-    /* ── PRINT ── */
-    @media print {
-      body { background: #fff; }
-      .hero { break-after: avoid; }
-      .section { break-inside: avoid; }
-      .card { break-inside: avoid; }
-      .bet-card { break-inside: avoid; }
-      .roster-grid { break-inside: auto; }
-      .roster-panel { break-inside: avoid; }
-    }
-
-    .adj-table { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 6px; }
-    .adj-table th { text-align: left; font-size: 10px; padding: 4px 6px; background: var(--soft-green); color: var(--green); }
-    .adj-table td { padding: 4px 6px; border-bottom: 1px solid var(--line); }
-    .adj-up { color: var(--red); font-weight: 700; }
-    .adj-down { color: var(--green); font-weight: 700; }
-    .adj-none { color: var(--muted); }
-
-    .subs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-    .sub-panel { background: rgba(255,255,255,.06); border-radius: 6px; padding: 8px; }
-    .sub-panel h4 { font-size: 10px; color: var(--gold); margin: 0 0 4px; text-transform: uppercase; }
-    .sub-row { font-size: 10px; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
-
-    .tactic-table { width: 100%; border-collapse: collapse; font-size: 11px; }
-    .tactic-table th { text-align: left; font-size: 10px; padding: 5px 6px; background: var(--soft-green); color: var(--green); font-weight: 700; }
-    .tactic-table td { padding: 5px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  </style>
+  <link rel="stylesheet" href="../report-theme.css">
+  <style>:root { --team-home: #007749; --team-away: #CD2E3A; }</style>
 </head>
 <body>
 
@@ -323,7 +74,7 @@
     </p>
     <div style="margin-top:8px;">
       <span class="tag tag-verified">Verified: Mexico qualified (6 pts)</span>
-      <span class="tag tag-verified">Verified: Mokoena &amp; Zwane suspended</span>
+      <span class="tag tag-verified">Verified: Mokoena & Zwane suspended</span>
       <span class="tag tag-verified">Verified: Korea draw clinches 2nd</span>
       <span class="tag tag-assumed">Assumed: Son starts</span>
       <span class="tag tag-assumed">Assumed: Heat suppresses goals</span>
@@ -401,7 +152,7 @@
     <table class="adj-table">
       <tr><th>Factor</th><th>Evidence</th><th>Direction</th></tr>
       <tr>
-        <td>SA missing Mokoena &amp; Zwane</td>
+        <td>SA missing Mokoena & Zwane</td>
         <td>Mokoena suspended (yellows); Zwane 3-match ban (red vs Mexico). Verified.</td>
         <td class="adj-up">↑ Korea scoring +0.4</td>
       </tr>
@@ -448,9 +199,9 @@
   </div>
 </div>
 
-<!-- ═══════════════════════ REFEREE &amp; ENVIRONMENT ═══════════════════════ -->
+<!-- ═══════════════════════ REFEREE & ENVIRONMENT ═══════════════════════ -->
 <div class="section wrap">
-  <div class="section-title">Referee &amp; Environment</div>
+  <div class="section-title">Referee & Environment</div>
   <div class="card">
     <h3>Referee: Facundo Tello (Argentina, age 34)</h3>
     <p style="margin:4px 0;font-size:12px;">
@@ -488,7 +239,7 @@
       <div style="font-size:10px;color:var(--muted);">Clear/sunny, muggy humidity</div>
     </div>
     <div class="env-item">
-      <div class="env-label">Travel &amp; Rest</div>
+      <div class="env-label">Travel & Rest</div>
       <div class="env-value">6 days rest (both)</div>
       <div style="font-size:10px;color:var(--muted);">SA from Guadalajara; Korea from Mexico City</div>
     </div>
@@ -564,7 +315,7 @@
       <strong>WC History:</strong> 11th appearance. Best: 4th place (2002 co-host).<br>
       <strong>Key Players:</strong> Son Heung-min (LAFC, $18M), Lee Kang-in (PSG, $40M), Kim Min-jae (Bayern, $35M).<br>
       <strong>Strengths:</strong> Elite European-based core, MD3 mentality, tactical flexibility, draw-is-enough mindset.<br>
-      <strong>Weaknesses:</strong> Kim Tae-hyeon &amp; Bae Jun-ho ankle doubts; can be passive when leading.<br>
+      <strong>Weaknesses:</strong> Kim Tae-hyeon & Bae Jun-ho ankle doubts; can be passive when leading.<br>
       <strong>Form:</strong> W 2-1 vs Czechia, L 0-1 vs Mexico.
     </p>
   </div>
@@ -572,7 +323,7 @@
 
 <!-- ═══════════════════════ PREDICTED STARTERS + PITCH ═══════════════════════ -->
 <div class="section wrap">
-  <div class="section-title">Predicted Starters &amp; Tactics</div>
+  <div class="section-title">Predicted Starters & Tactics</div>
 
   <div class="pitch-container">
     <div class="pitch">
@@ -586,30 +337,30 @@
       <div class="formation-label" style="bottom:3%;">SOUTH KOREA 3-4-2-1</div>
 
       <!-- SOUTH AFRICA (top) -->
-      <div class="player-dot" style="left:50%;top:5%;"><div class="dot dot-rsa">16</div><div class="pname">Williams</div></div>
-      <div class="player-dot" style="left:15%;top:15%;"><div class="dot dot-rsa">2</div><div class="pname">Mudau</div></div>
-      <div class="player-dot" style="left:37%;top:15%;"><div class="dot dot-rsa">21</div><div class="pname">Okon</div></div>
-      <div class="player-dot" style="left:63%;top:15%;"><div class="dot dot-rsa">15</div><div class="pname">Mbokazi</div></div>
-      <div class="player-dot" style="left:85%;top:15%;"><div class="dot dot-rsa">3</div><div class="pname">Modiba</div></div>
-      <div class="player-dot" style="left:25%;top:28%;"><div class="dot dot-rsa">5</div><div class="pname">Mbatha</div></div>
-      <div class="player-dot" style="left:50%;top:30%;"><div class="dot dot-rsa">13</div><div class="pname">Sithole</div></div>
-      <div class="player-dot" style="left:75%;top:28%;"><div class="dot dot-rsa">23</div><div class="pname">Adams</div></div>
-      <div class="player-dot" style="left:18%;top:40%;"><div class="dot dot-rsa">17</div><div class="pname">Maseko</div></div>
-      <div class="player-dot" style="left:50%;top:42%;"><div class="dot dot-rsa">7</div><div class="pname">Appollis</div></div>
-      <div class="player-dot" style="left:82%;top:40%;"><div class="dot dot-rsa">11</div><div class="pname">Rayners</div></div>
+      <div class="player-dot" style="left:50%;top:5%;"><div class="dot dot-home">16</div><div class="pname">Williams</div></div>
+      <div class="player-dot" style="left:15%;top:15%;"><div class="dot dot-home">2</div><div class="pname">Mudau</div></div>
+      <div class="player-dot" style="left:37%;top:15%;"><div class="dot dot-home">21</div><div class="pname">Okon</div></div>
+      <div class="player-dot" style="left:63%;top:15%;"><div class="dot dot-home">15</div><div class="pname">Mbokazi</div></div>
+      <div class="player-dot" style="left:85%;top:15%;"><div class="dot dot-home">3</div><div class="pname">Modiba</div></div>
+      <div class="player-dot" style="left:25%;top:28%;"><div class="dot dot-home">5</div><div class="pname">Mbatha</div></div>
+      <div class="player-dot" style="left:50%;top:30%;"><div class="dot dot-home">13</div><div class="pname">Sithole</div></div>
+      <div class="player-dot" style="left:75%;top:28%;"><div class="dot dot-home">23</div><div class="pname">Adams</div></div>
+      <div class="player-dot" style="left:18%;top:40%;"><div class="dot dot-home">17</div><div class="pname">Maseko</div></div>
+      <div class="player-dot" style="left:50%;top:42%;"><div class="dot dot-home">7</div><div class="pname">Appollis</div></div>
+      <div class="player-dot" style="left:82%;top:40%;"><div class="dot dot-home">11</div><div class="pname">Rayners</div></div>
 
       <!-- SOUTH KOREA (bottom) -->
-      <div class="player-dot" style="left:50%;top:95%;"><div class="dot dot-kor">21</div><div class="pname">Jo</div></div>
-      <div class="player-dot" style="left:22%;top:85%;"><div class="dot dot-kor">3</div><div class="pname">Lee HB</div></div>
-      <div class="player-dot" style="left:50%;top:86%;"><div class="dot dot-kor">4</div><div class="pname">Kim MJ</div></div>
-      <div class="player-dot" style="left:78%;top:85%;"><div class="dot dot-kor">2</div><div class="pname">Lee GH</div></div>
-      <div class="player-dot" style="left:12%;top:72%;"><div class="dot dot-kor">14</div><div class="pname">Kim MH</div></div>
-      <div class="player-dot" style="left:35%;top:74%;"><div class="dot dot-kor">6</div><div class="pname">Hwang IB</div></div>
-      <div class="player-dot" style="left:65%;top:74%;"><div class="dot dot-kor">8</div><div class="pname">Paik</div></div>
-      <div class="player-dot" style="left:88%;top:72%;"><div class="dot dot-kor">22</div><div class="pname">Seol</div></div>
-      <div class="player-dot" style="left:32%;top:62%;"><div class="dot dot-kor">10</div><div class="pname">Lee KI</div></div>
-      <div class="player-dot" style="left:68%;top:62%;"><div class="dot dot-kor">13</div><div class="pname">Lee JS</div></div>
-      <div class="player-dot" style="left:50%;top:55%;"><div class="dot dot-kor">7</div><div class="pname">Son</div></div>
+      <div class="player-dot" style="left:50%;top:95%;"><div class="dot dot-away">21</div><div class="pname">Jo</div></div>
+      <div class="player-dot" style="left:22%;top:85%;"><div class="dot dot-away">3</div><div class="pname">Lee HB</div></div>
+      <div class="player-dot" style="left:50%;top:86%;"><div class="dot dot-away">4</div><div class="pname">Kim MJ</div></div>
+      <div class="player-dot" style="left:78%;top:85%;"><div class="dot dot-away">2</div><div class="pname">Lee GH</div></div>
+      <div class="player-dot" style="left:12%;top:72%;"><div class="dot dot-away">14</div><div class="pname">Kim MH</div></div>
+      <div class="player-dot" style="left:35%;top:74%;"><div class="dot dot-away">6</div><div class="pname">Hwang IB</div></div>
+      <div class="player-dot" style="left:65%;top:74%;"><div class="dot dot-away">8</div><div class="pname">Paik</div></div>
+      <div class="player-dot" style="left:88%;top:72%;"><div class="dot dot-away">22</div><div class="pname">Seol</div></div>
+      <div class="player-dot" style="left:32%;top:62%;"><div class="dot dot-away">10</div><div class="pname">Lee KI</div></div>
+      <div class="player-dot" style="left:68%;top:62%;"><div class="dot dot-away">13</div><div class="pname">Lee JS</div></div>
+      <div class="player-dot" style="left:50%;top:55%;"><div class="dot dot-away">7</div><div class="pname">Son</div></div>
 
       <div class="venue-badge">Estadio BBVA · 31°C · Clear</div>
     </div>
@@ -650,7 +401,7 @@
         <div class="sub-row">GK: Goss, Chaine</div>
         <div class="sub-row">DEF: Sibisi, Ndamane, Kabini, Sebelebele, Cross, Matuludi, Makhanya</div>
         <div class="sub-row">MID/FWD: Foster, Makgopa, Mofokeng, Moremi</div>
-        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">🚫 Mokoena &amp; Zwane suspended</div>
+        <div class="sub-row" style="font-size:9px;color:rgba(255,255,255,.5);">🚫 Mokoena & Zwane suspended</div>
       </div>
       <div class="sub-panel">
         <h4>🇰🇷 South Korea Bench</h4>
@@ -668,7 +419,7 @@
 <div class="section wrap">
   <div class="section-title">Full Squad Rosters</div>
   <div class="roster-grid">
-    <div class="roster-panel rsa">
+    <div class="roster-panel home">
       <div class="roster-header">
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiMwMDc3NDkiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI0ZGQjgxQyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPlJTQTwvdGV4dD48L3N2Zz4=" alt="South Africa">
         <div class="rh-name">South Africa</div>
@@ -895,7 +646,7 @@
         </div>
       </div>
     </div>
-    <div class="roster-panel kor">
+    <div class="roster-panel away">
       <div class="roster-header">
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMjgiIGZpbGw9IiNDRDJFM0EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIzIi8+PHRleHQgeD0iMzAiIHk9IjMyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCIgZmlsbD0iI2ZmZiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI4MDAiPktPUjwvdGV4dD48L3N2Zz4=" alt="South Korea">
         <div class="rh-name">South Korea</div>
@@ -1129,9 +880,9 @@
   </p>
 </div>
 
-<!-- ═══════════════════════ ODDS &amp; PROBABILITIES ═══════════════════════ -->
+<!-- ═══════════════════════ ODDS & PROBABILITIES ═══════════════════════ -->
 <div class="section wrap">
-  <div class="section-title">Odds &amp; Probabilities</div>
+  <div class="section-title">Odds & Probabilities</div>
   <div class="card">
     <h3>Moneyline (90 min + stoppage)</h3>
     <table class="odds">
@@ -1148,7 +899,7 @@
   </div>
 
   <div class="card">
-    <h3>Totals &amp; Spreads</h3>
+    <h3>Totals & Spreads</h3>
     <table class="odds">
       <tr><th>Market</th><th>Line</th><th>Odds</th><th>Implication</th></tr>
       <tr><td>Total Goals</td><td>O/U 2.5</td><td>Over +106 / Under −130</td><td>Market leans Under; heat factor</td></tr>

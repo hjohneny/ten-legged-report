@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title id="page-title">Match Report</title>
+  <link rel="stylesheet" href="report-theme.css">
+  <style>:root { --team-home: var(--purple); --team-away: var(--coral); }</style>
+</head>
+<body>
+<div id="report-root"></div>
+<script>
+(function() {
+  var params = new URLSearchParams(location.search);
+  var matchPath = params.get('match');
+  if (!matchPath) {
+    document.getElementById('report-root').innerHTML = '<main style="padding:40px;text-align:center;color:#fff"><h1>No match specified</h1><p>Use ?match=md3/slug</p></main>';
+    return;
+  }
+
+  var jsonUrl = matchPath + '.json';
+  fetch(jsonUrl).then(function(r) {
+    if (!r.ok) throw new Error('JSON not found');
+    return r.json();
+  }).then(render).catch(function(e) {
+    // Fallback: redirect to static .tmp.html if JSON doesn't exist
+    var fallback = matchPath + '.tmp.html';
+    location.href = fallback;
+  });
+
+  function render(d) {
+    var m = d.meta;
+    document.title = m.title;
+    document.querySelector('style').textContent = ':root{--team-home:' + m.homeColor + ';--team-away:' + m.awayColor + ';}';
+
+    var html = '';
+
+    // Hero
+    html += '<header class="hero"><div class="hero-inner">';
+    html += '<div class="eyebrow">' + esc(m.eyebrow) + '</div>';
+    html += '<h1>' + esc(m.h1) + '</h1>';
+    html += '<p class="subtitle">' + m.subtitle + '</p>';
+    html += '<div class="team-strip" aria-label="Team comparison">';
+    html += '<div class="team"><div class="badge-dot home">' + esc(m.home.code) + '</div>';
+    html += '<div><strong>' + esc(m.home.name) + '</strong><span>' + esc(m.home.detail) + '</span></div></div>';
+    html += '<div class="versus">VS</div>';
+    html += '<div class="team away"><div><strong>' + esc(m.away.name) + '</strong><span>' + esc(m.away.detail) + '</span></div>';
+    html += '<div class="badge-dot away">' + esc(m.away.code) + '</div></div>';
+    html += '</div></div></header>';
+
+    // Main
+    html += '<main>';
+
+    // Notice
+    if (d.notice) {
+      html += '<div class="notice">' + d.notice + '</div>';
+    }
+
+    // Sections
+    (d.sections || []).forEach(function(sec) {
+      switch (sec.type) {
+        case 'conclusions':
+          html += renderConclusions(sec); break;
+        case 'pitch':
+          html += renderPitch(sec); break;
+        case 'roster':
+          html += renderRoster(sec); break;
+        case 'betting':
+          html += renderBetting(sec); break;
+        default:
+          html += renderGeneric(sec);
+      }
+    });
+
+    html += '</main>';
+
+    // Footer
+    if (d.footer) {
+      html += '<footer>' + d.footer + '</footer>';
+    }
+
+    document.getElementById('report-root').innerHTML = html;
+  }
+
+  function renderConclusions(sec) {
+    var h = '<section><h2>' + esc(sec.title) + '</h2>';
+    h += '<div class="grid four">';
+    (sec.metrics || []).forEach(function(met) {
+      h += '<div class="metric ' + (met.variant || '') + '"><b>' + esc(met.label) + '</b><span>' + met.detail + '</span></div>';
+    });
+    h += '</div>';
+    if (sec.tags && sec.tags.length) {
+      h += '<div class="pillbar">';
+      sec.tags.forEach(function(t) {
+        h += '<span class="tag ' + (t.type || '') + '">' + esc(t.text) + '</span>';
+      });
+      h += '</div>';
+    }
+    h += '</section>';
+    return h;
+  }
+
+  function renderBetting(sec) {
+    var h = '<section><h2>' + esc(sec.title) + '</h2>';
+    if (sec.intro) h += '<p>' + sec.intro + '</p>';
+    if (sec.warning) h += '<div class="warn-banner">' + sec.warning + '</div>';
+    if (sec.thesis) {
+      h += '<div class="budget-card"><h3>Score Thesis Summary</h3>';
+      h += '<p style="margin:0;font-size:12px;color:rgba(255,255,255,.9)">' + sec.thesis + '</p></div>';
+    }
+    (sec.bets || []).forEach(function(b) {
+      h += '<div class="bet-row"><div class="alloc">$' + b.amount + '</div><div>';
+      h += '<b>' + esc(b.label) + '</b>';
+      h += '<div class="split-note">' + b.detail + '</div>';
+      h += '<div class="bar"><i style="width:' + b.pct + '%"></i></div>';
+      h += '<div class="split-note"><strong>Min odds:</strong> ' + esc(b.minOdds) + ' · <strong>Cancel if:</strong> ' + esc(b.cancel) + '</div>';
+      h += '</div><div class="units">' + b.units + '</div></div>';
+    });
+    if (sec.extraHtml) h += sec.extraHtml;
+    h += '</section>';
+    return h;
+  }
+
+  function renderPitch(sec) {
+    var h = '<section><h2>' + esc(sec.title) + '</h2>';
+    h += '<div class="pitch-wrap"><div class="pitch-meta">';
+    h += '<span><span class="formation-tag">' + esc(sec.home.formation) + '</span> vs <span class="formation-tag">' + esc(sec.away.formation) + '</span></span>';
+    h += '</div>';
+    h += '<div class="pitch-combined" aria-label="Combined predicted lineups">';
+    h += '<div class="half-label">▲ ' + esc(sec.home.label) + '</div>';
+    (sec.home.rows || []).forEach(function(row) {
+      h += '<div class="lineup-row">';
+      row.forEach(function(p) {
+        h += '<span class="player-dot home" data-num="' + p.num + '">' + esc(p.name) + '</span>';
+      });
+      h += '</div>';
+    });
+    h += '<div class="half-label">▼ ' + esc(sec.away.label) + '</div>';
+    (sec.away.rows || []).forEach(function(row) {
+      h += '<div class="lineup-row">';
+      row.forEach(function(p) {
+        h += '<span class="player-dot away" data-num="' + p.num + '">' + esc(p.name) + '</span>';
+      });
+      h += '</div>';
+    });
+    h += '</div></div>';
+    if (sec.extraHtml) h += sec.extraHtml;
+    h += '</section>';
+    return h;
+  }
+
+  function renderRoster(sec) {
+    var h = '<section><h2>' + esc(sec.title) + '</h2>';
+    h += '<div class="roster-grid">';
+    h += renderRosterPanel(sec.home, 'home');
+    h += renderRosterPanel(sec.away, 'away');
+    h += '</div></section>';
+    return h;
+  }
+
+  function renderRosterPanel(team, side) {
+    var h = '<div class="roster-panel ' + side + '">';
+    h += '<div class="roster-header"><div class="badge-dot ' + side + '" style="width:28px;height:28px;font-size:8px">' + esc(team.code) + '</div>';
+    h += '<div class="rh-name">' + esc(team.name) + '</div></div>';
+    (team.groups || []).forEach(function(g) {
+      h += '<div class="pos-group-title">' + esc(g.position) + '</div>';
+      (g.players || []).forEach(function(p) {
+        h += '<div class="player-row">';
+        h += '<div class="avatar-init ' + side + '">' + esc(p.initials) + '</div>';
+        h += '<div class="pinfo"><div class="pname">' + esc(p.name) + (p.star ? ' ⭐' : '') + '</div>';
+        h += '<div class="pmeta">' + esc(p.meta) + '</div>';
+        h += '<div class="pdetail">' + esc(p.detail) + '</div></div></div>';
+      });
+    });
+    h += '</div>';
+    return h;
+  }
+
+  function renderGeneric(sec) {
+    var h = '<section><h2>' + esc(sec.title) + '</h2>';
+    h += (sec.content || '');
+    h += '</section>';
+    return h;
+  }
+
+  function esc(s) {
+    if (!s) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+})();
+</script>
+</body>
+</html>
