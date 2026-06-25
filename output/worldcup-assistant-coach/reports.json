@@ -1,0 +1,476 @@
+[
+  {
+    "slug": "md3/bosnia-vs-qatar-2026-06-24",
+    "date": "2026-06-24",
+    "kickoff": "3:00 PM ET",
+    "kickoffLocal": "3:00 AM MYT (Jun 25)",
+    "group": "Group B",
+    "matchLabel": "Match 52",
+    "venue": "Lumen Field, Seattle",
+    "alert": "⚠️ QAT: Ahmed & Madibo suspended",
+    "centralPath": "Bosnia 2–0",
+    "home": {
+      "code": "BIH",
+      "name": "Bosnia",
+      "rank": 64,
+      "pts": 1,
+      "color": "#002395"
+    },
+    "away": {
+      "code": "QAT",
+      "name": "Qatar",
+      "rank": 56,
+      "pts": 1,
+      "color": "#8A1538"
+    },
+    "odds": [
+      {
+        "label": "BIH",
+        "value": "-270"
+      },
+      {
+        "label": "Draw",
+        "value": "+420"
+      },
+      {
+        "label": "QAT",
+        "value": "+650"
+      }
+    ]
+  },
+  {
+    "slug": "md3/switzerland-vs-canada-2026-06-24",
+    "date": "2026-06-24",
+    "kickoff": "3:00 PM ET",
+    "kickoffLocal": "3:00 AM MYT (Jun 25)",
+    "group": "Group B",
+    "matchLabel": "Match 51",
+    "venue": "BC Place, Vancouver",
+    "alert": "🌐 Canada home match · Roof closed",
+    "centralPath": "Draw 1–1",
+    "home": {
+      "code": "SUI",
+      "name": "Switzerland",
+      "rank": 19,
+      "pts": 4,
+      "color": "#FF0000"
+    },
+    "away": {
+      "code": "CAN",
+      "name": "Canada",
+      "rank": 30,
+      "pts": 4,
+      "color": "#FF0000",
+      "badgeExtra": "border-color:#fff;"
+    },
+    "odds": [
+      {
+        "label": "SUI",
+        "value": "+130"
+      },
+      {
+        "label": "Draw",
+        "value": "+200"
+      },
+      {
+        "label": "CAN",
+        "value": "+240"
+      }
+    ]
+  },
+  {
+    "slug": "md3/morocco-vs-haiti-2026-06-24",
+    "date": "2026-06-24",
+    "kickoff": "6:00 PM ET",
+    "kickoffLocal": "6:00 AM MYT (Jun 25)",
+    "group": "Group C",
+    "matchLabel": "Matchday 3",
+    "venue": "Mercedes-Benz Stadium, Atlanta",
+    "alert": "❌ Haiti eliminated · 0 goals scored",
+    "centralPath": "Morocco 3–0",
+    "home": {
+      "code": "MAR",
+      "name": "Morocco",
+      "rank": 7,
+      "pts": 4,
+      "color": "#C1272D"
+    },
+    "away": {
+      "code": "HAI",
+      "name": "Haiti",
+      "rank": 83,
+      "pts": 0,
+      "color": "#00209F"
+    },
+    "odds": [
+      {
+        "label": "MAR",
+        "value": "-600"
+      },
+      {
+        "label": "Draw",
+        "value": "+600"
+      },
+      {
+        "label": "HAI",
+        "value": "+1600"
+      }
+    ]
+  },
+  {
+    "slug": "md3/scotland-vs-brazil-2026-06-24",
+    "date": "2026-06-24",
+    "kickoff": "6:00 PM ET",
+    "kickoffLocal": "6:00 AM MYT (Jun 25)",
+    "group": "Group C",
+    "matchLabel": "Match 49",
+    "venue": "Hard Rock Stadium, Miami",
+    "alert": "☀️ 87°F, 74% humidity · Open-air",
+    "centralPath": "Brazil 2–0",
+    "home": {
+      "code": "SCO",
+      "name": "Scotland",
+      "rank": 42,
+      "pts": 3,
+      "color": "#003399"
+    },
+    "away": {
+      "code": "BRA",
+      "name": "Brazil",
+      "rank": 6,
+      "pts": 4,
+      "color": "#FFDF00",
+      "badgeExtra": "color:#009739;border-color:#009739;"
+    },
+    "odds": [
+      {
+        "label": "BRA",
+        "value": "-280"
+      },
+      {
+        "label": "Draw",
+        "value": "+410"
+      },
+      {
+        "label": "SCO",
+        "value": "+700"
+      }
+    ]
+  },
+  {
+    "slug": "md3/south-africa-vs-south-korea-2026-06-24",
+    "date": "2026-06-24",
+    "kickoff": "9:00 PM ET",
+    "kickoffLocal": "9:00 AM MYT (Jun 25)",
+    "group": "Group A",
+    "matchLabel": "Match 54",
+    "venue": "Estadio BBVA, Monterrey",
+    "alert": "⚠️ RSA: Mokoena & Zwane suspended",
+    "centralPath": "S. Korea 2–0",
+    "home": {
+      "code": "RSA",
+      "name": "South Africa",
+      "rank": 60,
+      "pts": 1,
+      "color": "#007749"
+    },
+    "away": {
+      "code": "KOR",
+      "name": "South Korea",
+      "rank": 25,
+      "pts": 3,
+      "color": "#CD2E3A"
+    },
+    "odds": [
+      {
+        "label": "RSA",
+        "value": "+450"
+      },
+      {
+        "label": "Draw",
+        "value": "+280"
+      },
+      {
+        "label": "KOR",
+        "value": "-150"
+      }
+    ]
+  },
+  {
+    "slug": "md3/czechia-vs-mexico-2026-06-24",
+    "date": "2026-06-24",
+    "kickoff": "9:00 PM ET",
+    "kickoffLocal": "9:00 AM MYT (Jun 25)",
+    "group": "Group A",
+    "matchLabel": "Match 53",
+    "venue": "Estadio Azteca, Mexico City",
+    "alert": "⛈ Altitude 2,200m · Rain likely",
+    "centralPath": "Mexico 1–0",
+    "home": {
+      "code": "CZE",
+      "name": "Czechia",
+      "rank": 40,
+      "pts": 1,
+      "color": "#11457E"
+    },
+    "away": {
+      "code": "MEX",
+      "name": "Mexico",
+      "rank": 14,
+      "pts": 6,
+      "color": "#006847"
+    },
+    "odds": [
+      {
+        "label": "MEX",
+        "value": "-110"
+      },
+      {
+        "label": "Draw",
+        "value": "+280"
+      },
+      {
+        "label": "CZE",
+        "value": "+270"
+      }
+    ]
+  },
+  {
+    "slug": "md3/curacao-vs-ivory-coast-2026-06-25",
+    "date": "2026-06-25",
+    "kickoff": "4:00 PM ET",
+    "kickoffLocal": "4:00 AM MYT (Jun 26)",
+    "group": "Group E",
+    "matchLabel": "Match 55",
+    "venue": "Lincoln Financial Field, Philadelphia",
+    "alert": "🇨🇼 Curacao first-ever World Cup · CIV need draw",
+    "centralPath": "Ivory Coast 2–0",
+    "home": {
+      "code": "CUW",
+      "name": "Curacao",
+      "rank": 82,
+      "pts": 1,
+      "color": "#003DA5"
+    },
+    "away": {
+      "code": "CIV",
+      "name": "Ivory Coast",
+      "rank": 33,
+      "pts": 3,
+      "color": "#FF6600"
+    },
+    "odds": [
+      {
+        "label": "CUW",
+        "value": "+1700"
+      },
+      {
+        "label": "Draw",
+        "value": "+750"
+      },
+      {
+        "label": "CIV",
+        "value": "-650"
+      }
+    ]
+  },
+  {
+    "slug": "md3/ecuador-vs-germany-2026-06-25",
+    "date": "2026-06-25",
+    "kickoff": "4:00 PM ET",
+    "kickoffLocal": "4:00 AM MYT (Jun 26)",
+    "group": "Group E",
+    "matchLabel": "Match 56",
+    "venue": "MetLife Stadium, East Rutherford",
+    "alert": "🇩🇪 Germany rotate · Ecuador 0 goals in WC",
+    "centralPath": "Germany 1–0",
+    "home": {
+      "code": "ECU",
+      "name": "Ecuador",
+      "rank": 23,
+      "pts": 1,
+      "color": "#FFD100"
+    },
+    "away": {
+      "code": "GER",
+      "name": "Germany",
+      "rank": 10,
+      "pts": 6,
+      "color": "#000000",
+      "badgeExtra": "border-color:#fff;"
+    },
+    "odds": [
+      {
+        "label": "ECU",
+        "value": "+400"
+      },
+      {
+        "label": "Draw",
+        "value": "+355"
+      },
+      {
+        "label": "GER",
+        "value": "-151"
+      }
+    ]
+  },
+  {
+    "slug": "md3/tunisia-vs-netherlands-2026-06-25",
+    "date": "2026-06-25",
+    "kickoff": "7:00 PM ET",
+    "kickoffLocal": "7:00 AM MYT (Jun 26)",
+    "group": "Group F",
+    "matchLabel": "Match 58",
+    "venue": "Arrowhead Stadium, Kansas City",
+    "alert": "❌ Tunisia eliminated · Fired manager · NED -8 GD",
+    "centralPath": "Netherlands 3–0",
+    "home": {
+      "code": "TUN",
+      "name": "Tunisia",
+      "rank": 40,
+      "pts": 0,
+      "color": "#CE1126"
+    },
+    "away": {
+      "code": "NED",
+      "name": "Netherlands",
+      "rank": 3,
+      "pts": 4,
+      "color": "#FF6600"
+    },
+    "odds": [
+      {
+        "label": "TUN",
+        "value": "+1925"
+      },
+      {
+        "label": "Draw",
+        "value": "+850"
+      },
+      {
+        "label": "NED",
+        "value": "-813"
+      }
+    ]
+  },
+  {
+    "slug": "md3/japan-vs-sweden-2026-06-25",
+    "date": "2026-06-25",
+    "kickoff": "7:00 PM ET",
+    "kickoffLocal": "7:00 AM MYT (Jun 26)",
+    "group": "Group F",
+    "matchLabel": "Match 57",
+    "venue": "AT&T Stadium, Arlington",
+    "alert": "🏟 Indoor · Roof closed · SWE must win",
+    "centralPath": "Japan 2–1",
+    "home": {
+      "code": "JPN",
+      "name": "Japan",
+      "rank": 17,
+      "pts": 4,
+      "color": "#BC002D"
+    },
+    "away": {
+      "code": "SWE",
+      "name": "Sweden",
+      "rank": 25,
+      "pts": 3,
+      "color": "#006AA7",
+      "badgeExtra": "border-color:#FECC00;"
+    },
+    "odds": [
+      {
+        "label": "JPN",
+        "value": "-105"
+      },
+      {
+        "label": "Draw",
+        "value": "+225"
+      },
+      {
+        "label": "SWE",
+        "value": "+300"
+      }
+    ]
+  },
+  {
+    "slug": "md3/paraguay-vs-australia-2026-06-25",
+    "date": "2026-06-25",
+    "kickoff": "10:00 PM ET",
+    "kickoffLocal": "10:00 AM MYT (Jun 26)",
+    "group": "Group D",
+    "matchLabel": "Match 60",
+    "venue": "Levi's Stadium, Santa Clara",
+    "alert": "⚠️ PY: Almirón suspended · Draw sends both through",
+    "centralPath": "Draw 0–0",
+    "home": {
+      "code": "PAR",
+      "name": "Paraguay",
+      "rank": 52,
+      "pts": 3,
+      "color": "#DA291C",
+      "badgeExtra": "border-color:#fff;"
+    },
+    "away": {
+      "code": "AUS",
+      "name": "Australia",
+      "rank": 24,
+      "pts": 3,
+      "color": "#00843D",
+      "badgeExtra": "border-color:#FFCD00;"
+    },
+    "odds": [
+      {
+        "label": "PAR",
+        "value": "+195"
+      },
+      {
+        "label": "Draw",
+        "value": "+120"
+      },
+      {
+        "label": "AUS",
+        "value": "+275"
+      }
+    ]
+  },
+  {
+    "slug": "md3/turkiye-vs-usa-2026-06-25",
+    "date": "2026-06-25",
+    "kickoff": "10:00 PM ET",
+    "kickoffLocal": "10:00 AM MYT (Jun 26)",
+    "group": "Group D",
+    "matchLabel": "Match 59",
+    "venue": "SoFi Stadium, Los Angeles",
+    "alert": "🇺🇸 USA won group · TUR eliminated · Dead rubber",
+    "centralPath": "USA 2–1",
+    "home": {
+      "code": "TUR",
+      "name": "Türkiye",
+      "rank": 22,
+      "pts": 0,
+      "color": "#E30A17"
+    },
+    "away": {
+      "code": "USA",
+      "name": "USA",
+      "rank": 17,
+      "pts": 6,
+      "color": "#002868"
+    },
+    "odds": [
+      {
+        "label": "TUR",
+        "value": "+173"
+      },
+      {
+        "label": "Draw",
+        "value": "+300"
+      },
+      {
+        "label": "USA",
+        "value": "+148"
+      }
+    ]
+  }
+]
