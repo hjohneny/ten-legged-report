@@ -472,5 +472,240 @@
         "value": "+148"
       }
     ]
+  },
+  {
+    "slug": "md3/norway-vs-france-2026-06-26",
+    "date": "2026-06-26",
+    "kickoff": "3:00 PM ET",
+    "kickoffLocal": "3:00 AM MYT (Jun 27)",
+    "group": "Group I",
+    "matchLabel": "Match 61",
+    "venue": "Gillette Stadium, Boston",
+    "alert": "Group decider · Haaland vs Mbappe · Both on 6 pts",
+    "centralPath": "France 2–1",
+    "home": {
+      "code": "NOR",
+      "name": "Norway",
+      "rank": 18,
+      "pts": 6,
+      "color": "#BA0C2F"
+    },
+    "away": {
+      "code": "FRA",
+      "name": "France",
+      "rank": 2,
+      "pts": 6,
+      "color": "#002395"
+    },
+    "odds": [
+      {
+        "label": "NOR",
+        "value": "+420"
+      },
+      {
+        "label": "Draw",
+        "value": "+360"
+      },
+      {
+        "label": "FRA",
+        "value": "-175"
+      }
+    ]
+  },
+  {
+    "slug": "md3/senegal-vs-iraq-2026-06-26",
+    "date": "2026-06-26",
+    "kickoff": "3:00 PM ET",
+    "kickoffLocal": "3:00 AM MYT (Jun 27)",
+    "group": "Group I",
+    "matchLabel": "Match 62",
+    "venue": "BMO Field, Toronto",
+    "alert": "Both eliminated · Senegal need win for 3rd-place path",
+    "centralPath": "Senegal 3–1",
+    "home": {
+      "code": "SEN",
+      "name": "Senegal",
+      "rank": 21,
+      "pts": 0,
+      "color": "#00853F"
+    },
+    "away": {
+      "code": "IRQ",
+      "name": "Iraq",
+      "rank": 55,
+      "pts": 0,
+      "color": "#007A3D"
+    },
+    "odds": [
+      {
+        "label": "SEN",
+        "value": "-450"
+      },
+      {
+        "label": "Draw",
+        "value": "+550"
+      },
+      {
+        "label": "IRQ",
+        "value": "+1100"
+      }
+    ]
+  },
+  {
+    "slug": "md3/capeverde-vs-saudi-arabia-2026-06-26",
+    "date": "2026-06-26",
+    "kickoff": "8:00 PM ET",
+    "kickoffLocal": "8:00 AM MYT (Jun 27)",
+    "group": "Group H",
+    "matchLabel": "Match 65",
+    "venue": "NRG Stadium, Houston",
+    "alert": "CPV historic run · Win = Round of 32",
+    "centralPath": "Cape Verde 1–0",
+    "home": {
+      "code": "CPV",
+      "name": "Cape Verde",
+      "rank": 68,
+      "pts": 2,
+      "color": "#003893"
+    },
+    "away": {
+      "code": "SAU",
+      "name": "Saudi Arabia",
+      "rank": 56,
+      "pts": 1,
+      "color": "#006C35"
+    },
+    "odds": [
+      {
+        "label": "CPV",
+        "value": "+165"
+      },
+      {
+        "label": "Draw",
+        "value": "+220"
+      },
+      {
+        "label": "SAU",
+        "value": "+170"
+      }
+    ]
+  },
+  {
+    "slug": "md3/uruguay-vs-spain-2026-06-26",
+    "date": "2026-06-26",
+    "kickoff": "8:00 PM ET",
+    "kickoffLocal": "8:00 AM MYT (Jun 27)",
+    "group": "Group H",
+    "matchLabel": "Match 66",
+    "venue": "Estadio Akron, Guadalajara",
+    "alert": "Spain top with draw · Araujo out · Pedri suspended",
+    "centralPath": "Spain 2–0",
+    "home": {
+      "code": "URU",
+      "name": "Uruguay",
+      "rank": 11,
+      "pts": 2,
+      "color": "#001489"
+    },
+    "away": {
+      "code": "ESP",
+      "name": "Spain",
+      "rank": 5,
+      "pts": 4,
+      "color": "#AA151B"
+    },
+    "odds": [
+      {
+        "label": "URU",
+        "value": "+600"
+      },
+      {
+        "label": "Draw",
+        "value": "+320"
+      },
+      {
+        "label": "ESP",
+        "value": "-194"
+      }
+    ]
+  },
+  {
+    "slug": "md3/egypt-vs-iran-2026-06-26",
+    "date": "2026-06-26",
+    "kickoff": "11:00 PM ET",
+    "kickoffLocal": "11:00 AM MYT (Jun 27)",
+    "group": "Group G",
+    "matchLabel": "Match 63",
+    "venue": "Lumen Field, Seattle",
+    "alert": "Egypt draw = qualified · Iran must win",
+    "centralPath": "Egypt 1–0",
+    "home": {
+      "code": "EGY",
+      "name": "Egypt",
+      "rank": 29,
+      "pts": 4,
+      "color": "#C8102E"
+    },
+    "away": {
+      "code": "IRN",
+      "name": "Iran",
+      "rank": 20,
+      "pts": 2,
+      "color": "#239F40"
+    },
+    "odds": [
+      {
+        "label": "EGY",
+        "value": "+140"
+      },
+      {
+        "label": "Draw",
+        "value": "+160"
+      },
+      {
+        "label": "IRN",
+        "value": "+270"
+      }
+    ]
+  },
+  {
+    "slug": "md3/newzealand-vs-belgium-2026-06-26",
+    "date": "2026-06-26",
+    "kickoff": "11:00 PM ET",
+    "kickoffLocal": "11:00 AM MYT (Jun 27)",
+    "group": "Group G",
+    "matchLabel": "Match 64",
+    "venue": "BC Place, Vancouver",
+    "alert": "Belgium must win · Ngoy suspended · Roof closed",
+    "centralPath": "Belgium 2–0",
+    "home": {
+      "code": "NZL",
+      "name": "New Zealand",
+      "rank": 86,
+      "pts": 1,
+      "color": "#000000",
+      "badgeExtra": "border-color:#fff;"
+    },
+    "away": {
+      "code": "BEL",
+      "name": "Belgium",
+      "rank": 9,
+      "pts": 2,
+      "color": "#ED2939"
+    },
+    "odds": [
+      {
+        "label": "NZL",
+        "value": "+1300"
+      },
+      {
+        "label": "Draw",
+        "value": "+600"
+      },
+      {
+        "label": "BEL",
+        "value": "-475"
+      }
+    ]
   }
 ]
